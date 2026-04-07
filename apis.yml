@@ -9,10 +9,10 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Ad Insertion
-  - Video Monetization
+  - AWS
   - Live Streaming
   - Media
-  - AWS
+  - Video Monetization
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -29,8 +29,8 @@ apis:
     baseURL: https://api.mediatailor.amazonaws.com
     tags:
       - Ad Insertion
-      - Video Monetization
       - Live Streaming
+      - Video Monetization
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/mediatailor/latest/apireference/welcome.html
