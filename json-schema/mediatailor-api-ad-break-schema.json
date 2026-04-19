@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-ad-break-schema.json",
+  "title": "AdBreak",
+  "description": "Ad break configuration parameters.",
+  "type": "object",
+  "properties": {
+    "MessageType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MessageType"
+        },
+        {
+          "description": "The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>."
+        }
+      ]
+    },
+    "OffsetMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped."
+        }
+      ]
+    },
+    "Slate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SlateSource"
+        },
+        {
+          "description": "Ad break slate configuration."
+        }
+      ]
+    },
+    "SpliceInsertMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpliceInsertMessage"
+        },
+        {
+          "description": "This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1."
+        }
+      ]
+    },
+    "TimeSignalMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSignalMessage"
+        },
+        {
+          "description": "<p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p> <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p> <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>"
+        }
+      ]
+    }
+  }
+}

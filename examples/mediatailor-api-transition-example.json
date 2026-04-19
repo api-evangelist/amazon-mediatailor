@@ -1,0 +1,7 @@
+{
+  "DurationMillis": "example-value",
+  "RelativePosition": "example-value",
+  "RelativeProgram": "example-value",
+  "ScheduledStartTimeMillis": "example-value",
+  "Type": "STANDARD"
+}

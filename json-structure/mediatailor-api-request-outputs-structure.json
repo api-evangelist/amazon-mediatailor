@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-request-outputs-structure.json",
+  "name": "RequestOutputs",
+  "type": "array",
+  "description": "An object that represents an object in the CreateChannel request.",
+  "items": {
+    "$ref": "#/components/schemas/RequestOutputItem"
+  }
+}

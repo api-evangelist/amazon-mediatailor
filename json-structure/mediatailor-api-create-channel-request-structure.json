@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-create-channel-request-structure.json",
+  "name": "CreateChannelRequest",
+  "type": "object",
+  "description": "CreateChannelRequest schema from Amazon MediaTailor API",
+  "properties": {
+    "FillerSlate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SlateSource"
+        },
+        {
+          "description": "The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestOutputs"
+        },
+        {
+          "description": "The channel's output properties."
+        }
+      ]
+    },
+    "PlaybackMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaybackMode"
+        },
+        {
+          "description": "<p>The type of playback mode to use for this channel.</p> <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p> <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>"
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    },
+    "Tier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tier"
+        },
+        {
+          "description": "The tier of the channel."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Outputs",
+    "PlaybackMode"
+  ]
+}

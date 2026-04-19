@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-configuration-aliases-request-structure.json",
+  "name": "ConfigurationAliasesRequest",
+  "type": "object",
+  "description": "The predefined aliases for dynamic variables.",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/__mapOf__string"
+  }
+}

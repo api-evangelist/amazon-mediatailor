@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-http-package-configurations-structure.json",
+  "name": "HttpPackageConfigurations",
+  "type": "array",
+  "description": "The VOD source's HTTP package configuration settings.",
+  "items": {
+    "$ref": "#/components/schemas/HttpPackageConfiguration"
+  }
+}

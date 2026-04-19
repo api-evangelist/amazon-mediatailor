@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-update-live-source-request-structure.json",
+  "name": "UpdateLiveSourceRequest",
+  "type": "object",
+  "description": "UpdateLiveSourceRequest schema from Amazon MediaTailor API",
+  "properties": {
+    "HttpPackageConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPackageConfigurations"
+        },
+        {
+          "description": "A list of HTTP package configurations for the live source on this account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "HttpPackageConfigurations"
+  ]
+}

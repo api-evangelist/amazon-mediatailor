@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-http-configuration-schema.json",
+  "title": "HttpConfiguration",
+  "description": "The HTTP configuration for the source location.",
+  "type": "object",
+  "properties": {
+    "BaseUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "BaseUrl"
+  ]
+}

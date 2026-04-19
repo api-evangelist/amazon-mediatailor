@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-clip-range-schema.json",
+  "title": "ClipRange",
+  "description": "Clip range configuration for the VOD source associated with the program.",
+  "type": "object",
+  "properties": {
+    "EndOffsetMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program."
+        }
+      ]
+    }
+  },
+  "required": [
+    "EndOffsetMillis"
+  ]
+}

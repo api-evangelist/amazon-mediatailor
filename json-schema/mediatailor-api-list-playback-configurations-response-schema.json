@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-list-playback-configurations-response-schema.json",
+  "title": "ListPlaybackConfigurationsResponse",
+  "description": "ListPlaybackConfigurationsResponse schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfPlaybackConfiguration"
+        },
+        {
+          "description": "Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+        }
+      ]
+    }
+  }
+}

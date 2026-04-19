@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-update-channel-response-schema.json",
+  "title": "UpdateChannelResponse",
+  "description": "UpdateChannelResponse schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) associated with the channel."
+        }
+      ]
+    },
+    "ChannelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the channel."
+        }
+      ]
+    },
+    "ChannelState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelState"
+        },
+        {
+          "description": "Returns the state whether the channel is running or not."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp of when the channel was created."
+        }
+      ]
+    },
+    "FillerSlate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SlateSource"
+        },
+        {
+          "description": "The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>."
+        }
+      ]
+    },
+    "LastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the channel was last modified."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponseOutputs"
+        },
+        {
+          "description": "The channel's output properties."
+        }
+      ]
+    },
+    "PlaybackMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "<p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> - Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>"
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    },
+    "Tier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The tier associated with this Channel."
+        }
+      ]
+    }
+  }
+}

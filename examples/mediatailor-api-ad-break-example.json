@@ -1,0 +1,7 @@
+{
+  "MessageType": "STANDARD",
+  "OffsetMillis": "example-value",
+  "Slate": "example-value",
+  "SpliceInsertMessage": "example-value",
+  "TimeSignalMessage": "example-value"
+}

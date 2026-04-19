@@ -1,0 +1,16 @@
+{
+  "AdDecisionServerUrl": "example-value",
+  "AvailSuppression": "example-value",
+  "Bumper": "example-value",
+  "CdnConfiguration": "example-value",
+  "ConfigurationAliases": "example-value",
+  "DashConfiguration": "example-value",
+  "LivePreRollConfiguration": "example-value",
+  "ManifestProcessingRules": "example-value",
+  "Name": "example-resource",
+  "PersonalizationThresholdSeconds": "example-value",
+  "SlateAdUrl": "example-value",
+  "Tags": "example-value",
+  "TranscodeProfileName": "example-resource",
+  "VideoContentSourceUrl": "id-abc123"
+}

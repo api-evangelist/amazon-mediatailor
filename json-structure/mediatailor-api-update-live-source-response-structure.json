@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-update-live-source-response-structure.json",
+  "name": "UpdateLiveSourceResponse",
+  "type": "object",
+  "description": "UpdateLiveSourceResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) associated with this live source."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the live source was created."
+        }
+      ]
+    },
+    "HttpPackageConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPackageConfigurations"
+        },
+        {
+          "description": "A list of HTTP package configurations for the live source on this account."
+        }
+      ]
+    },
+    "LastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the live source was last modified."
+        }
+      ]
+    },
+    "LiveSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the live source."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location associated with the live source."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    }
+  }
+}

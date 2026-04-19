@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-update-program-schedule-configuration-structure.json",
+  "name": "UpdateProgramScheduleConfiguration",
+  "type": "object",
+  "description": "Schedule configuration parameters.",
+  "properties": {
+    "ClipRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClipRange"
+        },
+        {
+          "description": "Program clip range configuration."
+        }
+      ]
+    },
+    "Transition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateProgramTransition"
+        },
+        {
+          "description": "Program transition configuration."
+        }
+      ]
+    }
+  }
+}

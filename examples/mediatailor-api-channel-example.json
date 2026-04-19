@@ -1,0 +1,13 @@
+{
+  "Arn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ChannelName": "example-resource",
+  "ChannelState": "example-value",
+  "CreationTime": "example-value",
+  "FillerSlate": "example-value",
+  "LastModifiedTime": "example-value",
+  "LogConfiguration": "example-value",
+  "Outputs": "example-value",
+  "PlaybackMode": "example-value",
+  "Tags": "example-value",
+  "Tier": "example-value"
+}

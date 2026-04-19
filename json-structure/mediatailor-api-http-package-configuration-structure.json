@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-http-package-configuration-structure.json",
+  "name": "HttpPackageConfiguration",
+  "type": "object",
+  "description": "The HTTP package configuration properties for the requested VOD source.",
+  "properties": {
+    "Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL."
+        }
+      ]
+    },
+    "SourceGroup": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Type"
+        },
+        {
+          "description": "The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Path",
+    "SourceGroup",
+    "Type"
+  ]
+}

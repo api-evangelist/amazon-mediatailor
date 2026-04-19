@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-update-channel-request-schema.json",
+  "title": "UpdateChannelRequest",
+  "description": "UpdateChannelRequest schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "FillerSlate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SlateSource"
+        },
+        {
+          "description": "The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestOutputs"
+        },
+        {
+          "description": "The channel's output properties."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Outputs"
+  ]
+}

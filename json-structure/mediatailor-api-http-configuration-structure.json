@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-http-configuration-structure.json",
+  "name": "HttpConfiguration",
+  "type": "object",
+  "description": "The HTTP configuration for the source location.",
+  "properties": {
+    "BaseUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "BaseUrl"
+  ]
+}

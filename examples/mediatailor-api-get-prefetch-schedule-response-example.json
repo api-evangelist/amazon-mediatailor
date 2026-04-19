@@ -1,0 +1,8 @@
+{
+  "Arn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "Consumption": "example-value",
+  "Name": "example-resource",
+  "PlaybackConfigurationName": "example-resource",
+  "Retrieval": "example-value",
+  "StreamId": "id-abc123"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-slate-source-structure.json",
+  "name": "SlateSource",
+  "type": "object",
+  "description": "Slate VOD source configuration.",
+  "properties": {
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location where the slate VOD source is stored."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate."
+        }
+      ]
+    }
+  }
+}

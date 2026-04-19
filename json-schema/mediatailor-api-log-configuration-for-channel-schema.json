@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-log-configuration-for-channel-schema.json",
+  "title": "LogConfigurationForChannel",
+  "description": "The log configuration for the channel.",
+  "type": "object",
+  "properties": {
+    "LogTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogTypes"
+        },
+        {
+          "description": "The log types."
+        }
+      ]
+    }
+  }
+}

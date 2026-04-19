@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-update-program-transition-schema.json",
+  "title": "UpdateProgramTransition",
+  "description": "Program transition configuration.",
+  "type": "object",
+  "properties": {
+    "DurationMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The duration of the live program in seconds."
+        }
+      ]
+    },
+    "ScheduledStartTimeMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The date and time that the program is scheduled to start, in epoch milliseconds."
+        }
+      ]
+    }
+  }
+}

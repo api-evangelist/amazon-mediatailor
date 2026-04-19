@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-update-program-request-structure.json",
+  "name": "UpdateProgramRequest",
+  "type": "object",
+  "description": "UpdateProgramRequest schema from Amazon MediaTailor API",
+  "properties": {
+    "AdBreaks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAdBreak"
+        },
+        {
+          "description": "The ad break configuration settings."
+        }
+      ]
+    },
+    "ScheduleConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateProgramScheduleConfiguration"
+        },
+        {
+          "description": "The schedule configuration settings."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ScheduleConfiguration"
+  ]
+}

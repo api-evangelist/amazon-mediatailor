@@ -1,0 +1,21 @@
+{
+  "AdDecisionServerUrl": "example-value",
+  "AvailSuppression": "example-value",
+  "Bumper": "example-value",
+  "CdnConfiguration": "example-value",
+  "ConfigurationAliases": "example-value",
+  "DashConfiguration": "example-value",
+  "HlsConfiguration": "example-value",
+  "LivePreRollConfiguration": "example-value",
+  "LogConfiguration": "example-value",
+  "ManifestProcessingRules": "example-value",
+  "Name": "example-resource",
+  "PersonalizationThresholdSeconds": "example-value",
+  "PlaybackConfigurationArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "PlaybackEndpointPrefix": "example-value",
+  "SessionInitializationEndpointPrefix": "example-value",
+  "SlateAdUrl": "example-value",
+  "Tags": "example-value",
+  "TranscodeProfileName": "example-resource",
+  "VideoContentSourceUrl": "id-abc123"
+}

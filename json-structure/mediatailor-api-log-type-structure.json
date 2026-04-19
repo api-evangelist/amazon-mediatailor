@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-log-type-structure.json",
+  "name": "LogType",
+  "type": "string",
+  "description": "LogType schema from Amazon MediaTailor API",
+  "enum": [
+    "AS_RUN"
+  ]
+}

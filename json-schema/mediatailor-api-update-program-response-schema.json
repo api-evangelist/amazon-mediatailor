@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-update-program-response-schema.json",
+  "title": "UpdateProgramResponse",
+  "description": "UpdateProgramResponse schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "AdBreaks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAdBreak"
+        },
+        {
+          "description": "The ad break configuration settings."
+        }
+      ]
+    },
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The ARN to assign to the program."
+        }
+      ]
+    },
+    "ChannelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to the channel for this program."
+        }
+      ]
+    },
+    "ClipRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClipRange"
+        },
+        {
+          "description": "The clip range configuration settings."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The time the program was created."
+        }
+      ]
+    },
+    "DurationMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The duration of the live program in milliseconds."
+        }
+      ]
+    },
+    "LiveSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the LiveSource for this Program."
+        }
+      ]
+    },
+    "ProgramName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to this program."
+        }
+      ]
+    },
+    "ScheduledStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The scheduled start time for this Program."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to the source location for this program."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name that's used to refer to a VOD source."
+        }
+      ]
+    }
+  }
+}

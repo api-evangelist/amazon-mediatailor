@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-operator-schema.json",
+  "title": "Operator",
+  "description": "Operator schema from Amazon MediaTailor API",
+  "type": "string",
+  "enum": [
+    "EQUALS"
+  ]
+}

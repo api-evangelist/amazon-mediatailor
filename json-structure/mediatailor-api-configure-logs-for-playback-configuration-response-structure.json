@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-configure-logs-for-playback-configuration-response-structure.json",
+  "name": "ConfigureLogsForPlaybackConfigurationResponse",
+  "type": "object",
+  "description": "ConfigureLogsForPlaybackConfigurationResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "PercentEnabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "description": "The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account."
+        }
+      ]
+    },
+    "PlaybackConfigurationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the playback configuration."
+        }
+      ]
+    }
+  },
+  "required": [
+    "PercentEnabled"
+  ]
+}

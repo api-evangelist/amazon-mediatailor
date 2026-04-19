@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-describe-source-location-request-structure.json",
+  "name": "DescribeSourceLocationRequest",
+  "type": "object",
+  "description": "DescribeSourceLocationRequest schema from Amazon MediaTailor API",
+  "properties": {}
+}

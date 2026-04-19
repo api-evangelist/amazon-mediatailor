@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-mode-structure.json",
+  "name": "Mode",
+  "type": "string",
+  "description": "Mode schema from Amazon MediaTailor API",
+  "enum": [
+    false,
+    "BEHIND_LIVE_EDGE"
+  ]
+}

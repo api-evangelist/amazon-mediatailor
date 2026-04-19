@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-vod-source-schema.json",
+  "title": "VodSource",
+  "description": "VOD source configuration parameters.",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The ARN for the VOD source."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the VOD source was created."
+        }
+      ]
+    },
+    "HttpPackageConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPackageConfigurations"
+        },
+        {
+          "description": "The HTTP package configurations for the VOD source."
+        }
+      ]
+    },
+    "LastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the VOD source was last modified."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location that the VOD source is associated with."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the VOD source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Arn",
+    "HttpPackageConfigurations",
+    "SourceLocationName",
+    "VodSourceName"
+  ]
+}

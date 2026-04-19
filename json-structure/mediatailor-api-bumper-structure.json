@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-bumper-structure.json",
+  "name": "Bumper",
+  "type": "object",
+  "description": "The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html\">Bumpers</a>.",
+  "properties": {
+    "EndUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The URL for the end bumper asset."
+        }
+      ]
+    },
+    "StartUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The URL for the start bumper asset."
+        }
+      ]
+    }
+  }
+}

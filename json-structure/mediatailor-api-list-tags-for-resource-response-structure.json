@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-list-tags-for-resource-response-structure.json",
+  "name": "ListTagsForResourceResponse",
+  "type": "object",
+  "description": "ListTagsForResourceResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    }
+  }
+}

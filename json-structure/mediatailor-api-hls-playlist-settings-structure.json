@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-hls-playlist-settings-structure.json",
+  "name": "HlsPlaylistSettings",
+  "type": "object",
+  "description": "HLS playlist configuration parameters.",
+  "properties": {
+    "ManifestWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "description": "The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds."
+        }
+      ]
+    }
+  }
+}

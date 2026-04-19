@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-create-prefetch-schedule-response-structure.json",
+  "name": "CreatePrefetchScheduleResponse",
+  "type": "object",
+  "description": "CreatePrefetchScheduleResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The ARN to assign to the prefetch schedule."
+        }
+      ]
+    },
+    "Consumption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrefetchConsumption"
+        },
+        {
+          "description": "The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to the prefetch schedule."
+        }
+      ]
+    },
+    "PlaybackConfigurationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to the playback configuration."
+        }
+      ]
+    },
+    "Retrieval": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrefetchRetrieval"
+        },
+        {
+          "description": "The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break."
+        }
+      ]
+    },
+    "StreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>."
+        }
+      ]
+    }
+  }
+}

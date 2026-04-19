@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-response-output-item-schema.json",
+  "title": "ResponseOutputItem",
+  "description": "The output item response.",
+  "type": "object",
+  "properties": {
+    "DashPlaylistSettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DashPlaylistSettings"
+        },
+        {
+          "description": "DASH manifest configuration settings."
+        }
+      ]
+    },
+    "HlsPlaylistSettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HlsPlaylistSettings"
+        },
+        {
+          "description": "HLS manifest configuration settings."
+        }
+      ]
+    },
+    "ManifestName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the manifest for the channel that will appear in the channel output's playback URL."
+        }
+      ]
+    },
+    "PlaybackUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The URL used for playback by content players."
+        }
+      ]
+    },
+    "SourceGroup": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "A string used to associate a package configuration source group with a channel output."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ManifestName",
+    "PlaybackUrl",
+    "SourceGroup"
+  ]
+}

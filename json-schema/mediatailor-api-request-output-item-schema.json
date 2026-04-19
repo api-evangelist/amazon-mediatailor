@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-request-output-item-schema.json",
+  "title": "RequestOutputItem",
+  "description": "The output configuration for this channel.",
+  "type": "object",
+  "properties": {
+    "DashPlaylistSettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DashPlaylistSettings"
+        },
+        {
+          "description": "DASH manifest configuration parameters."
+        }
+      ]
+    },
+    "HlsPlaylistSettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HlsPlaylistSettings"
+        },
+        {
+          "description": "HLS playlist configuration parameters."
+        }
+      ]
+    },
+    "ManifestName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>."
+        }
+      ]
+    },
+    "SourceGroup": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ManifestName",
+    "SourceGroup"
+  ]
+}

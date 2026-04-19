@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-message-type-structure.json",
+  "name": "MessageType",
+  "type": "string",
+  "description": "MessageType schema from Amazon MediaTailor API",
+  "enum": [
+    "SPLICE_INSERT",
+    "TIME_SIGNAL"
+  ]
+}

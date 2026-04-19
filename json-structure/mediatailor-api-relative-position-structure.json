@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-relative-position-structure.json",
+  "name": "RelativePosition",
+  "type": "string",
+  "description": "RelativePosition schema from Amazon MediaTailor API",
+  "enum": [
+    "BEFORE_PROGRAM",
+    "AFTER_PROGRAM"
+  ]
+}

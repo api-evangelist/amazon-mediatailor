@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-get-channel-policy-response-structure.json",
+  "name": "GetChannelPolicyResponse",
+  "type": "object",
+  "description": "GetChannelPolicyResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Policy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The IAM policy for the channel. IAM policies are used to control access to your channel."
+        }
+      ]
+    }
+  }
+}

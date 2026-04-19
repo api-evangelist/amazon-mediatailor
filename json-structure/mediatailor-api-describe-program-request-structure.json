@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-describe-program-request-structure.json",
+  "name": "DescribeProgramRequest",
+  "type": "object",
+  "description": "DescribeProgramRequest schema from Amazon MediaTailor API",
+  "properties": {}
+}

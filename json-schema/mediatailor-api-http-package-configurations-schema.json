@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-http-package-configurations-schema.json",
+  "title": "HttpPackageConfigurations",
+  "description": "The VOD source's HTTP package configuration settings.",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/HttpPackageConfiguration"
+  }
+}

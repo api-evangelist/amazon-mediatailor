@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-prefetch-consumption-schema.json",
+  "title": "PrefetchConsumption",
+  "description": "A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.",
+  "type": "object",
+  "properties": {
+    "AvailMatchingCriteria": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAvailMatchingCriteria"
+        },
+        {
+          "description": "If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria."
+        }
+      ]
+    },
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>."
+        }
+      ]
+    },
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server."
+        }
+      ]
+    }
+  },
+  "required": [
+    "EndTime"
+  ]
+}

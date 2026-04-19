@@ -1,0 +1,7 @@
+{
+  "DashPlaylistSettings": "example-value",
+  "HlsPlaylistSettings": "example-value",
+  "ManifestName": "example-resource",
+  "PlaybackUrl": "example-value",
+  "SourceGroup": "example-value"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-update-source-location-request-schema.json",
+  "title": "UpdateSourceLocationRequest",
+  "description": "UpdateSourceLocationRequest schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "AccessConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessConfiguration"
+        },
+        {
+          "description": "Access configuration parameters. Configures the type of authentication used to access content from your source location."
+        }
+      ]
+    },
+    "DefaultSegmentDeliveryConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DefaultSegmentDeliveryConfiguration"
+        },
+        {
+          "description": "The optional configuration for the host server that serves segments."
+        }
+      ]
+    },
+    "HttpConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpConfiguration"
+        },
+        {
+          "description": "The HTTP configuration for the source location."
+        }
+      ]
+    },
+    "SegmentDeliveryConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfSegmentDeliveryConfiguration"
+        },
+        {
+          "description": "A list of the segment delivery configurations associated with this resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "HttpConfiguration"
+  ]
+}

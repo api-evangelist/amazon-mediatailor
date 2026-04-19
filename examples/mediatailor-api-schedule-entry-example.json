@@ -1,0 +1,12 @@
+{
+  "ApproximateDurationSeconds": "example-value",
+  "ApproximateStartTime": "example-value",
+  "Arn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ChannelName": "example-resource",
+  "LiveSourceName": "example-resource",
+  "ProgramName": "example-resource",
+  "ScheduleAdBreaks": "example-value",
+  "ScheduleEntryType": "STANDARD",
+  "SourceLocationName": "example-resource",
+  "VodSourceName": "example-resource"
+}

@@ -1,0 +1,356 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon MediaTailor
+  description: Unified vocabulary for Amazon MediaTailor APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon MediaTailor API
+    namespace: mediatailor
+    version: '2018-11-14'
+    baseUrl: http://api.mediatailor.{region}.amazonaws.com
+    status: active
+  resources:
+  - name: configureLogs
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: channel
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: playbackConfiguration
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: sourceLocation
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: liveSource
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: prefetchSchedule
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: program
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: vodSource
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: policy
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: schedule
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: alerts#resourceArn
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: channels
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: liveSources
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: playbackConfigurations
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: sourceLocations
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: tags
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: vodSources
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: start
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: stop
+    api: Amazon MediaTailor API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - ConfigureLogsForChannelResponse
+    - LogType
+    - ConfigureLogsForPlaybackConfigurationResponse
+    - CreateChannelResponse
+    - RequestOutputItem
+    - CreateLiveSourceResponse
+    - HttpPackageConfiguration
+    - CreatePrefetchScheduleResponse
+    - CreateProgramResponse
+    - AdBreak
+    - ClipRange
+  parameters:
+    pagination:
+    - name: nextToken
+      description: Pagination token
+    - name: maxResults
+      description: Max results per page
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Amazon MediaTailor Workflow
+    file: capabilities/amazon-mediatailor-media-workflow.yaml
+    description: Amazon MediaTailor media processing workflow
+    personas:
+    - Broadcast Engineer
+    - Media Developer
+    domains:
+    - Media Processing
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing broadcast media workflows
+    workflows:
+    - Amazon MediaTailor Workflow
+  - id: media-developer
+    name: Media Developer
+    description: Developer building media processing applications
+    workflows:
+    - Amazon MediaTailor Workflow
+  domains:
+  - name: Media Processing
+    description: AWS media processing and delivery
+  namespaces:
+  - name: mediatailor
+    type: consumed
+  - name: mediatailor-workflow-api
+    type: rest
+    port: 8080
+  - name: mediatailor-workflow-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+crossReference:
+- resource: configureLogs
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: channel
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: playbackConfiguration
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: sourceLocation
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: liveSource
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: prefetchSchedule
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: program
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: vodSource
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: policy
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: schedule
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: alerts#resourceArn
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: channels
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: liveSources
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: playbackConfigurations
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: sourceLocations
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: tags
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: vodSources
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: start
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer
+- resource: stop
+  api: Amazon MediaTailor API
+  workflows:
+  - Amazon MediaTailor Workflow
+  personas:
+  - Broadcast Engineer

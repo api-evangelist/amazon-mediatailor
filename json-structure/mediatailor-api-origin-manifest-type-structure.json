@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-origin-manifest-type-structure.json",
+  "name": "OriginManifestType",
+  "type": "string",
+  "description": "OriginManifestType schema from Amazon MediaTailor API",
+  "enum": [
+    "SINGLE_PERIOD",
+    "MULTI_PERIOD"
+  ]
+}

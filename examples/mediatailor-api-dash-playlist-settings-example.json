@@ -1,0 +1,6 @@
+{
+  "ManifestWindowSeconds": "example-value",
+  "MinBufferTimeSeconds": "example-value",
+  "MinUpdatePeriodSeconds": "example-value",
+  "SuggestedPresentationDelaySeconds": "example-value"
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-prefetch-retrieval-schema.json",
+  "title": "PrefetchRetrieval",
+  "description": "A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.",
+  "type": "object",
+  "properties": {
+    "DynamicVariables": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "description": "<p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You initially configure <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html\">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>"
+        }
+      ]
+    },
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time."
+        }
+      ]
+    },
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible."
+        }
+      ]
+    }
+  },
+  "required": [
+    "EndTime"
+  ]
+}

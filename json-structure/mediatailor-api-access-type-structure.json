@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-access-type-structure.json",
+  "name": "AccessType",
+  "type": "string",
+  "description": "AccessType schema from Amazon MediaTailor API",
+  "enum": [
+    "S3_SIGV4",
+    "SECRETS_MANAGER_ACCESS_TOKEN"
+  ]
+}

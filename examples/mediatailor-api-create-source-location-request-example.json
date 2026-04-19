@@ -1,0 +1,7 @@
+{
+  "AccessConfiguration": "example-value",
+  "DefaultSegmentDeliveryConfiguration": "example-value",
+  "HttpConfiguration": "example-value",
+  "SegmentDeliveryConfigurations": "example-value",
+  "Tags": "example-value"
+}

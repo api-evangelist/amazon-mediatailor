@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-create-program-request-schema.json",
+  "title": "CreateProgramRequest",
+  "description": "CreateProgramRequest schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "AdBreaks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAdBreak"
+        },
+        {
+          "description": "The ad break configuration settings."
+        }
+      ]
+    },
+    "LiveSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the LiveSource for this Program."
+        }
+      ]
+    },
+    "ScheduleConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleConfiguration"
+        },
+        {
+          "description": "The schedule configuration settings."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name that's used to refer to a VOD source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ScheduleConfiguration",
+    "SourceLocationName"
+  ]
+}

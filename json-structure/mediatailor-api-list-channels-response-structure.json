@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-list-channels-response-structure.json",
+  "name": "ListChannelsResponse",
+  "type": "object",
+  "description": "ListChannelsResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Items": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfChannel"
+        },
+        {
+          "description": "A list of channels that are associated with this account."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+        }
+      ]
+    }
+  }
+}

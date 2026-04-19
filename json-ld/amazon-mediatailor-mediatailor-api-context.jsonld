@@ -1,0 +1,627 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DeleteVodSourceResponse": "pan:DeleteVodSourceResponse",
+    "PutPlaybackConfigurationRequest": "pan:PutPlaybackConfigurationRequest",
+    "LogTypes": "pan:LogTypes",
+    "ListVodSourcesResponse": "pan:ListVodSourcesResponse",
+    "CreateProgramRequest": "pan:CreateProgramRequest",
+    "AvailMatchingCriteria": "pan:AvailMatchingCriteria",
+    "Tier": "pan:Tier",
+    "StopChannelRequest": "pan:StopChannelRequest",
+    "ScheduleEntry": "pan:ScheduleEntry",
+    "ScheduleConfiguration": "pan:ScheduleConfiguration",
+    "PutChannelPolicyRequest": "pan:PutChannelPolicyRequest",
+    "AccessConfiguration": "pan:AccessConfiguration",
+    "ListPrefetchSchedulesResponse": "pan:ListPrefetchSchedulesResponse",
+    "ManifestProcessingRules": "pan:ManifestProcessingRules",
+    "TimeSignalMessage": "pan:TimeSignalMessage",
+    "AdMarkerPassthrough": "pan:AdMarkerPassthrough",
+    "DescribeSourceLocationResponse": "pan:DescribeSourceLocationResponse",
+    "RequestOutputItem": "pan:RequestOutputItem",
+    "AccessType": "pan:AccessType",
+    "DeleteVodSourceRequest": "pan:DeleteVodSourceRequest",
+    "ListLiveSourcesRequest": "pan:ListLiveSourcesRequest",
+    "CreateVodSourceResponse": "pan:CreateVodSourceResponse",
+    "UpdateProgramTransition": "pan:UpdateProgramTransition",
+    "DashConfigurationForPut": "pan:DashConfigurationForPut",
+    "StopChannelResponse": "pan:StopChannelResponse",
+    "MessageType": "pan:MessageType",
+    "MaxResults": "pan:MaxResults",
+    "VodSource": "pan:VodSource",
+    "UpdateProgramResponse": "pan:UpdateProgramResponse",
+    "DeleteChannelPolicyResponse": "pan:DeleteChannelPolicyResponse",
+    "AvailSuppression": "pan:AvailSuppression",
+    "CreatePrefetchScheduleRequest": "pan:CreatePrefetchScheduleRequest",
+    "Type": "pan:Type",
+    "LogConfiguration": "pan:LogConfiguration",
+    "HttpPackageConfigurations": "pan:HttpPackageConfigurations",
+    "SlateSource": "pan:SlateSource",
+    "DescribeVodSourceResponse": "pan:DescribeVodSourceResponse",
+    "Transition": "pan:Transition",
+    "DeleteProgramResponse": "pan:DeleteProgramResponse",
+    "StartChannelResponse": "pan:StartChannelResponse",
+    "UpdateSourceLocationRequest": "pan:UpdateSourceLocationRequest",
+    "UpdateProgramRequest": "pan:UpdateProgramRequest",
+    "ListSourceLocationsRequest": "pan:ListSourceLocationsRequest",
+    "ChannelState": "pan:ChannelState",
+    "ConfigurationAliasesResponse": "pan:ConfigurationAliasesResponse",
+    "DescribeProgramResponse": "pan:DescribeProgramResponse",
+    "DefaultSegmentDeliveryConfiguration": "pan:DefaultSegmentDeliveryConfiguration",
+    "UpdateVodSourceRequest": "pan:UpdateVodSourceRequest",
+    "CreateLiveSourceResponse": "pan:CreateLiveSourceResponse",
+    "ListPlaybackConfigurationsRequest": "pan:ListPlaybackConfigurationsRequest",
+    "Long": "pan:Long",
+    "UpdateLiveSourceRequest": "pan:UpdateLiveSourceRequest",
+    "TagResourceRequest": "pan:TagResourceRequest",
+    "String": "pan:String",
+    "UpdateProgramScheduleConfiguration": "pan:UpdateProgramScheduleConfiguration",
+    "PutPlaybackConfigurationResponse": "pan:PutPlaybackConfigurationResponse",
+    "SegmentationDescriptor": "pan:SegmentationDescriptor",
+    "CreateChannelResponse": "pan:CreateChannelResponse",
+    "GetChannelPolicyResponse": "pan:GetChannelPolicyResponse",
+    "ConfigureLogsForPlaybackConfigurationResponse": "pan:ConfigureLogsForPlaybackConfigurationResponse",
+    "PrefetchSchedule": "pan:PrefetchSchedule",
+    "StartChannelRequest": "pan:StartChannelRequest",
+    "HttpConfiguration": "pan:HttpConfiguration",
+    "GetChannelScheduleResponse": "pan:GetChannelScheduleResponse",
+    "DeleteChannelRequest": "pan:DeleteChannelRequest",
+    "SecretsManagerAccessTokenConfiguration": "pan:SecretsManagerAccessTokenConfiguration",
+    "Bumper": "pan:Bumper",
+    "DashPlaylistSettings": "pan:DashPlaylistSettings",
+    "DescribeChannelRequest": "pan:DescribeChannelRequest",
+    "DescribeSourceLocationRequest": "pan:DescribeSourceLocationRequest",
+    "ScheduleEntryType": "pan:ScheduleEntryType",
+    "CreateVodSourceRequest": "pan:CreateVodSourceRequest",
+    "LivePreRollConfiguration": "pan:LivePreRollConfiguration",
+    "ListChannelsRequest": "pan:ListChannelsRequest",
+    "ListAlertsResponse": "pan:ListAlertsResponse",
+    "DeletePlaybackConfigurationResponse": "pan:DeletePlaybackConfigurationResponse",
+    "GetPrefetchScheduleRequest": "pan:GetPrefetchScheduleRequest",
+    "GetPlaybackConfigurationResponse": "pan:GetPlaybackConfigurationResponse",
+    "CreatePrefetchScheduleResponse": "pan:CreatePrefetchScheduleResponse",
+    "DescribeLiveSourceResponse": "pan:DescribeLiveSourceResponse",
+    "RelativePosition": "pan:RelativePosition",
+    "Integer": "pan:Integer",
+    "DeleteLiveSourceRequest": "pan:DeleteLiveSourceRequest",
+    "DeletePrefetchScheduleRequest": "pan:DeletePrefetchScheduleRequest",
+    "GetPrefetchScheduleResponse": "pan:GetPrefetchScheduleResponse",
+    "CreateSourceLocationRequest": "pan:CreateSourceLocationRequest",
+    "DeleteChannelResponse": "pan:DeleteChannelResponse",
+    "ListChannelsResponse": "pan:ListChannelsResponse",
+    "ListVodSourcesRequest": "pan:ListVodSourcesRequest",
+    "UpdateChannelResponse": "pan:UpdateChannelResponse",
+    "LogConfigurationForChannel": "pan:LogConfigurationForChannel",
+    "HlsPlaylistSettings": "pan:HlsPlaylistSettings",
+    "ScheduleAdBreak": "pan:ScheduleAdBreak",
+    "ListTagsForResourceRequest": "pan:ListTagsForResourceRequest",
+    "UpdateSourceLocationResponse": "pan:UpdateSourceLocationResponse",
+    "DeleteProgramRequest": "pan:DeleteProgramRequest",
+    "DashConfiguration": "pan:DashConfiguration",
+    "GetChannelPolicyRequest": "pan:GetChannelPolicyRequest",
+    "DescribeProgramRequest": "pan:DescribeProgramRequest",
+    "ConfigurationAliasesRequest": "pan:ConfigurationAliasesRequest",
+    "AdBreak": "pan:AdBreak",
+    "Operator": "pan:Operator",
+    "DeleteLiveSourceResponse": "pan:DeleteLiveSourceResponse",
+    "ListPrefetchSchedulesRequest": "pan:ListPrefetchSchedulesRequest",
+    "ListTagsForResourceResponse": "pan:ListTagsForResourceResponse",
+    "SegmentDeliveryConfiguration": "pan:SegmentDeliveryConfiguration",
+    "ListLiveSourcesResponse": "pan:ListLiveSourcesResponse",
+    "LiveSource": "pan:LiveSource",
+    "CreateLiveSourceRequest": "pan:CreateLiveSourceRequest",
+    "ConfigureLogsForChannelResponse": "pan:ConfigureLogsForChannelResponse",
+    "ListPlaybackConfigurationsResponse": "pan:ListPlaybackConfigurationsResponse",
+    "DeleteSourceLocationResponse": "pan:DeleteSourceLocationResponse",
+    "DeleteChannelPolicyRequest": "pan:DeleteChannelPolicyRequest",
+    "UpdateLiveSourceResponse": "pan:UpdateLiveSourceResponse",
+    "HttpPackageConfiguration": "pan:HttpPackageConfiguration",
+    "RequestOutputs": "pan:RequestOutputs",
+    "ResponseOutputItem": "pan:ResponseOutputItem",
+    "UpdateChannelRequest": "pan:UpdateChannelRequest",
+    "CreateSourceLocationResponse": "pan:CreateSourceLocationResponse",
+    "DescribeLiveSourceRequest": "pan:DescribeLiveSourceRequest",
+    "SourceLocation": "pan:SourceLocation",
+    "UntagResourceRequest": "pan:UntagResourceRequest",
+    "ClipRange": "pan:ClipRange",
+    "GetPlaybackConfigurationRequest": "pan:GetPlaybackConfigurationRequest",
+    "CdnConfiguration": "pan:CdnConfiguration",
+    "Mode": "pan:Mode",
+    "UpdateVodSourceResponse": "pan:UpdateVodSourceResponse",
+    "DeleteSourceLocationRequest": "pan:DeleteSourceLocationRequest",
+    "DescribeVodSourceRequest": "pan:DescribeVodSourceRequest",
+    "SpliceInsertMessage": "pan:SpliceInsertMessage",
+    "PlaybackMode": "pan:PlaybackMode",
+    "Alert": "pan:Alert",
+    "DeletePrefetchScheduleResponse": "pan:DeletePrefetchScheduleResponse",
+    "ResponseOutputs": "pan:ResponseOutputs",
+    "PrefetchRetrieval": "pan:PrefetchRetrieval",
+    "ListSourceLocationsResponse": "pan:ListSourceLocationsResponse",
+    "PutChannelPolicyResponse": "pan:PutChannelPolicyResponse",
+    "CreateProgramResponse": "pan:CreateProgramResponse",
+    "DeletePlaybackConfigurationRequest": "pan:DeletePlaybackConfigurationRequest",
+    "GetChannelScheduleRequest": "pan:GetChannelScheduleRequest",
+    "ConfigureLogsForChannelRequest": "pan:ConfigureLogsForChannelRequest",
+    "CreateChannelRequest": "pan:CreateChannelRequest",
+    "SegmentationDescriptorList": "pan:SegmentationDescriptorList",
+    "LogType": "pan:LogType",
+    "PrefetchConsumption": "pan:PrefetchConsumption",
+    "HlsConfiguration": "pan:HlsConfiguration",
+    "DescribeChannelResponse": "pan:DescribeChannelResponse",
+    "OriginManifestType": "pan:OriginManifestType",
+    "Channel": "pan:Channel",
+    "ListAlertsRequest": "pan:ListAlertsRequest",
+    "PlaybackConfiguration": "pan:PlaybackConfiguration",
+    "ConfigureLogsForPlaybackConfigurationRequest": "pan:ConfigureLogsForPlaybackConfigurationRequest",
+    "adDecisionServerUrl": {
+      "@id": "pan:ad_decision_server_url",
+      "@type": "xsd:string"
+    },
+    "availSuppression": {
+      "@id": "pan:avail_suppression",
+      "@type": "xsd:string"
+    },
+    "bumper": {
+      "@id": "pan:bumper",
+      "@type": "xsd:string"
+    },
+    "cdnConfiguration": {
+      "@id": "pan:cdn_configuration",
+      "@type": "xsd:string"
+    },
+    "configurationAliases": {
+      "@id": "pan:configuration_aliases",
+      "@type": "xsd:string"
+    },
+    "dashConfiguration": {
+      "@id": "pan:dash_configuration",
+      "@type": "xsd:string"
+    },
+    "livePreRollConfiguration": {
+      "@id": "pan:live_pre_roll_configuration",
+      "@type": "xsd:string"
+    },
+    "manifestProcessingRules": {
+      "@id": "pan:manifest_processing_rules",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "personalizationThresholdSeconds": {
+      "@id": "pan:personalization_threshold_seconds",
+      "@type": "xsd:string"
+    },
+    "slateAdUrl": {
+      "@id": "pan:slate_ad_url",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "pan:tags",
+      "@type": "xsd:string"
+    },
+    "transcodeProfileName": {
+      "@id": "pan:transcode_profile_name",
+      "@type": "xsd:string"
+    },
+    "videoContentSourceUrl": {
+      "@id": "pan:video_content_source_url",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "pan:items",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    },
+    "adBreaks": {
+      "@id": "pan:ad_breaks",
+      "@type": "xsd:string"
+    },
+    "liveSourceName": {
+      "@id": "pan:live_source_name",
+      "@type": "xsd:string"
+    },
+    "scheduleConfiguration": {
+      "@id": "pan:schedule_configuration",
+      "@type": "xsd:string"
+    },
+    "sourceLocationName": {
+      "@id": "pan:source_location_name",
+      "@type": "xsd:string"
+    },
+    "vodSourceName": {
+      "@id": "pan:vod_source_name",
+      "@type": "xsd:string"
+    },
+    "dynamicVariable": {
+      "@id": "pan:dynamic_variable",
+      "@type": "xsd:string"
+    },
+    "operator": {
+      "@id": "pan:operator",
+      "@type": "xsd:string"
+    },
+    "approximateDurationSeconds": {
+      "@id": "pan:approximate_duration_seconds",
+      "@type": "xsd:string"
+    },
+    "approximateStartTime": {
+      "@id": "pan:approximate_start_time",
+      "@type": "xsd:string"
+    },
+    "arn": {
+      "@id": "pan:arn",
+      "@type": "xsd:string"
+    },
+    "channelName": {
+      "@id": "pan:channel_name",
+      "@type": "xsd:string"
+    },
+    "programName": {
+      "@id": "pan:program_name",
+      "@type": "xsd:string"
+    },
+    "scheduleAdBreaks": {
+      "@id": "pan:schedule_ad_breaks",
+      "@type": "xsd:string"
+    },
+    "scheduleEntryType": {
+      "@id": "pan:schedule_entry_type",
+      "@type": "xsd:string"
+    },
+    "clipRange": {
+      "@id": "pan:clip_range",
+      "@type": "xsd:string"
+    },
+    "transition": {
+      "@id": "pan:transition",
+      "@type": "xsd:string"
+    },
+    "policy": {
+      "@id": "pan:policy",
+      "@type": "xsd:string"
+    },
+    "accessType": {
+      "@id": "pan:access_type",
+      "@type": "xsd:string"
+    },
+    "secretsManagerAccessTokenConfiguration": {
+      "@id": "pan:secrets_manager_access_token_configuration",
+      "@type": "xsd:string"
+    },
+    "adMarkerPassthrough": {
+      "@id": "pan:ad_marker_passthrough",
+      "@type": "xsd:string"
+    },
+    "segmentationDescriptors": {
+      "@id": "pan:segmentation_descriptors",
+      "@type": "xsd:string"
+    },
+    "enabled": {
+      "@id": "pan:enabled",
+      "@type": "xsd:string"
+    },
+    "accessConfiguration": {
+      "@id": "pan:access_configuration",
+      "@type": "xsd:string"
+    },
+    "creationTime": "schema:dateCreated",
+    "defaultSegmentDeliveryConfiguration": {
+      "@id": "pan:default_segment_delivery_configuration",
+      "@type": "xsd:string"
+    },
+    "httpConfiguration": {
+      "@id": "pan:http_configuration",
+      "@type": "xsd:string"
+    },
+    "lastModifiedTime": {
+      "@id": "pan:last_modified_time",
+      "@type": "xsd:string"
+    },
+    "segmentDeliveryConfigurations": {
+      "@id": "pan:segment_delivery_configurations",
+      "@type": "xsd:string"
+    },
+    "dashPlaylistSettings": {
+      "@id": "pan:dash_playlist_settings",
+      "@type": "xsd:string"
+    },
+    "hlsPlaylistSettings": {
+      "@id": "pan:hls_playlist_settings",
+      "@type": "xsd:string"
+    },
+    "manifestName": {
+      "@id": "pan:manifest_name",
+      "@type": "xsd:string"
+    },
+    "sourceGroup": {
+      "@id": "pan:source_group",
+      "@type": "xsd:string"
+    },
+    "httpPackageConfigurations": {
+      "@id": "pan:http_package_configurations",
+      "@type": "xsd:string"
+    },
+    "durationMillis": {
+      "@id": "pan:duration_millis",
+      "@type": "xsd:string"
+    },
+    "scheduledStartTimeMillis": {
+      "@id": "pan:scheduled_start_time_millis",
+      "@type": "xsd:string"
+    },
+    "mpdLocation": {
+      "@id": "pan:mpd_location",
+      "@type": "xsd:string"
+    },
+    "originManifestType": {
+      "@id": "pan:origin_manifest_type",
+      "@type": "xsd:string"
+    },
+    "scheduledStartTime": {
+      "@id": "pan:scheduled_start_time",
+      "@type": "xsd:string"
+    },
+    "mode": {
+      "@id": "pan:mode",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "pan:value",
+      "@type": "xsd:string"
+    },
+    "consumption": {
+      "@id": "pan:consumption",
+      "@type": "xsd:string"
+    },
+    "retrieval": {
+      "@id": "pan:retrieval",
+      "@type": "xsd:string"
+    },
+    "streamId": {
+      "@id": "pan:stream_id",
+      "@type": "xsd:string"
+    },
+    "percentEnabled": {
+      "@id": "pan:percent_enabled",
+      "@type": "xsd:string"
+    },
+    "relativePosition": {
+      "@id": "pan:relative_position",
+      "@type": "xsd:string"
+    },
+    "relativeProgram": {
+      "@id": "pan:relative_program",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "pan:type",
+      "@type": "xsd:string"
+    },
+    "baseUrl": {
+      "@id": "pan:base_url",
+      "@type": "xsd:string"
+    },
+    "hlsConfiguration": {
+      "@id": "pan:hls_configuration",
+      "@type": "xsd:string"
+    },
+    "logConfiguration": {
+      "@id": "pan:log_configuration",
+      "@type": "xsd:string"
+    },
+    "playbackConfigurationArn": {
+      "@id": "pan:playback_configuration_arn",
+      "@type": "xsd:string"
+    },
+    "playbackEndpointPrefix": {
+      "@id": "pan:playback_endpoint_prefix",
+      "@type": "xsd:string"
+    },
+    "sessionInitializationEndpointPrefix": {
+      "@id": "pan:session_initialization_endpoint_prefix",
+      "@type": "xsd:string"
+    },
+    "segmentNum": {
+      "@id": "pan:segment_num",
+      "@type": "xsd:string"
+    },
+    "segmentationEventId": {
+      "@id": "pan:segmentation_event_id",
+      "@type": "xsd:string"
+    },
+    "segmentationTypeId": {
+      "@id": "pan:segmentation_type_id",
+      "@type": "xsd:string"
+    },
+    "segmentationUpid": {
+      "@id": "pan:segmentation_upid",
+      "@type": "xsd:string"
+    },
+    "segmentationUpidType": {
+      "@id": "pan:segmentation_upid_type",
+      "@type": "xsd:string"
+    },
+    "segmentsExpected": {
+      "@id": "pan:segments_expected",
+      "@type": "xsd:string"
+    },
+    "subSegmentNum": {
+      "@id": "pan:sub_segment_num",
+      "@type": "xsd:string"
+    },
+    "subSegmentsExpected": {
+      "@id": "pan:sub_segments_expected",
+      "@type": "xsd:string"
+    },
+    "channelState": {
+      "@id": "pan:channel_state",
+      "@type": "xsd:string"
+    },
+    "fillerSlate": {
+      "@id": "pan:filler_slate",
+      "@type": "xsd:string"
+    },
+    "outputs": {
+      "@id": "pan:outputs",
+      "@type": "xsd:string"
+    },
+    "playbackMode": {
+      "@id": "pan:playback_mode",
+      "@type": "xsd:string"
+    },
+    "tier": {
+      "@id": "pan:tier",
+      "@type": "xsd:string"
+    },
+    "playbackConfigurationName": {
+      "@id": "pan:playback_configuration_name",
+      "@type": "xsd:string"
+    },
+    "headerName": {
+      "@id": "pan:header_name",
+      "@type": "xsd:string"
+    },
+    "secretArn": {
+      "@id": "pan:secret_arn",
+      "@type": "xsd:string"
+    },
+    "secretStringKey": {
+      "@id": "pan:secret_string_key",
+      "@type": "xsd:string"
+    },
+    "endUrl": {
+      "@id": "pan:end_url",
+      "@type": "xsd:string"
+    },
+    "startUrl": {
+      "@id": "pan:start_url",
+      "@type": "xsd:string"
+    },
+    "manifestWindowSeconds": {
+      "@id": "pan:manifest_window_seconds",
+      "@type": "xsd:string"
+    },
+    "minBufferTimeSeconds": {
+      "@id": "pan:min_buffer_time_seconds",
+      "@type": "xsd:string"
+    },
+    "minUpdatePeriodSeconds": {
+      "@id": "pan:min_update_period_seconds",
+      "@type": "xsd:string"
+    },
+    "suggestedPresentationDelaySeconds": {
+      "@id": "pan:suggested_presentation_delay_seconds",
+      "@type": "xsd:string"
+    },
+    "maxDurationSeconds": {
+      "@id": "pan:max_duration_seconds",
+      "@type": "xsd:string"
+    },
+    "logTypes": {
+      "@id": "pan:log_types",
+      "@type": "xsd:string"
+    },
+    "manifestEndpointPrefix": {
+      "@id": "pan:manifest_endpoint_prefix",
+      "@type": "xsd:string"
+    },
+    "messageType": {
+      "@id": "pan:message_type",
+      "@type": "xsd:string"
+    },
+    "offsetMillis": {
+      "@id": "pan:offset_millis",
+      "@type": "xsd:string"
+    },
+    "slate": {
+      "@id": "pan:slate",
+      "@type": "xsd:string"
+    },
+    "spliceInsertMessage": {
+      "@id": "pan:splice_insert_message",
+      "@type": "xsd:string"
+    },
+    "timeSignalMessage": {
+      "@id": "pan:time_signal_message",
+      "@type": "xsd:string"
+    },
+    "maxResults": {
+      "@id": "pan:max_results",
+      "@type": "xsd:string"
+    },
+    "path": {
+      "@id": "pan:path",
+      "@type": "xsd:string"
+    },
+    "playbackUrl": {
+      "@id": "pan:playback_url",
+      "@type": "xsd:string"
+    },
+    "endOffsetMillis": {
+      "@id": "pan:end_offset_millis",
+      "@type": "xsd:string"
+    },
+    "adSegmentUrlPrefix": {
+      "@id": "pan:ad_segment_url_prefix",
+      "@type": "xsd:string"
+    },
+    "contentSegmentUrlPrefix": {
+      "@id": "pan:content_segment_url_prefix",
+      "@type": "xsd:string"
+    },
+    "availNum": {
+      "@id": "pan:avail_num",
+      "@type": "xsd:string"
+    },
+    "availsExpected": {
+      "@id": "pan:avails_expected",
+      "@type": "xsd:string"
+    },
+    "spliceEventId": {
+      "@id": "pan:splice_event_id",
+      "@type": "xsd:string"
+    },
+    "uniqueProgramId": {
+      "@id": "pan:unique_program_id",
+      "@type": "xsd:string"
+    },
+    "alertCode": {
+      "@id": "pan:alert_code",
+      "@type": "xsd:string"
+    },
+    "alertMessage": {
+      "@id": "pan:alert_message",
+      "@type": "xsd:string"
+    },
+    "relatedResourceArns": {
+      "@id": "pan:related_resource_arns",
+      "@type": "xsd:string"
+    },
+    "resourceArn": {
+      "@id": "pan:resource_arn",
+      "@type": "xsd:string"
+    },
+    "dynamicVariables": {
+      "@id": "pan:dynamic_variables",
+      "@type": "xsd:string"
+    },
+    "endTime": {
+      "@id": "pan:end_time",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "pan:start_time",
+      "@type": "xsd:string"
+    },
+    "availMatchingCriteria": {
+      "@id": "pan:avail_matching_criteria",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-log-type-schema.json",
+  "title": "LogType",
+  "description": "LogType schema from Amazon MediaTailor API",
+  "type": "string",
+  "enum": [
+    "AS_RUN"
+  ]
+}

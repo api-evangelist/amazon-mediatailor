@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-schedule-ad-break-structure.json",
+  "name": "ScheduleAdBreak",
+  "type": "object",
+  "description": "The schedule's ad break properties.",
+  "properties": {
+    "ApproximateDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The approximate duration of the ad break, in seconds."
+        }
+      ]
+    },
+    "ApproximateStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The approximate time that the ad will start playing."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location containing the VOD source used for the ad break."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the VOD source used for the ad break."
+        }
+      ]
+    }
+  }
+}

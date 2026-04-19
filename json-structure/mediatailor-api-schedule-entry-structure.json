@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-schedule-entry-structure.json",
+  "name": "ScheduleEntry",
+  "type": "object",
+  "description": "The properties for a schedule.",
+  "properties": {
+    "ApproximateDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The approximate duration of this program, in seconds."
+        }
+      ]
+    },
+    "ApproximateStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The approximate time that the program will start playing."
+        }
+      ]
+    },
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The ARN of the program."
+        }
+      ]
+    },
+    "ChannelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the channel that uses this schedule."
+        }
+      ]
+    },
+    "LiveSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the live source used for the program."
+        }
+      ]
+    },
+    "ProgramName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the program."
+        }
+      ]
+    },
+    "ScheduleAdBreaks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfScheduleAdBreak"
+        },
+        {
+          "description": "The schedule's ad break properties."
+        }
+      ]
+    },
+    "ScheduleEntryType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleEntryType"
+        },
+        {
+          "description": "The type of schedule entry."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location."
+        }
+      ]
+    },
+    "VodSourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the VOD source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Arn",
+    "ChannelName",
+    "ProgramName",
+    "SourceLocationName"
+  ]
+}

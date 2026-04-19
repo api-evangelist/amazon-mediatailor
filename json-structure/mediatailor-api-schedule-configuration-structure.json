@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-schedule-configuration-structure.json",
+  "name": "ScheduleConfiguration",
+  "type": "object",
+  "description": "Schedule configuration parameters. A channel must be stopped before changes can be made to the schedule.",
+  "properties": {
+    "ClipRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClipRange"
+        },
+        {
+          "description": "Program clip range configuration."
+        }
+      ]
+    },
+    "Transition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Transition"
+        },
+        {
+          "description": "Program transition configurations."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Transition"
+  ]
+}

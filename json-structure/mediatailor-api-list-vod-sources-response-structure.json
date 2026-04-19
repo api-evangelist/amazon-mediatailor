@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-list-vod-sources-response-structure.json",
+  "name": "ListVodSourcesResponse",
+  "type": "object",
+  "description": "ListVodSourcesResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Items": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfVodSource"
+        },
+        {
+          "description": "Lists the VOD sources."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+        }
+      ]
+    }
+  }
+}

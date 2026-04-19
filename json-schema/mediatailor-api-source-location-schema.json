@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-source-location-schema.json",
+  "title": "SourceLocation",
+  "description": "A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>.",
+  "type": "object",
+  "properties": {
+    "AccessConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessConfiguration"
+        },
+        {
+          "description": "The access configuration for the source location."
+        }
+      ]
+    },
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The ARN of the SourceLocation."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the source location was created."
+        }
+      ]
+    },
+    "DefaultSegmentDeliveryConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DefaultSegmentDeliveryConfiguration"
+        },
+        {
+          "description": "The default segment delivery configuration."
+        }
+      ]
+    },
+    "HttpConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpConfiguration"
+        },
+        {
+          "description": "The HTTP configuration for the source location."
+        }
+      ]
+    },
+    "LastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp that indicates when the source location was last modified."
+        }
+      ]
+    },
+    "SegmentDeliveryConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfSegmentDeliveryConfiguration"
+        },
+        {
+          "description": "The segment delivery configurations for the source location."
+        }
+      ]
+    },
+    "SourceLocationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the source location."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Arn",
+    "HttpConfiguration",
+    "SourceLocationName"
+  ]
+}

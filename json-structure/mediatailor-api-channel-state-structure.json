@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-channel-state-structure.json",
+  "name": "ChannelState",
+  "type": "string",
+  "description": "ChannelState schema from Amazon MediaTailor API",
+  "enum": [
+    "RUNNING",
+    "STOPPED"
+  ]
+}

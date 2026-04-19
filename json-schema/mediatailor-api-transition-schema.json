@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-transition-schema.json",
+  "title": "Transition",
+  "description": "Program transition configuration.",
+  "type": "object",
+  "properties": {
+    "DurationMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The duration of the live program in seconds."
+        }
+      ]
+    },
+    "RelativePosition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelativePosition"
+        },
+        {
+          "description": "The position where this program will be inserted relative to the <code>RelativePosition</code>."
+        }
+      ]
+    },
+    "RelativeProgram": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>."
+        }
+      ]
+    },
+    "ScheduledStartTimeMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__long"
+        },
+        {
+          "description": "The date and time that the program is scheduled to start, in epoch milliseconds."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "<p>Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or <code>RELATIVE</code>.</p> <p> <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.</p> <p>Note the following considerations when using <code>ABSOLUTE</code> transitions:</p> <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p> <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "RelativePosition",
+    "Type"
+  ]
+}

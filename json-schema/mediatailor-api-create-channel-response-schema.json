@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-create-channel-response-schema.json",
+  "title": "CreateChannelResponse",
+  "description": "CreateChannelResponse schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) to assign to the channel."
+        }
+      ]
+    },
+    "ChannelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name to assign to the channel."
+        }
+      ]
+    },
+    "ChannelState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChannelState"
+        },
+        {
+          "description": "Indicates whether the channel is in a running state or not."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp of when the channel was created."
+        }
+      ]
+    },
+    "FillerSlate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SlateSource"
+        },
+        {
+          "description": "Contains information about the slate used to fill gaps between programs in the schedule."
+        }
+      ]
+    },
+    "LastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__timestampUnix"
+        },
+        {
+          "description": "The timestamp of when the channel was last modified."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponseOutputs"
+        },
+        {
+          "description": "The output properties to assign to the channel."
+        }
+      ]
+    },
+    "PlaybackMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The playback mode to assign to the channel."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          },
+          "description": "The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html\">Tagging AWS Elemental MediaTailor Resources</a>."
+        }
+      ]
+    },
+    "Tier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The tier of the channel."
+        }
+      ]
+    }
+  }
+}

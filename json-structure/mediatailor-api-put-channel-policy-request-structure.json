@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-put-channel-policy-request-structure.json",
+  "name": "PutChannelPolicyRequest",
+  "type": "object",
+  "description": "PutChannelPolicyRequest schema from Amazon MediaTailor API",
+  "properties": {
+    "Policy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Adds an IAM role that determines the permissions of your channel."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Policy"
+  ]
+}

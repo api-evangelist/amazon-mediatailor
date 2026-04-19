@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-schema/mediatailor-api-get-channel-schedule-response-schema.json",
+  "title": "GetChannelScheduleResponse",
+  "description": "GetChannelScheduleResponse schema from Amazon MediaTailor API",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfScheduleEntry"
+        },
+        {
+          "description": "A list of schedule entries for the channel."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+        }
+      ]
+    }
+  }
+}

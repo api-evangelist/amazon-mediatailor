@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-configure-logs-for-channel-response-structure.json",
+  "name": "ConfigureLogsForChannelResponse",
+  "type": "object",
+  "description": "ConfigureLogsForChannelResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "ChannelName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the channel."
+        }
+      ]
+    },
+    "LogTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogTypes"
+        },
+        {
+          "description": "The types of logs collected."
+        }
+      ]
+    }
+  }
+}

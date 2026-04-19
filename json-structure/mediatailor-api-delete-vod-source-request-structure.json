@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-delete-vod-source-request-structure.json",
+  "name": "DeleteVodSourceRequest",
+  "type": "object",
+  "description": "DeleteVodSourceRequest schema from Amazon MediaTailor API",
+  "properties": {}
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-start-channel-response-structure.json",
+  "name": "StartChannelResponse",
+  "type": "object",
+  "description": "StartChannelResponse schema from Amazon MediaTailor API",
+  "properties": {}
+}

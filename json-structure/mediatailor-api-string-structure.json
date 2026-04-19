@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-string-structure.json",
+  "name": "String",
+  "type": "string",
+  "description": "String schema from Amazon MediaTailor API"
+}

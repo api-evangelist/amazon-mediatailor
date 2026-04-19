@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-list-prefetch-schedules-response-structure.json",
+  "name": "ListPrefetchSchedulesResponse",
+  "type": "object",
+  "description": "ListPrefetchSchedulesResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Items": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfPrefetchSchedule"
+        },
+        {
+          "description": "Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+        }
+      ]
+    }
+  }
+}

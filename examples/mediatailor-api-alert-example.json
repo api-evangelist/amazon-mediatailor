@@ -1,0 +1,7 @@
+{
+  "AlertCode": "example-value",
+  "AlertMessage": "example-value",
+  "LastModifiedTime": "example-value",
+  "RelatedResourceArns": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ResourceArn": "arn:aws:service:us-east-1:123456789012:resource/example"
+}

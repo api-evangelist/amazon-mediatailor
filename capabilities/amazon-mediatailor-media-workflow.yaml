@@ -1,0 +1,116 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon MediaTailor Workflow
+  description: Workflow capability for Amazon MediaTailor media processing operations for broadcast engineers and media developers.
+  tags:
+  - AWS
+  - Media
+  - Broadcasting
+  - Workflow
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - import: mediatailor
+    location: ./shared/mediatailor.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: mediatailor-workflow-api
+    description: Unified REST API for Amazon MediaTailor workflow management.
+    resources:
+    - path: /v1/jobs
+      name: jobs
+      description: Manage media processing jobs
+      operations:
+      - method: GET
+        name: list-jobs
+        description: List jobs
+        call: mediatailor.list-jobs
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: mediatailor-workflow-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon MediaTailor workflow management.
+    tools:
+    - name: configure-logs-for-channel
+      description: ConfigureLogsForChannel
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.configure-logs-for-channel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: configure-logs-for-playback-configuration
+      description: ConfigureLogsForPlaybackConfiguration
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.configure-logs-for-playback-configuration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-channel
+      description: DescribeChannel
+      hints:
+        readOnly: true
+        openWorld: true
+      call: mediatailor.describe-channel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-channel
+      description: CreateChannel
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.create-channel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-channel
+      description: UpdateChannel
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.update-channel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-channel
+      description: DeleteChannel
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.delete-channel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-live-source
+      description: DescribeLiveSource
+      hints:
+        readOnly: true
+        openWorld: true
+      call: mediatailor.describe-live-source
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-live-source
+      description: CreateLiveSource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: mediatailor.create-live-source
+      outputParameters:
+      - type: object
+        mapping: $.

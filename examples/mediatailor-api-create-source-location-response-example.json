@@ -1,0 +1,11 @@
+{
+  "AccessConfiguration": "example-value",
+  "Arn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "CreationTime": "example-value",
+  "DefaultSegmentDeliveryConfiguration": "example-value",
+  "HttpConfiguration": "example-value",
+  "LastModifiedTime": "example-value",
+  "SegmentDeliveryConfigurations": "example-value",
+  "SourceLocationName": "example-resource",
+  "Tags": "example-value"
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/json-structure/mediatailor-api-get-prefetch-schedule-response-structure.json",
+  "name": "GetPrefetchScheduleResponse",
+  "type": "object",
+  "description": "GetPrefetchScheduleResponse schema from Amazon MediaTailor API",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the prefetch schedule."
+        }
+      ]
+    },
+    "Consumption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrefetchConsumption"
+        },
+        {
+          "description": "Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration."
+        }
+      ]
+    },
+    "PlaybackConfigurationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "The name of the playback configuration to create the prefetch schedule for."
+        }
+      ]
+    },
+    "Retrieval": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrefetchRetrieval"
+        },
+        {
+          "description": "A complex type that contains settings for prefetch retrieval from the ad decision server (ADS)."
+        }
+      ]
+    },
+    "StreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "description": "An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration."
+        }
+      ]
+    }
+  }
+}
