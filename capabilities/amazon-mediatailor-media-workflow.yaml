@@ -1,4 +1,4 @@
-naftiko: 1.0.0-alpha1
+naftiko: 1.0.0-alpha2
 info:
   label: Amazon MediaTailor Workflow
   description: Workflow capability for Amazon MediaTailor media processing operations for broadcast engineers and media developers.
@@ -8,7 +8,7 @@ info:
   - Broadcasting
   - Workflow
   created: '2026-04-19'
-  modified: '2026-04-19'
+  modified: '2026-05-06'
 binds:
 - namespace: env
   keys:
@@ -17,8 +17,912 @@ binds:
     AWS_REGION: AWS_REGION
 capability:
   consumes:
-  - import: mediatailor
-    location: ./shared/mediatailor.yaml
+  - type: http
+    namespace: mediatailor
+    baseUri: http://api.mediatailor.{region}.amazonaws.com
+    description: Amazon MediaTailor REST API
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: default
+      path: /
+      description: Amazon MediaTailor resources
+      operations:
+      - name: configure-logs-for-channel
+        method: PUT
+        description: ConfigureLogsForChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: configure-logs-for-playback-configuration
+        method: PUT
+        description: ConfigureLogsForPlaybackConfiguration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: describe-channel
+        method: GET
+        description: DescribeChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+      - name: create-channel
+        method: POST
+        description: CreateChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+        body:
+          type: json
+          data: {}
+      - name: update-channel
+        method: PUT
+        description: UpdateChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+        body:
+          type: json
+          data: {}
+      - name: delete-channel
+        method: DELETE
+        description: DeleteChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+      - name: describe-live-source
+        method: GET
+        description: DescribeLiveSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LiveSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the live source.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this Live Source.
+      - name: create-live-source
+        method: POST
+        description: CreateLiveSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LiveSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the live source.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location.
+        body:
+          type: json
+          data: {}
+      - name: update-live-source
+        method: PUT
+        description: UpdateLiveSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LiveSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the live source.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this Live Source.
+        body:
+          type: json
+          data: {}
+      - name: delete-live-source
+        method: DELETE
+        description: DeleteLiveSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LiveSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the live source.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this Live Source.
+      - name: get-prefetch-schedule
+        method: GET
+        description: GetPrefetchSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Name
+          in: path
+          type: string
+          required: true
+          description: The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated
+            with the specified playback configuration.
+        - name: PlaybackConfigurationName
+          in: path
+          type: string
+          required: true
+          description: Returns information about the prefetch schedule for a specific playback configuration. If you call
+            <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+      - name: create-prefetch-schedule
+        method: POST
+        description: CreatePrefetchSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Name
+          in: path
+          type: string
+          required: true
+          description: The name to assign to the schedule request.
+        - name: PlaybackConfigurationName
+          in: path
+          type: string
+          required: true
+          description: The name to assign to the playback configuration.
+        body:
+          type: json
+          data: {}
+      - name: delete-prefetch-schedule
+        method: DELETE
+        description: DeletePrefetchSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Name
+          in: path
+          type: string
+          required: true
+          description: The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204
+            response with an empty HTTP body.
+        - name: PlaybackConfigurationName
+          in: path
+          type: string
+          required: true
+          description: The name of the playback configuration for this prefetch schedule.
+      - name: describe-program
+        method: GET
+        description: DescribeProgram
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel associated with this Program.
+        - name: ProgramName
+          in: path
+          type: string
+          required: true
+          description: The name of the program.
+      - name: create-program
+        method: POST
+        description: CreateProgram
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel for this Program.
+        - name: ProgramName
+          in: path
+          type: string
+          required: true
+          description: The name of the Program.
+        body:
+          type: json
+          data: {}
+      - name: update-program
+        method: PUT
+        description: UpdateProgram
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel for this Program.
+        - name: ProgramName
+          in: path
+          type: string
+          required: true
+          description: The name of the Program.
+        body:
+          type: json
+          data: {}
+      - name: delete-program
+        method: DELETE
+        description: DeleteProgram
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+        - name: ProgramName
+          in: path
+          type: string
+          required: true
+          description: The name of the program.
+      - name: describe-source-location
+        method: GET
+        description: DescribeSourceLocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location.
+      - name: create-source-location
+        method: POST
+        description: CreateSourceLocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name associated with the source location.
+        body:
+          type: json
+          data: {}
+      - name: update-source-location
+        method: PUT
+        description: UpdateSourceLocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location.
+        body:
+          type: json
+          data: {}
+      - name: delete-source-location
+        method: DELETE
+        description: DeleteSourceLocation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location.
+      - name: describe-vod-source
+        method: GET
+        description: DescribeVodSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this VOD Source.
+        - name: VodSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the VOD Source.
+      - name: create-vod-source
+        method: POST
+        description: CreateVodSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location for this VOD source.
+        - name: VodSourceName
+          in: path
+          type: string
+          required: true
+          description: The name associated with the VOD source.&gt;
+        body:
+          type: json
+          data: {}
+      - name: update-vod-source
+        method: PUT
+        description: UpdateVodSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this VOD Source.
+        - name: VodSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the VOD source.
+        body:
+          type: json
+          data: {}
+      - name: delete-vod-source
+        method: DELETE
+        description: DeleteVodSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this VOD Source.
+        - name: VodSourceName
+          in: path
+          type: string
+          required: true
+          description: The name of the VOD source.
+      - name: get-channel-policy
+        method: GET
+        description: GetChannelPolicy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel associated with this Channel Policy.
+      - name: put-channel-policy
+        method: PUT
+        description: PutChannelPolicy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The channel name associated with this Channel Policy.
+        body:
+          type: json
+          data: {}
+      - name: delete-channel-policy
+        method: DELETE
+        description: DeleteChannelPolicy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel associated with this channel policy.
+      - name: get-playback-configuration
+        method: GET
+        description: GetPlaybackConfiguration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Name
+          in: path
+          type: string
+          required: true
+          description: The identifier for the playback configuration.
+      - name: delete-playback-configuration
+        method: DELETE
+        description: DeletePlaybackConfiguration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Name
+          in: path
+          type: string
+          required: true
+          description: The name of the playback configuration.
+      - name: get-channel-schedule
+        method: GET
+        description: GetChannelSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel associated with this Channel Schedule.
+        - name: durationMinutes
+          in: query
+          type: string
+          required: false
+          description: The duration in minutes of the channel schedule.
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of channel schedules that you want MediaTailor to return in response to the current
+            request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code>
+            in the response to get the next page of results.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules,
+            use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>GetChannelScheduleRequest</code>
+            request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code>
+            from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p>If the previous
+            response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: list-alerts
+        method: GET
+        description: ListAlerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of alerts that you want MediaTailor to return in response to the current request.
+            If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response
+            to get the next page of results.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+        - name: resourceArn
+          in: query
+          type: string
+          required: true
+          description: The Amazon Resource Name (ARN) of the resource.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: list-channels
+        method: GET
+        description: ListChannels
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of channels that you want MediaTailor to return in response to the current request.
+            If there are more than <code>MaxResults</code> channels, use the value of <code>NextToken</code> in the response
+            to get the next page of results.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: list-live-sources
+        method: GET
+        description: ListLiveSources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of live sources that you want MediaTailor to return in response to the current request.
+            If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response
+            to get the next page of results.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this Live Sources list.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: list-playback-configurations
+        method: GET
+        description: ListPlaybackConfigurations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of playback configurations that you want MediaTailor to return in response to the
+            current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code>
+            in the response to get the next page of results.
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+      - name: list-prefetch-schedules
+        method: POST
+        description: ListPrefetchSchedules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PlaybackConfigurationName
+          in: path
+          type: string
+          required: true
+          description: Retrieves the prefetch schedule(s) for a specific playback configuration.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        body:
+          type: json
+          data: {}
+      - name: list-source-locations
+        method: GET
+        description: ListSourceLocations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: ' The maximum number of source locations that you want MediaTailor to return in response to the current
+            request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code>
+            in the response to get the next page of results.'
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: list-tags-for-resource
+        method: GET
+        description: ListTagsForResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ResourceArn
+          in: path
+          type: string
+          required: true
+          description: The Amazon Resource Name (ARN) associated with this resource.
+      - name: tag-resource
+        method: POST
+        description: TagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ResourceArn
+          in: path
+          type: string
+          required: true
+          description: The Amazon Resource Name (ARN) associated with the resource.
+        body:
+          type: json
+          data: {}
+      - name: list-vod-sources
+        method: GET
+        description: ListVodSources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: ' The maximum number of VOD sources that you want MediaTailor to return in response to the current
+            request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in
+            the response to get the next page of results.'
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token
+            to fetch the next page of results.
+        - name: SourceLocationName
+          in: path
+          type: string
+          required: true
+          description: The name of the source location associated with this VOD Source list.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: put-playback-configuration
+        method: PUT
+        description: PutPlaybackConfiguration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: start-channel
+        method: PUT
+        description: StartChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+        body:
+          type: json
+          data: {}
+      - name: stop-channel
+        method: PUT
+        description: StopChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChannelName
+          in: path
+          type: string
+          required: true
+          description: The name of the channel.
+        body:
+          type: json
+          data: {}
+      - name: untag-resource
+        method: DELETE
+        description: UntagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ResourceArn
+          in: path
+          type: string
+          required: true
+          description: The Amazon Resource Name (ARN) of the resource to untag.
+        - name: tagKeys
+          in: query
+          type: array
+          required: true
+          description: The tag keys associated with the resource.
   exposes:
   - type: rest
     port: 8080
