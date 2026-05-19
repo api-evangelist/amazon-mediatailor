@@ -1,7 +1,7 @@
 aid: amazon-mediatailor
 name: Amazon MediaTailor
-description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize your video content with server-side targeted advertising while 
-  maintaining broadcast-quality.
+description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize
+  your video content with server-side targeted advertising while maintaining broadcast-quality.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -11,13 +11,13 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-mediatailor:mediatailor-api
   name: Amazon MediaTailor API
-  description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize your video content with server-side targeted advertising while 
-    maintaining broadcast-quality.
+  description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize
+    your video content with server-side targeted advertising while maintaining broadcast-quality.
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
@@ -35,6 +35,8 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-mediatailor.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/mediatailor/
@@ -62,8 +64,6 @@ common:
   url: rules/amazon-mediatailor-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-mediatailor-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-mediatailor-media-workflow.yaml
 - type: Features
   data:
   - name: Server-Side Ad Insertion
