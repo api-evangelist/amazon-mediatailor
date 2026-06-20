@@ -3,7 +3,7 @@ name: Amazon MediaTailor
 description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize
   your video content with server-side targeted advertising while maintaining broadcast-quality.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Broadcasting
