@@ -38,6 +38,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-mediatailor.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-mediatailor-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-mediatailor-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-mediatailor-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-mediatailor-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/mediatailor/
 - type: Documentation
