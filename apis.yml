@@ -38,6 +38,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-mediatailor.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-mediatailor-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-mediatailor-trust-center.yml
 - type: VulnerabilityDisclosure
