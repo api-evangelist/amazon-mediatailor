@@ -1,0 +1,582 @@
+openapi: 3.0.0
+info:
+  version: 2018-04-23
+  x-release: v4
+  title: AWS MediaTailor Alerts#resourceArn PrefetchSchedule API
+  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediatailor
+  x-aws-signingName: mediatailor
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: https://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: http://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+- url: https://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: PrefetchSchedule
+paths:
+  /prefetchSchedule/{PlaybackConfigurationName}/{Name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreatePrefetchSchedule
+      description: Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePrefetchScheduleResponse'
+              examples:
+                CreatePrefetchSchedule200Example:
+                  summary: Default CreatePrefetchSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    Arn: arn:aws:service:us-east-1:123456789012:resource/example
+                    Consumption: example-value
+                    Name: example-resource
+                    PlaybackConfigurationName: example-resource
+                    Retrieval: example-value
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: The name to assign to the schedule request.
+        schema:
+          type: string
+      - name: PlaybackConfigurationName
+        in: path
+        required: true
+        description: The name to assign to the playback configuration.
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Consumption
+              - Retrieval
+              properties:
+                Consumption:
+                  description: A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.
+                  type: object
+                  properties:
+                    AvailMatchingCriteria:
+                      allOf:
+                      - $ref: '#/components/schemas/__listOfAvailMatchingCriteria'
+                      - description: If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.
+                    EndTime:
+                      allOf:
+                      - $ref: '#/components/schemas/__timestampUnix'
+                      - description: The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
+                    StartTime:
+                      allOf:
+                      - $ref: '#/components/schemas/__timestampUnix'
+                      - description: The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.
+                Retrieval:
+                  description: A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.
+                  type: object
+                  properties:
+                    DynamicVariables:
+                      allOf:
+                      - $ref: '#/components/schemas/__mapOf__string'
+                      - description: <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
+                    EndTime:
+                      allOf:
+                      - $ref: '#/components/schemas/__timestampUnix'
+                      - description: The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.
+                    StartTime:
+                      allOf:
+                      - $ref: '#/components/schemas/__timestampUnix'
+                      - description: The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.
+                StreamId:
+                  description: An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
+                  type: string
+      summary: Amazon MediaTailor Create Prefetch Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - PrefetchSchedule
+    delete:
+      operationId: DeletePrefetchSchedule
+      description: Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.
+      responses:
+        '204':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletePrefetchScheduleResponse'
+              examples:
+                DeletePrefetchSchedule204Example:
+                  summary: Default DeletePrefetchSchedule 204 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.
+        schema:
+          type: string
+      - name: PlaybackConfigurationName
+        in: path
+        required: true
+        description: The name of the playback configuration for this prefetch schedule.
+        schema:
+          type: string
+      summary: Amazon MediaTailor Delete Prefetch Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - PrefetchSchedule
+    get:
+      operationId: GetPrefetchSchedule
+      description: Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPrefetchScheduleResponse'
+              examples:
+                GetPrefetchSchedule200Example:
+                  summary: Default GetPrefetchSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    Arn: arn:aws:service:us-east-1:123456789012:resource/example
+                    Consumption: example-value
+                    Name: example-resource
+                    PlaybackConfigurationName: example-resource
+                    Retrieval: example-value
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.
+        schema:
+          type: string
+      - name: PlaybackConfigurationName
+        in: path
+        required: true
+        description: Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+        schema:
+          type: string
+      summary: Amazon MediaTailor Get Prefetch Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - PrefetchSchedule
+  /prefetchSchedule/{PlaybackConfigurationName}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListPrefetchSchedules
+      description: Lists the prefetch schedules for a playback configuration.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPrefetchSchedulesResponse'
+              examples:
+                ListPrefetchSchedules200Example:
+                  summary: Default ListPrefetchSchedules 200 response
+                  x-microcks-default: true
+                  value:
+                    Items: example-value
+                    NextToken: example-value
+      parameters:
+      - name: PlaybackConfigurationName
+        in: path
+        required: true
+        description: Retrieves the prefetch schedule(s) for a specific playback configuration.
+        schema:
+          type: string
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                MaxResults:
+                  description: The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                NextToken:
+                  description: <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p> <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
+                  type: string
+                StreamId:
+                  description: An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.
+                  type: string
+      summary: Amazon MediaTailor List Prefetch Schedules
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - PrefetchSchedule
+components:
+  schemas:
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    __timestampUnix:
+      type: string
+      format: date-time
+    CreatePrefetchScheduleResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN to assign to the prefetch schedule.
+        Consumption:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchConsumption'
+          - description: The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the prefetch schedule.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the playback configuration.
+        Retrieval:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchRetrieval'
+          - description: The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.
+        StreamId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
+    AvailMatchingCriteria:
+      type: object
+      required:
+      - DynamicVariable
+      - Operator
+      properties:
+        DynamicVariable:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
+        Operator:
+          allOf:
+          - $ref: '#/components/schemas/Operator'
+          - description: For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.
+      description: <p>MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into.</p> <p>As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code> and <code>Operator</code> to <code>EQUALS</code>, and your playback configuration has an ADS URL of <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>. And the prefetch request to the ADS contains these values <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of <code>my-awesome-event</code>, since it must match the event id that MediaTailor uses to query the ADS.</p> <p>You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical <code>AND</code>. You can model logical <code>OR</code> combinations by creating multiple prefetch schedules.</p>
+    PrefetchRetrieval:
+      type: object
+      required:
+      - EndTime
+      properties:
+        DynamicVariables:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - description: <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.
+      description: A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.
+    GetPrefetchScheduleResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) of the prefetch schedule.
+        Consumption:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchConsumption'
+          - description: Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the playback configuration to create the prefetch schedule for.
+        Retrieval:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchRetrieval'
+          - description: A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+        StreamId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.
+    PrefetchConsumption:
+      type: object
+      required:
+      - EndTime
+      properties:
+        AvailMatchingCriteria:
+          allOf:
+          - $ref: '#/components/schemas/__listOfAvailMatchingCriteria'
+          - description: If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.
+      description: A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.
+    DeletePrefetchScheduleResponse:
+      type: object
+      properties: {}
+    PrefetchSchedule:
+      type: object
+      required:
+      - Arn
+      - Consumption
+      - Name
+      - PlaybackConfigurationName
+      - Retrieval
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) of the prefetch schedule.
+        Consumption:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchConsumption'
+          - description: Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the playback configuration to create the prefetch schedule for.
+        Retrieval:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchRetrieval'
+          - description: A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).
+        StreamId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.
+      description: A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.
+    __listOfAvailMatchingCriteria:
+      type: array
+      items:
+        $ref: '#/components/schemas/AvailMatchingCriteria'
+    __listOfPrefetchSchedule:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrefetchSchedule'
+    ListPrefetchSchedulesResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfPrefetchSchedule'
+          - description: Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    Operator:
+      type: string
+      enum:
+      - EQUALS
+    __string:
+      type: string
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediatailor/
+x-hasEquivalentPaths: true

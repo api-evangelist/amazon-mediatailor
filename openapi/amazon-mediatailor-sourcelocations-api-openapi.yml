@@ -1,0 +1,369 @@
+openapi: 3.0.0
+info:
+  version: 2018-04-23
+  x-release: v4
+  title: AWS MediaTailor Alerts#resourceArn SourceLocations API
+  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediatailor
+  x-aws-signingName: mediatailor
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: https://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: http://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+- url: https://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: SourceLocations
+paths:
+  /sourceLocations:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListSourceLocations
+      description: Lists the source locations for a channel. A source location defines the host server URL, and contains a list of sources.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSourceLocationsResponse'
+              examples:
+                ListSourceLocations200Example:
+                  summary: Default ListSourceLocations 200 response
+                  x-microcks-default: true
+                  value:
+                    Items: example-value
+                    NextToken: example-value
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: ' The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.'
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+        schema:
+          type: string
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon MediaTailor List Source Locations
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - SourceLocations
+components:
+  schemas:
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    __timestampUnix:
+      type: string
+      format: date-time
+    AccessConfiguration:
+      type: object
+      properties:
+        AccessType:
+          allOf:
+          - $ref: '#/components/schemas/AccessType'
+          - description: '<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>'
+        SecretsManagerAccessTokenConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/SecretsManagerAccessTokenConfiguration'
+          - description: AWS Secrets Manager access token configuration parameters.
+      description: Access configuration parameters.
+    SecretsManagerAccessTokenConfiguration:
+      type: object
+      properties:
+        HeaderName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the HTTP header used to supply the access token in requests to the source location.
+        SecretArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.
+        SecretStringKey:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.
+      description: AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.
+    DefaultSegmentDeliveryConfiguration:
+      type: object
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.
+      description: The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.
+    SourceLocation:
+      type: object
+      required:
+      - Arn
+      - HttpConfiguration
+      - SourceLocationName
+      properties:
+        AccessConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AccessConfiguration'
+          - description: The access configuration for the source location.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN of the SourceLocation.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the source location was created.
+        DefaultSegmentDeliveryConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/DefaultSegmentDeliveryConfiguration'
+          - description: The default segment delivery configuration.
+        HttpConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/HttpConfiguration'
+          - description: The HTTP configuration for the source location.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the source location was last modified.
+        SegmentDeliveryConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/__listOfSegmentDeliveryConfiguration'
+          - description: The segment delivery configurations for the source location.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+      description: A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
+    ListSourceLocationsResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfSourceLocation'
+          - description: A list of source locations.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    __listOfSourceLocation:
+      type: array
+      items:
+        $ref: '#/components/schemas/SourceLocation'
+    __listOfSegmentDeliveryConfiguration:
+      type: array
+      items:
+        $ref: '#/components/schemas/SegmentDeliveryConfiguration'
+    HttpConfiguration:
+      type: object
+      required:
+      - BaseUrl
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.
+      description: The HTTP configuration for the source location.
+    AccessType:
+      type: string
+      enum:
+      - S3_SIGV4
+      - SECRETS_MANAGER_ACCESS_TOKEN
+    SegmentDeliveryConfiguration:
+      type: object
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A unique identifier used to distinguish between multiple segment delivery configurations in a source location.
+      description: The segment delivery configuration settings.
+    __string:
+      type: string
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediatailor/
+x-hasEquivalentPaths: true

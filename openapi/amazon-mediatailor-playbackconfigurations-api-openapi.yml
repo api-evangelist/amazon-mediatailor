@@ -1,0 +1,443 @@
+openapi: 3.0.0
+info:
+  version: 2018-04-23
+  x-release: v4
+  title: AWS MediaTailor Alerts#resourceArn PlaybackConfigurations API
+  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediatailor
+  x-aws-signingName: mediatailor
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: https://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: http://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+- url: https://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: PlaybackConfigurations
+paths:
+  /playbackConfigurations:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListPlaybackConfigurations
+      description: Retrieves existing playback configurations. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with Configurations in AWS Elemental MediaTailor</a>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPlaybackConfigurationsResponse'
+              examples:
+                ListPlaybackConfigurations200Example:
+                  summary: Default ListPlaybackConfigurations 200 response
+                  x-microcks-default: true
+                  value:
+                    Items: example-value
+                    NextToken: example-value
+      parameters:
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: NextToken
+        in: query
+        required: false
+        description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+        schema:
+          type: string
+      summary: Amazon MediaTailor List Playback Configurations
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - PlaybackConfigurations
+components:
+  schemas:
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    OriginManifestType:
+      type: string
+      enum:
+      - SINGLE_PERIOD
+      - MULTI_PERIOD
+    Mode:
+      type: string
+      enum:
+      - false
+      - BEHIND_LIVE_EDGE
+    ConfigurationAliasesResponse:
+      type: object
+      description: The predefined aliases for dynamic variables.
+      additionalProperties:
+        $ref: '#/components/schemas/__mapOf__string'
+    DashConfiguration:
+      type: object
+      properties:
+        ManifestEndpointPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL generated by MediaTailor to initiate a playback session. The session uses server-side reporting. This setting is ignored in PUT operations.
+        MpdLocation:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of the tag and is the default value.
+        OriginManifestType:
+          allOf:
+          - $ref: '#/components/schemas/OriginManifestType'
+          - description: The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set it to <code>MULTI_PERIOD</code>.
+      description: The configuration for DASH content.
+    __integer:
+      type: integer
+    LogConfiguration:
+      type: object
+      required:
+      - PercentEnabled
+      properties:
+        PercentEnabled:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: '<p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>'
+      description: Returns Amazon CloudWatch log settings for a playback configuration.
+    AdMarkerPassthrough:
+      type: object
+      properties:
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/__boolean'
+          - description: Enables ad marker passthrough for your configuration.
+      description: <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p> <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
+    HlsConfiguration:
+      type: object
+      properties:
+        ManifestEndpointPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.
+      description: The configuration for HLS content.
+    ManifestProcessingRules:
+      type: object
+      properties:
+        AdMarkerPassthrough:
+          allOf:
+          - $ref: '#/components/schemas/AdMarkerPassthrough'
+          - description: <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p> <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
+      description: The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
+    __string:
+      type: string
+    __boolean:
+      type: boolean
+    AvailSuppression:
+      type: object
+      properties:
+        Mode:
+          allOf:
+          - $ref: '#/components/schemas/Mode'
+          - description: Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the live edge.
+      description: The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
+    CdnConfiguration:
+      type: object
+      properties:
+        AdSegmentUrlPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.
+        ContentSegmentUrlPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.
+      description: The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.
+    PlaybackConfiguration:
+      type: object
+      properties:
+        AdDecisionServerUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.
+        AvailSuppression:
+          allOf:
+          - $ref: '#/components/schemas/AvailSuppression'
+          - description: The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
+        Bumper:
+          allOf:
+          - $ref: '#/components/schemas/Bumper'
+          - description: The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+        CdnConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/CdnConfiguration'
+          - description: The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.
+        ConfigurationAliases:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationAliasesResponse'
+          - description: The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
+        DashConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/DashConfiguration'
+          - description: The configuration for a DASH source.
+        HlsConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/HlsConfiguration'
+          - description: The configuration for HLS content.
+        LivePreRollConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/LivePreRollConfiguration'
+          - description: The configuration for pre-roll ad insertion.
+        LogConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/LogConfiguration'
+          - description: The Amazon CloudWatch log settings for a playback configuration.
+        ManifestProcessingRules:
+          allOf:
+          - $ref: '#/components/schemas/ManifestProcessingRules'
+          - description: The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The identifier for the playback configuration.
+        PersonalizationThresholdSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integerMin1'
+          - description: Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.
+        PlaybackConfigurationArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) for the playback configuration.
+        PlaybackEndpointPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
+        SessionInitializationEndpointPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL that the player uses to initialize a session that uses client-side reporting.
+        SlateAdUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        TranscodeProfileName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.
+        VideoContentSourceUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
+      description: A playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.
+    __listOfPlaybackConfiguration:
+      type: array
+      items:
+        $ref: '#/components/schemas/PlaybackConfiguration'
+    __integerMin1:
+      type: integer
+      minimum: 1
+    LivePreRollConfiguration:
+      type: object
+      properties:
+        AdDecisionServerUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.
+        MaxDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.
+      description: The configuration for pre-roll ad insertion.
+    Bumper:
+      type: object
+      properties:
+        EndUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL for the end bumper asset.
+        StartUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL for the start bumper asset.
+      description: The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+    ListPlaybackConfigurationsResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfPlaybackConfiguration'
+          - description: Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediatailor/
+x-hasEquivalentPaths: true

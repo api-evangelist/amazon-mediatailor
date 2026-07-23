@@ -1,0 +1,309 @@
+openapi: 3.0.0
+info:
+  version: 2018-04-23
+  x-release: v4
+  title: AWS MediaTailor Alerts#resourceArn ConfigureLogs API
+  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediatailor
+  x-aws-signingName: mediatailor
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: https://api.mediatailor.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaTailor multi-region endpoint
+- url: http://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+- url: https://api.mediatailor.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaTailor endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: ConfigureLogs
+paths:
+  /configureLogs/channel:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: ConfigureLogsForChannel
+      description: Configures Amazon CloudWatch log settings for a channel.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigureLogsForChannelResponse'
+              examples:
+                ConfigureLogsForChannel200Example:
+                  summary: Default ConfigureLogsForChannel 200 response
+                  x-microcks-default: true
+                  value:
+                    ChannelName: example-resource
+                    LogTypes: STANDARD
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - ChannelName
+              - LogTypes
+              properties:
+                ChannelName:
+                  description: The name of the channel.
+                  type: string
+                LogTypes:
+                  description: The types of logs to collect.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/LogType'
+      summary: Amazon MediaTailor Configure Logs for Channel
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - ConfigureLogs
+  /configureLogs/playbackConfiguration:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: ConfigureLogsForPlaybackConfiguration
+      description: Amazon CloudWatch log settings for a playback configuration.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigureLogsForPlaybackConfigurationResponse'
+              examples:
+                ConfigureLogsForPlaybackConfiguration200Example:
+                  summary: Default ConfigureLogsForPlaybackConfiguration 200 response
+                  x-microcks-default: true
+                  value:
+                    PercentEnabled: example-value
+                    PlaybackConfigurationName: example-resource
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - PercentEnabled
+              - PlaybackConfigurationName
+              properties:
+                PercentEnabled:
+                  description: '<p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>'
+                  type: integer
+                PlaybackConfigurationName:
+                  description: The name of the playback configuration.
+                  type: string
+      summary: Amazon MediaTailor Configure Logs for Playback Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - ConfigureLogs
+components:
+  schemas:
+    __integer:
+      type: integer
+    ConfigureLogsForChannelResponse:
+      type: object
+      properties:
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the channel.
+        LogTypes:
+          allOf:
+          - $ref: '#/components/schemas/LogTypes'
+          - description: The types of logs collected.
+    ConfigureLogsForPlaybackConfigurationResponse:
+      type: object
+      required:
+      - PercentEnabled
+      properties:
+        PercentEnabled:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the playback configuration.
+    LogTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogType'
+    LogType:
+      type: string
+      enum:
+      - AS_RUN
+    __string:
+      type: string
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediatailor/
+x-hasEquivalentPaths: true
