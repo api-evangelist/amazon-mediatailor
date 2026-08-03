@@ -1,0 +1,32 @@
+{
+  "provider": "amazon-mediatailor",
+  "sources": [
+    "amazon-mediatailor-alerts-resourcearn-api-openapi.yml",
+    "amazon-mediatailor-channel-api-openapi.yml",
+    "amazon-mediatailor-channels-api-openapi.yml",
+    "amazon-mediatailor-configurelogs-api-openapi.yml",
+    "amazon-mediatailor-playbackconfiguration-api-openapi.yml",
+    "amazon-mediatailor-playbackconfigurations-api-openapi.yml",
+    "amazon-mediatailor-prefetchschedule-api-openapi.yml",
+    "amazon-mediatailor-sourcelocation-api-openapi.yml",
+    "amazon-mediatailor-sourcelocations-api-openapi.yml",
+    "amazon-mediatailor-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-mediatailor-alerts-resourcearn-api-openapi.yml",
+    "amazon-mediatailor-channel-api-openapi.yml",
+    "amazon-mediatailor-channels-api-openapi.yml",
+    "amazon-mediatailor-configurelogs-api-openapi.yml",
+    "amazon-mediatailor-playbackconfiguration-api-openapi.yml",
+    "amazon-mediatailor-playbackconfigurations-api-openapi.yml",
+    "amazon-mediatailor-prefetchschedule-api-openapi.yml",
+    "amazon-mediatailor-sourcelocation-api-openapi.yml",
+    "amazon-mediatailor-sourcelocations-api-openapi.yml",
+    "amazon-mediatailor-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

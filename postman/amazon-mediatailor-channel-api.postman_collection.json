@@ -1,0 +1,2390 @@
+{
+  "info": {
+    "_postman_id": "4a925735-7a1d-44e1-9ca9-34842f1ac1af",
+    "name": "AWS MediaTailor Alerts#resourceArn Channel API",
+    "description": "<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:39:23.000Z",
+    "updatedAt": "2026-07-28T10:39:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4a925735-7a1d-44e1-9ca9-34842f1ac1af"
+  },
+  "item": [
+    {
+      "name": "channel",
+      "item": [
+        {
+          "name": "{ChannelName}",
+          "item": [
+            {
+              "name": "program",
+              "item": [
+                {
+                  "name": "{ProgramName}",
+                  "item": [
+                    {
+                      "name": "Amazon MediaTailor Create Program",
+                      "id": "9a768136-1149-40ac-ac22-0cef0bdc087c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ScheduleConfiguration\": {\n    \"ClipRange\": {\n      \"EndOffsetMillis\": \"<integer>\"\n    },\n    \"Transition\": {\n      \"RelativePosition\": \"BEFORE_PROGRAM\",\n      \"Type\": \"<string>\",\n      \"DurationMillis\": \"<integer>\",\n      \"RelativeProgram\": \"<string>\",\n      \"ScheduledStartTimeMillis\": \"<integer>\"\n    }\n  },\n  \"SourceLocationName\": \"<string>\",\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"LiveSourceName\": \"<string>\",\n  \"VodSourceName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "program",
+                            ":ProgramName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "d648babb-a078-4190-808b-b792e6e1eb62",
+                              "key": "ChannelName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the channel for this Program."
+                            },
+                            {
+                              "id": "dd502019-b599-44cc-9d28-7b430ace98ad",
+                              "key": "ProgramName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the Program."
+                            }
+                          ]
+                        },
+                        "description": "Creates a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+                      },
+                      "response": [
+                        {
+                          "id": "a8ca057c-6a55-4bb2-972b-b082129d15e4",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ScheduleConfiguration\": {\n    \"ClipRange\": {\n      \"EndOffsetMillis\": \"<integer>\"\n    },\n    \"Transition\": {\n      \"RelativePosition\": \"BEFORE_PROGRAM\",\n      \"Type\": \"<string>\",\n      \"DurationMillis\": \"<integer>\",\n      \"RelativeProgram\": \"<string>\",\n      \"ScheduledStartTimeMillis\": \"<integer>\"\n    }\n  },\n  \"SourceLocationName\": \"<string>\",\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"LiveSourceName\": \"<string>\",\n  \"VodSourceName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "channel",
+                                ":ChannelName",
+                                "program",
+                                ":ProgramName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "ChannelName"
+                                },
+                                {
+                                  "key": "ProgramName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ClipRange\": {\n    \"EndOffsetMillis\": \"<integer>\"\n  },\n  \"CreationTime\": \"<dateTime>\",\n  \"DurationMillis\": \"<integer>\",\n  \"LiveSourceName\": \"<string>\",\n  \"ProgramName\": \"<string>\",\n  \"ScheduledStartTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:23.000Z",
+                          "updatedAt": "2026-07-28T10:39:23.000Z",
+                          "uid": "35240-a8ca057c-6a55-4bb2-972b-b082129d15e4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-9a768136-1149-40ac-ac22-0cef0bdc087c"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Delete Program",
+                      "id": "5fe42b9a-338d-4752-a34d-0b3e9ce7b254",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "program",
+                            ":ProgramName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "27329f55-466e-497f-aace-97427c51a160",
+                              "key": "ChannelName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the channel."
+                            },
+                            {
+                              "id": "58c821fe-716e-4221-b579-f3d6a5bd77b1",
+                              "key": "ProgramName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the program."
+                            }
+                          ]
+                        },
+                        "description": "Deletes a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+                      },
+                      "response": [
+                        {
+                          "id": "ffb573cf-e950-43c2-afe1-ca59c6cf037a",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "channel",
+                                ":ChannelName",
+                                "program",
+                                ":ProgramName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "ChannelName"
+                                },
+                                {
+                                  "key": "ProgramName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:39:23.000Z",
+                          "updatedAt": "2026-07-28T10:39:23.000Z",
+                          "uid": "35240-ffb573cf-e950-43c2-afe1-ca59c6cf037a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-5fe42b9a-338d-4752-a34d-0b3e9ce7b254"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Describe Program",
+                      "id": "7c1a4dfe-5d40-4f31-8148-9db44e81ad87",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "program",
+                            ":ProgramName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f18370e8-9208-42e4-92e3-2ef9930d6286",
+                              "key": "ChannelName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the channel associated with this Program."
+                            },
+                            {
+                              "id": "c53bfebf-6b14-4df4-8016-b58827a86c0f",
+                              "key": "ProgramName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the program."
+                            }
+                          ]
+                        },
+                        "description": "Describes a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+                      },
+                      "response": [
+                        {
+                          "id": "c36d747d-2cd3-4ba2-99f1-ed0691d81cf7",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "channel",
+                                ":ChannelName",
+                                "program",
+                                ":ProgramName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "ChannelName"
+                                },
+                                {
+                                  "key": "ProgramName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ClipRange\": {\n    \"EndOffsetMillis\": \"<integer>\"\n  },\n  \"CreationTime\": \"<dateTime>\",\n  \"DurationMillis\": \"<integer>\",\n  \"LiveSourceName\": \"<string>\",\n  \"ProgramName\": \"<string>\",\n  \"ScheduledStartTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:23.000Z",
+                          "updatedAt": "2026-07-28T10:39:23.000Z",
+                          "uid": "35240-c36d747d-2cd3-4ba2-99f1-ed0691d81cf7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-7c1a4dfe-5d40-4f31-8148-9db44e81ad87"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Update Program",
+                      "id": "40b2515a-8fc6-4748-bc46-934426b4caec",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ScheduleConfiguration\": {\n    \"ClipRange\": {\n      \"EndOffsetMillis\": \"<integer>\"\n    },\n    \"Transition\": {\n      \"DurationMillis\": \"<integer>\",\n      \"ScheduledStartTimeMillis\": \"<integer>\"\n    }\n  },\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "program",
+                            ":ProgramName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "61ddcc7c-4f75-4e9c-b954-9bc1f416cfec",
+                              "key": "ChannelName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the channel for this Program."
+                            },
+                            {
+                              "id": "9dacd001-8c2a-476d-9fd8-f5ea38983482",
+                              "key": "ProgramName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the Program."
+                            }
+                          ]
+                        },
+                        "description": "Updates a program within a channel."
+                      },
+                      "response": [
+                        {
+                          "id": "7bc631cd-0c9b-4f6f-ab9e-2059cc9afd9c",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ScheduleConfiguration\": {\n    \"ClipRange\": {\n      \"EndOffsetMillis\": \"<integer>\"\n    },\n    \"Transition\": {\n      \"DurationMillis\": \"<integer>\",\n      \"ScheduledStartTimeMillis\": \"<integer>\"\n    }\n  },\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/channel/:ChannelName/program/:ProgramName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "channel",
+                                ":ChannelName",
+                                "program",
+                                ":ProgramName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "ChannelName"
+                                },
+                                {
+                                  "key": "ProgramName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"AdBreaks\": [\n    {\n      \"MessageType\": \"TIME_SIGNAL\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    {\n      \"MessageType\": \"SPLICE_INSERT\",\n      \"OffsetMillis\": \"<integer>\",\n      \"Slate\": {\n        \"SourceLocationName\": \"<string>\",\n        \"VodSourceName\": \"<string>\"\n      },\n      \"SpliceInsertMessage\": {\n        \"AvailNum\": \"<integer>\",\n        \"AvailsExpected\": \"<integer>\",\n        \"SpliceEventId\": \"<integer>\",\n        \"UniqueProgramId\": \"<integer>\"\n      },\n      \"TimeSignalMessage\": {\n        \"SegmentationDescriptors\": [\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          },\n          {\n            \"SegmentNum\": \"<integer>\",\n            \"SegmentationEventId\": \"<integer>\",\n            \"SegmentationTypeId\": \"<integer>\",\n            \"SegmentationUpid\": \"<string>\",\n            \"SegmentationUpidType\": \"<integer>\",\n            \"SegmentsExpected\": \"<integer>\",\n            \"SubSegmentNum\": \"<integer>\",\n            \"SubSegmentsExpected\": \"<integer>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ClipRange\": {\n    \"EndOffsetMillis\": \"<integer>\"\n  },\n  \"CreationTime\": \"<dateTime>\",\n  \"DurationMillis\": \"<integer>\",\n  \"LiveSourceName\": \"<string>\",\n  \"ProgramName\": \"<string>\",\n  \"ScheduledStartTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:23.000Z",
+                          "updatedAt": "2026-07-28T10:39:23.000Z",
+                          "uid": "35240-7bc631cd-0c9b-4f6f-ab9e-2059cc9afd9c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-40b2515a-8fc6-4748-bc46-934426b4caec"
+                    }
+                  ],
+                  "id": "d9f04e4e-6474-4ad0-a1f3-84f5e2e3575b",
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-d9f04e4e-6474-4ad0-a1f3-84f5e2e3575b"
+                }
+              ],
+              "id": "7b9cc7f0-4181-4bf9-86c0-0fd1730a6f42",
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-7b9cc7f0-4181-4bf9-86c0-0fd1730a6f42"
+            },
+            {
+              "name": "policy",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor Delete Channel Policy",
+                  "id": "345986a5-7b5a-480f-9971-44cef52df93b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "policy"
+                      ],
+                      "variable": [
+                        {
+                          "id": "d3ec0609-6603-438b-a987-9fa88efde7ba",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the channel associated with this channel policy."
+                        }
+                      ]
+                    },
+                    "description": "The channel policy to delete."
+                  },
+                  "response": [
+                    {
+                      "id": "1d91f329-e153-4c2a-a147-cebaf3743513",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "policy"
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-1d91f329-e153-4c2a-a147-cebaf3743513"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-345986a5-7b5a-480f-9971-44cef52df93b"
+                },
+                {
+                  "name": "Amazon MediaTailor Get Channel Policy",
+                  "id": "f5dc4b78-c44e-4b26-8e9e-016e8a744d5d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "policy"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6c482b55-a67a-4626-9079-c1c0912d136e",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the channel associated with this Channel Policy."
+                        }
+                      ]
+                    },
+                    "description": "Returns the channel's IAM policy. IAM policies are used to control access to your channel."
+                  },
+                  "response": [
+                    {
+                      "id": "816a7002-e0de-4538-a3f4-aa108981abe8",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "policy"
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Policy\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-816a7002-e0de-4538-a3f4-aa108981abe8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-f5dc4b78-c44e-4b26-8e9e-016e8a744d5d"
+                },
+                {
+                  "name": "Amazon MediaTailor Put Channel Policy",
+                  "id": "079339f4-e15e-4f9b-9fcf-7f9902b84377",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Policy\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "policy"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6d80239e-77f5-4176-a3b3-1495ff50a337",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The channel name associated with this Channel Policy."
+                        }
+                      ]
+                    },
+                    "description": "Creates an IAM policy for the channel. IAM policies are used to control access to your channel."
+                  },
+                  "response": [
+                    {
+                      "id": "c582a553-5733-404e-8974-867b976267cf",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Policy\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/policy",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "policy"
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-c582a553-5733-404e-8974-867b976267cf"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-079339f4-e15e-4f9b-9fcf-7f9902b84377"
+                }
+              ],
+              "id": "ec3a67f8-62cd-46a0-be37-4c14f390276b",
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-ec3a67f8-62cd-46a0-be37-4c14f390276b"
+            },
+            {
+              "name": "schedule",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor Get Channel Schedule",
+                  "id": "4176febb-2fbb-4e88-af18-eefbee8b5b42",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/schedule?durationMinutes=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "schedule"
+                      ],
+                      "query": [
+                        {
+                          "description": "The duration in minutes of the channel schedule.",
+                          "key": "durationMinutes",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "<p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "3fc2a2f0-11eb-4d55-89fd-fcb9c53a393a",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the channel associated with this Channel Schedule."
+                        }
+                      ]
+                    },
+                    "description": "Retrieves information about your channel's schedule."
+                  },
+                  "response": [
+                    {
+                      "id": "260abe13-875e-4cbc-a18c-1ff4c6cdd590",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/schedule?durationMinutes=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "schedule"
+                          ],
+                          "query": [
+                            {
+                              "description": "The duration in minutes of the channel schedule.",
+                              "key": "durationMinutes",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "<p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination limit",
+                              "key": "MaxResults",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination token",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Items\": [\n    {\n      \"Arn\": \"<string>\",\n      \"ChannelName\": \"<string>\",\n      \"ProgramName\": \"<string>\",\n      \"SourceLocationName\": \"<string>\",\n      \"ApproximateDurationSeconds\": \"<integer>\",\n      \"ApproximateStartTime\": \"<dateTime>\",\n      \"LiveSourceName\": \"<string>\",\n      \"ScheduleAdBreaks\": [\n        {\n          \"ApproximateDurationSeconds\": \"<integer>\",\n          \"ApproximateStartTime\": \"<dateTime>\",\n          \"SourceLocationName\": \"<string>\",\n          \"VodSourceName\": \"<string>\"\n        },\n        {\n          \"ApproximateDurationSeconds\": \"<integer>\",\n          \"ApproximateStartTime\": \"<dateTime>\",\n          \"SourceLocationName\": \"<string>\",\n          \"VodSourceName\": \"<string>\"\n        }\n      ],\n      \"ScheduleEntryType\": \"PROGRAM\",\n      \"VodSourceName\": \"<string>\"\n    },\n    {\n      \"Arn\": \"<string>\",\n      \"ChannelName\": \"<string>\",\n      \"ProgramName\": \"<string>\",\n      \"SourceLocationName\": \"<string>\",\n      \"ApproximateDurationSeconds\": \"<integer>\",\n      \"ApproximateStartTime\": \"<dateTime>\",\n      \"LiveSourceName\": \"<string>\",\n      \"ScheduleAdBreaks\": [\n        {\n          \"ApproximateDurationSeconds\": \"<integer>\",\n          \"ApproximateStartTime\": \"<dateTime>\",\n          \"SourceLocationName\": \"<string>\",\n          \"VodSourceName\": \"<string>\"\n        },\n        {\n          \"ApproximateDurationSeconds\": \"<integer>\",\n          \"ApproximateStartTime\": \"<dateTime>\",\n          \"SourceLocationName\": \"<string>\",\n          \"VodSourceName\": \"<string>\"\n        }\n      ],\n      \"ScheduleEntryType\": \"FILLER_SLATE\",\n      \"VodSourceName\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-260abe13-875e-4cbc-a18c-1ff4c6cdd590"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-4176febb-2fbb-4e88-af18-eefbee8b5b42"
+                }
+              ],
+              "id": "e0fa5632-0b7e-4355-aa99-b27c3ead6385",
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-e0fa5632-0b7e-4355-aa99-b27c3ead6385"
+            },
+            {
+              "name": "start",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor Start Channel",
+                  "id": "b5f94d8c-0184-49fd-89b0-1de608d7f9d2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/start",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "start"
+                      ],
+                      "variable": [
+                        {
+                          "id": "67f98ae3-d635-43f6-9d09-e9f49c1ce51a",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the channel."
+                        }
+                      ]
+                    },
+                    "description": "Starts a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+                  },
+                  "response": [
+                    {
+                      "id": "92322eb3-f185-47f2-a745-015419aa47a7",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/start",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "start"
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-92322eb3-f185-47f2-a745-015419aa47a7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-b5f94d8c-0184-49fd-89b0-1de608d7f9d2"
+                }
+              ],
+              "id": "abe0d5c3-975d-49ba-9840-5f19812311f7",
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-abe0d5c3-975d-49ba-9840-5f19812311f7"
+            },
+            {
+              "name": "stop",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor Stop Channel",
+                  "id": "56827fd8-b682-4fc8-9b6e-eaf3edb7a1c7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName/stop",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName",
+                        "stop"
+                      ],
+                      "variable": [
+                        {
+                          "id": "a09349d5-e0f3-4eed-a706-34ac9adbc5b6",
+                          "key": "ChannelName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the channel."
+                        }
+                      ]
+                    },
+                    "description": "Stops a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+                  },
+                  "response": [
+                    {
+                      "id": "298f010d-310b-4fe1-ae82-e88f5ca04fab",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/channel/:ChannelName/stop",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "channel",
+                            ":ChannelName",
+                            "stop"
+                          ],
+                          "variable": [
+                            {
+                              "key": "ChannelName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:39:23.000Z",
+                      "updatedAt": "2026-07-28T10:39:23.000Z",
+                      "uid": "35240-298f010d-310b-4fe1-ae82-e88f5ca04fab"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-56827fd8-b682-4fc8-9b6e-eaf3edb7a1c7"
+                }
+              ],
+              "id": "ad76eb68-1b53-432c-b431-a12e9cc53f7a",
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-ad76eb68-1b53-432c-b431-a12e9cc53f7a"
+            },
+            {
+              "name": "Amazon MediaTailor Create Channel",
+              "id": "c97a8e60-a2d5-4ac7-a189-2f70a81f6593",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"PlaybackMode\": \"LOOP\",\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  },\n  \"tags\": {\n    \"culpa400\": \"<string>\"\n  },\n  \"Tier\": \"BASIC\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/channel/:ChannelName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "channel",
+                    ":ChannelName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "db058aac-06d0-4a30-b0f8-7a764005fa90",
+                      "key": "ChannelName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the channel."
+                    }
+                  ]
+                },
+                "description": "Creates a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "291dcfd6-ca94-435b-bac4-343dcacc3cfc",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"PlaybackMode\": \"LOOP\",\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  },\n  \"tags\": {\n    \"culpa400\": \"<string>\"\n  },\n  \"Tier\": \"BASIC\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ChannelName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ChannelState\": \"STOPPED\",\n  \"CreationTime\": \"<dateTime>\",\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"PlaybackMode\": \"<string>\",\n  \"Tags\": {\n    \"ut_2bc\": \"<string>\"\n  },\n  \"Tier\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-291dcfd6-ca94-435b-bac4-343dcacc3cfc"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-c97a8e60-a2d5-4ac7-a189-2f70a81f6593"
+            },
+            {
+              "name": "Amazon MediaTailor Delete Channel",
+              "id": "695f457e-22c0-49ce-ad48-f036a4b6c7be",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/channel/:ChannelName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "channel",
+                    ":ChannelName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ae87eb77-e270-4777-b5f4-17e096f1a925",
+                      "key": "ChannelName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the channel."
+                    }
+                  ]
+                },
+                "description": "Deletes a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "93eab10d-fa7c-4b63-acc8-47faf2f7fc9e",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ChannelName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-93eab10d-fa7c-4b63-acc8-47faf2f7fc9e"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-695f457e-22c0-49ce-ad48-f036a4b6c7be"
+            },
+            {
+              "name": "Amazon MediaTailor Describe Channel",
+              "id": "dfdab514-c208-4bdc-ba35-ab0db60d483c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/channel/:ChannelName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "channel",
+                    ":ChannelName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "db11d16d-a974-4bd4-8b5e-19ea4cc1a726",
+                      "key": "ChannelName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the channel."
+                    }
+                  ]
+                },
+                "description": "Describes a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "5f4f6c8a-ecaa-4803-963a-6fd73fe6fbe8",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ChannelName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"LogConfiguration\": {\n    \"LogTypes\": [\n      \"AS_RUN\",\n      \"AS_RUN\"\n    ]\n  },\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ChannelState\": \"RUNNING\",\n  \"CreationTime\": \"<dateTime>\",\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"PlaybackMode\": \"<string>\",\n  \"Tags\": {\n    \"sint_a\": \"<string>\"\n  },\n  \"Tier\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-5f4f6c8a-ecaa-4803-963a-6fd73fe6fbe8"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-dfdab514-c208-4bdc-ba35-ab0db60d483c"
+            },
+            {
+              "name": "Amazon MediaTailor Update Channel",
+              "id": "5526a73c-b049-4644-87d5-fe63a6fb5371",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/channel/:ChannelName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "channel",
+                    ":ChannelName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "54d89198-ee7f-4398-8da5-d89e224b3827",
+                      "key": "ChannelName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the channel."
+                    }
+                  ]
+                },
+                "description": "Updates a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "75c070c2-d9e9-4de4-9743-a37b62317d2d",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/channel/:ChannelName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "channel",
+                        ":ChannelName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ChannelName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Arn\": \"<string>\",\n  \"ChannelName\": \"<string>\",\n  \"ChannelState\": \"STOPPED\",\n  \"CreationTime\": \"<dateTime>\",\n  \"FillerSlate\": {\n    \"SourceLocationName\": \"<string>\",\n    \"VodSourceName\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"Outputs\": [\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    },\n    {\n      \"ManifestName\": \"<string>\",\n      \"PlaybackUrl\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"DashPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\",\n        \"MinBufferTimeSeconds\": \"<integer>\",\n        \"MinUpdatePeriodSeconds\": \"<integer>\",\n        \"SuggestedPresentationDelaySeconds\": \"<integer>\"\n      },\n      \"HlsPlaylistSettings\": {\n        \"ManifestWindowSeconds\": \"<integer>\"\n      }\n    }\n  ],\n  \"PlaybackMode\": \"<string>\",\n  \"Tags\": {\n    \"autefc5\": \"<string>\",\n    \"dolore_e\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"Duis_5d\": \"<string>\"\n  },\n  \"Tier\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:39:23.000Z",
+                  "updatedAt": "2026-07-28T10:39:23.000Z",
+                  "uid": "35240-75c070c2-d9e9-4de4-9743-a37b62317d2d"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:23.000Z",
+              "updatedAt": "2026-07-28T10:39:23.000Z",
+              "uid": "35240-5526a73c-b049-4644-87d5-fe63a6fb5371"
+            }
+          ],
+          "id": "ecca0fe5-938b-4bf6-8f68-7cd1b3cbf98e",
+          "createdAt": "2026-07-28T10:39:23.000Z",
+          "updatedAt": "2026-07-28T10:39:23.000Z",
+          "uid": "35240-ecca0fe5-938b-4bf6-8f68-7cd1b3cbf98e"
+        }
+      ],
+      "id": "d7e0e3b2-34fb-48ee-852c-d11088a3afce",
+      "createdAt": "2026-07-28T10:39:23.000Z",
+      "updatedAt": "2026-07-28T10:39:23.000Z",
+      "uid": "35240-d7e0e3b2-34fb-48ee-852c-d11088a3afce"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://api.mediatailor.{{region}}.amazonaws.com"
+    }
+  ]
+}

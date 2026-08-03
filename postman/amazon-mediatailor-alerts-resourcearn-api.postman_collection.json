@@ -1,0 +1,238 @@
+{
+  "info": {
+    "_postman_id": "cc195429-c37a-4a14-a8b4-a21c9ec6b5aa",
+    "name": "AWS MediaTailor Alerts#resourceArn API",
+    "description": "<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:39:13.000Z",
+    "updatedAt": "2026-07-28T10:39:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cc195429-c37a-4a14-a8b4-a21c9ec6b5aa"
+  },
+  "item": [
+    {
+      "name": "alerts#resourceArn",
+      "item": [
+        {
+          "name": "Amazon MediaTailor List Alerts",
+          "id": "c11c9a2e-c21a-4455-9139-65894ff7c1af",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/alerts?maxResults=<integer>&nextToken=<string>&resourceArn=<string>&MaxResults=<string>&NextToken=<string>#resourceArn",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "alerts"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The Amazon Resource Name (ARN) of the resource.",
+                  "key": "resourceArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "resourceArn"
+            },
+            "description": "Lists the alerts that are associated with a MediaTailor channel assembly resource."
+          },
+          "response": [
+            {
+              "id": "6fc8e293-adac-426f-a850-564dd93562a9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/alerts?maxResults=<integer>&nextToken=<string>&resourceArn=<string>&MaxResults=<string>&NextToken=<string>#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "alerts"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the resource.",
+                      "key": "resourceArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Items\": [\n    {\n      \"AlertCode\": \"<string>\",\n      \"AlertMessage\": \"<string>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"RelatedResourceArns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ResourceArn\": \"<string>\"\n    },\n    {\n      \"AlertCode\": \"<string>\",\n      \"AlertMessage\": \"<string>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"RelatedResourceArns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ResourceArn\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:39:13.000Z",
+              "updatedAt": "2026-07-28T10:39:13.000Z",
+              "uid": "35240-6fc8e293-adac-426f-a850-564dd93562a9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:39:13.000Z",
+          "updatedAt": "2026-07-28T10:39:13.000Z",
+          "uid": "35240-c11c9a2e-c21a-4455-9139-65894ff7c1af"
+        }
+      ],
+      "id": "0eb4102c-2a49-4026-a93d-73ea720a0dd1",
+      "createdAt": "2026-07-28T10:39:13.000Z",
+      "updatedAt": "2026-07-28T10:39:13.000Z",
+      "uid": "35240-0eb4102c-2a49-4026-a93d-73ea720a0dd1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://api.mediatailor.{{region}}.amazonaws.com"
+    }
+  ]
+}

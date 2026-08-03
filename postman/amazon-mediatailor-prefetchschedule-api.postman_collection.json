@@ -1,0 +1,760 @@
+{
+  "info": {
+    "_postman_id": "f709e2d0-c4b3-4b5a-b8e8-0f6521e54af2",
+    "name": "AWS MediaTailor Alerts#resourceArn PrefetchSchedule API",
+    "description": "<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:39:33.000Z",
+    "updatedAt": "2026-07-28T10:39:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f709e2d0-c4b3-4b5a-b8e8-0f6521e54af2"
+  },
+  "item": [
+    {
+      "name": "prefetchSchedule",
+      "item": [
+        {
+          "name": "{PlaybackConfigurationName}",
+          "item": [
+            {
+              "name": "{Name}",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor Create Prefetch Schedule",
+                  "id": "df20259e-72d3-44a6-8438-b5422276b195",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Consumption\": {\n    \"AvailMatchingCriteria\": [\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      },\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      }\n    ],\n    \"EndTime\": \"<dateTime>\",\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"Retrieval\": {\n    \"DynamicVariables\": {\n      \"nulla60a\": \"<string>\"\n    },\n    \"EndTime\": \"<dateTime>\",\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"StreamId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prefetchSchedule",
+                        ":PlaybackConfigurationName",
+                        ":Name"
+                      ],
+                      "variable": [
+                        {
+                          "id": "61a5f374-689a-4b92-9b30-e789415d090e",
+                          "key": "PlaybackConfigurationName",
+                          "value": "<string>",
+                          "description": "(Required) The name to assign to the playback configuration."
+                        },
+                        {
+                          "id": "264f6b8f-eb95-4998-b0a0-b538a0d40f7d",
+                          "key": "Name",
+                          "value": "<string>",
+                          "description": "(Required) The name to assign to the schedule request."
+                        }
+                      ]
+                    },
+                    "description": "Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+                  },
+                  "response": [
+                    {
+                      "id": "7d2afad1-50c4-4df7-ab86-cf829cbe4da8",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Consumption\": {\n    \"AvailMatchingCriteria\": [\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      },\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      }\n    ],\n    \"EndTime\": \"<dateTime>\",\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"Retrieval\": {\n    \"DynamicVariables\": {\n      \"nulla60a\": \"<string>\"\n    },\n    \"EndTime\": \"<dateTime>\",\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"StreamId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "prefetchSchedule",
+                            ":PlaybackConfigurationName",
+                            ":Name"
+                          ],
+                          "variable": [
+                            {
+                              "key": "PlaybackConfigurationName"
+                            },
+                            {
+                              "key": "Name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Arn\": \"<string>\",\n  \"Consumption\": {\n    \"EndTime\": \"<dateTime>\",\n    \"AvailMatchingCriteria\": [\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      },\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      }\n    ],\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"Name\": \"<string>\",\n  \"PlaybackConfigurationName\": \"<string>\",\n  \"Retrieval\": {\n    \"EndTime\": \"<dateTime>\",\n    \"DynamicVariables\": {\n      \"doloree\": \"<string>\"\n    },\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"StreamId\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:33.000Z",
+                      "updatedAt": "2026-07-28T10:39:33.000Z",
+                      "uid": "35240-7d2afad1-50c4-4df7-ab86-cf829cbe4da8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:33.000Z",
+                  "updatedAt": "2026-07-28T10:39:33.000Z",
+                  "uid": "35240-df20259e-72d3-44a6-8438-b5422276b195"
+                },
+                {
+                  "name": "Amazon MediaTailor Delete Prefetch Schedule",
+                  "id": "9313172e-2e48-456a-84f2-0b9ba54b6618",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prefetchSchedule",
+                        ":PlaybackConfigurationName",
+                        ":Name"
+                      ],
+                      "variable": [
+                        {
+                          "id": "ae6c017f-99d6-4a47-903a-7143a73d46d4",
+                          "key": "PlaybackConfigurationName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the playback configuration for this prefetch schedule."
+                        },
+                        {
+                          "id": "fc54ba33-c119-4122-9c6a-9f365a18eeaa",
+                          "key": "Name",
+                          "value": "<string>",
+                          "description": "(Required) The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body."
+                        }
+                      ]
+                    },
+                    "description": "Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+                  },
+                  "response": [
+                    {
+                      "id": "a2b17d17-a4bd-46f9-9684-0a51f45200d7",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "prefetchSchedule",
+                            ":PlaybackConfigurationName",
+                            ":Name"
+                          ],
+                          "variable": [
+                            {
+                              "key": "PlaybackConfigurationName"
+                            },
+                            {
+                              "key": "Name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:39:33.000Z",
+                      "updatedAt": "2026-07-28T10:39:33.000Z",
+                      "uid": "35240-a2b17d17-a4bd-46f9-9684-0a51f45200d7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:33.000Z",
+                  "updatedAt": "2026-07-28T10:39:33.000Z",
+                  "uid": "35240-9313172e-2e48-456a-84f2-0b9ba54b6618"
+                },
+                {
+                  "name": "Amazon MediaTailor Get Prefetch Schedule",
+                  "id": "e7644c7e-148d-4e19-9542-80f404fec1a9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prefetchSchedule",
+                        ":PlaybackConfigurationName",
+                        ":Name"
+                      ],
+                      "variable": [
+                        {
+                          "id": "a3bd257b-1fbc-4045-89a6-1eb556a13509",
+                          "key": "PlaybackConfigurationName",
+                          "value": "<string>",
+                          "description": "(Required) Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code."
+                        },
+                        {
+                          "id": "e402f0b7-ef75-4ba2-872e-12badcfc573b",
+                          "key": "Name",
+                          "value": "<string>",
+                          "description": "(Required) The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration."
+                        }
+                      ]
+                    },
+                    "description": "Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+                  },
+                  "response": [
+                    {
+                      "id": "391d6e42-a9bd-461f-8b99-fdfb2dd31dfc",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName/:Name",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "prefetchSchedule",
+                            ":PlaybackConfigurationName",
+                            ":Name"
+                          ],
+                          "variable": [
+                            {
+                              "key": "PlaybackConfigurationName"
+                            },
+                            {
+                              "key": "Name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Arn\": \"<string>\",\n  \"Consumption\": {\n    \"EndTime\": \"<dateTime>\",\n    \"AvailMatchingCriteria\": [\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      },\n      {\n        \"DynamicVariable\": \"<string>\",\n        \"Operator\": \"EQUALS\"\n      }\n    ],\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"Name\": \"<string>\",\n  \"PlaybackConfigurationName\": \"<string>\",\n  \"Retrieval\": {\n    \"EndTime\": \"<dateTime>\",\n    \"DynamicVariables\": {\n      \"officia0\": \"<string>\",\n      \"aliquip_c93\": \"<string>\"\n    },\n    \"StartTime\": \"<dateTime>\"\n  },\n  \"StreamId\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:33.000Z",
+                      "updatedAt": "2026-07-28T10:39:33.000Z",
+                      "uid": "35240-391d6e42-a9bd-461f-8b99-fdfb2dd31dfc"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:33.000Z",
+                  "updatedAt": "2026-07-28T10:39:33.000Z",
+                  "uid": "35240-e7644c7e-148d-4e19-9542-80f404fec1a9"
+                }
+              ],
+              "id": "e39c0954-9c15-4c97-87f0-7446116133a0",
+              "createdAt": "2026-07-28T10:39:33.000Z",
+              "updatedAt": "2026-07-28T10:39:33.000Z",
+              "uid": "35240-e39c0954-9c15-4c97-87f0-7446116133a0"
+            },
+            {
+              "name": "Amazon MediaTailor List Prefetch Schedules",
+              "id": "b724289e-3bc2-4f9f-8919-73b372055991",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\",\n  \"StreamId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "prefetchSchedule",
+                    ":PlaybackConfigurationName"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "e4a43b7a-2434-4d60-b75b-51ab3013da9f",
+                      "key": "PlaybackConfigurationName",
+                      "value": "<string>",
+                      "description": "(Required) Retrieves the prefetch schedule(s) for a specific playback configuration."
+                    }
+                  ]
+                },
+                "description": "Lists the prefetch schedules for a playback configuration."
+              },
+              "response": [
+                {
+                  "id": "605b4a93-881a-438e-b421-1d00e4120952",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\",\n  \"StreamId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/prefetchSchedule/:PlaybackConfigurationName?MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prefetchSchedule",
+                        ":PlaybackConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "PlaybackConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Items\": [\n    {\n      \"Arn\": \"<string>\",\n      \"Consumption\": {\n        \"EndTime\": \"<dateTime>\",\n        \"AvailMatchingCriteria\": [\n          {\n            \"DynamicVariable\": \"<string>\",\n            \"Operator\": \"EQUALS\"\n          },\n          {\n            \"DynamicVariable\": \"<string>\",\n            \"Operator\": \"EQUALS\"\n          }\n        ],\n        \"StartTime\": \"<dateTime>\"\n      },\n      \"Name\": \"<string>\",\n      \"PlaybackConfigurationName\": \"<string>\",\n      \"Retrieval\": {\n        \"EndTime\": \"<dateTime>\",\n        \"DynamicVariables\": {\n          \"amet_7\": \"<string>\",\n          \"doa\": \"<string>\"\n        },\n        \"StartTime\": \"<dateTime>\"\n      },\n      \"StreamId\": \"<string>\"\n    },\n    {\n      \"Arn\": \"<string>\",\n      \"Consumption\": {\n        \"EndTime\": \"<dateTime>\",\n        \"AvailMatchingCriteria\": [\n          {\n            \"DynamicVariable\": \"<string>\",\n            \"Operator\": \"EQUALS\"\n          },\n          {\n            \"DynamicVariable\": \"<string>\",\n            \"Operator\": \"EQUALS\"\n          }\n        ],\n        \"StartTime\": \"<dateTime>\"\n      },\n      \"Name\": \"<string>\",\n      \"PlaybackConfigurationName\": \"<string>\",\n      \"Retrieval\": {\n        \"EndTime\": \"<dateTime>\",\n        \"DynamicVariables\": {\n          \"utbb\": \"<string>\",\n          \"dolorcdc\": \"<string>\"\n        },\n        \"StartTime\": \"<dateTime>\"\n      },\n      \"StreamId\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:39:33.000Z",
+                  "updatedAt": "2026-07-28T10:39:33.000Z",
+                  "uid": "35240-605b4a93-881a-438e-b421-1d00e4120952"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:33.000Z",
+              "updatedAt": "2026-07-28T10:39:33.000Z",
+              "uid": "35240-b724289e-3bc2-4f9f-8919-73b372055991"
+            }
+          ],
+          "id": "ca601688-f80c-4f31-b2aa-5b75ccdb0e7a",
+          "createdAt": "2026-07-28T10:39:33.000Z",
+          "updatedAt": "2026-07-28T10:39:33.000Z",
+          "uid": "35240-ca601688-f80c-4f31-b2aa-5b75ccdb0e7a"
+        }
+      ],
+      "id": "a9089646-2139-447a-ab6c-2a6db716c7d1",
+      "createdAt": "2026-07-28T10:39:33.000Z",
+      "updatedAt": "2026-07-28T10:39:33.000Z",
+      "uid": "35240-a9089646-2139-447a-ab6c-2a6db716c7d1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://api.mediatailor.{{region}}.amazonaws.com"
+    }
+  ]
+}

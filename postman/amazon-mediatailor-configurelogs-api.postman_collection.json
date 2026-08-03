@@ -1,0 +1,389 @@
+{
+  "info": {
+    "_postman_id": "18b2c8c6-232d-402f-9043-f8ead6c3b40f",
+    "name": "AWS MediaTailor Alerts#resourceArn ConfigureLogs API",
+    "description": "<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:39:25.000Z",
+    "updatedAt": "2026-07-28T10:39:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-18b2c8c6-232d-402f-9043-f8ead6c3b40f"
+  },
+  "item": [
+    {
+      "name": "configureLogs",
+      "item": [
+        {
+          "name": "channel",
+          "item": [
+            {
+              "name": "Amazon MediaTailor Configure Logs for Channel",
+              "id": "2b41d4ec-4342-4f7f-8afc-1753326615c1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ChannelName\": \"<string>\",\n  \"LogTypes\": [\n    \"AS_RUN\",\n    \"AS_RUN\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/configureLogs/channel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "configureLogs",
+                    "channel"
+                  ]
+                },
+                "description": "Configures Amazon CloudWatch log settings for a channel."
+              },
+              "response": [
+                {
+                  "id": "1dc9d2e7-cf97-4706-9900-52f3b43e5b43",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ChannelName\": \"<string>\",\n  \"LogTypes\": [\n    \"AS_RUN\",\n    \"AS_RUN\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/configureLogs/channel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "configureLogs",
+                        "channel"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"ChannelName\": \"<string>\",\n  \"LogTypes\": [\n    \"AS_RUN\",\n    \"AS_RUN\"\n  ]\n}",
+                  "createdAt": "2026-07-28T10:39:25.000Z",
+                  "updatedAt": "2026-07-28T10:39:25.000Z",
+                  "uid": "35240-1dc9d2e7-cf97-4706-9900-52f3b43e5b43"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:25.000Z",
+              "updatedAt": "2026-07-28T10:39:25.000Z",
+              "uid": "35240-2b41d4ec-4342-4f7f-8afc-1753326615c1"
+            }
+          ],
+          "id": "bc5f44f2-1315-4fc5-b4d3-9a95a77c8d71",
+          "createdAt": "2026-07-28T10:39:25.000Z",
+          "updatedAt": "2026-07-28T10:39:25.000Z",
+          "uid": "35240-bc5f44f2-1315-4fc5-b4d3-9a95a77c8d71"
+        },
+        {
+          "name": "playbackConfiguration",
+          "item": [
+            {
+              "name": "Amazon MediaTailor Configure Logs for Playback Configuration",
+              "id": "606d7c53-a852-4de7-8f5f-700b2807b3ee",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PercentEnabled\": \"<integer>\",\n  \"PlaybackConfigurationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/configureLogs/playbackConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "configureLogs",
+                    "playbackConfiguration"
+                  ]
+                },
+                "description": "Amazon CloudWatch log settings for a playback configuration."
+              },
+              "response": [
+                {
+                  "id": "df7abd6a-38a7-4f5b-91dc-e451b7e33e2c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"PercentEnabled\": \"<integer>\",\n  \"PlaybackConfigurationName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/configureLogs/playbackConfiguration",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "configureLogs",
+                        "playbackConfiguration"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"PercentEnabled\": \"<integer>\",\n  \"PlaybackConfigurationName\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:39:25.000Z",
+                  "updatedAt": "2026-07-28T10:39:25.000Z",
+                  "uid": "35240-df7abd6a-38a7-4f5b-91dc-e451b7e33e2c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:25.000Z",
+              "updatedAt": "2026-07-28T10:39:25.000Z",
+              "uid": "35240-606d7c53-a852-4de7-8f5f-700b2807b3ee"
+            }
+          ],
+          "id": "642078b5-e3c4-413a-bf15-c51a3aff8583",
+          "createdAt": "2026-07-28T10:39:25.000Z",
+          "updatedAt": "2026-07-28T10:39:25.000Z",
+          "uid": "35240-642078b5-e3c4-413a-bf15-c51a3aff8583"
+        }
+      ],
+      "id": "94b080f7-5fc1-401b-b525-9fc95afb9d6a",
+      "createdAt": "2026-07-28T10:39:25.000Z",
+      "updatedAt": "2026-07-28T10:39:25.000Z",
+      "uid": "35240-94b080f7-5fc1-401b-b525-9fc95afb9d6a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://api.mediatailor.{{region}}.amazonaws.com"
+    }
+  ]
+}

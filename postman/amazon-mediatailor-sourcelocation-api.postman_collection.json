@@ -1,0 +1,2496 @@
+{
+  "info": {
+    "_postman_id": "66053ffa-488b-45c5-947f-9a7ef82c51c3",
+    "name": "AWS MediaTailor Alerts#resourceArn SourceLocation API",
+    "description": "<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:39:34.000Z",
+    "updatedAt": "2026-07-28T10:39:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-66053ffa-488b-45c5-947f-9a7ef82c51c3"
+  },
+  "item": [
+    {
+      "name": "sourceLocation",
+      "item": [
+        {
+          "name": "{SourceLocationName}",
+          "item": [
+            {
+              "name": "liveSource",
+              "item": [
+                {
+                  "name": "{LiveSourceName}",
+                  "item": [
+                    {
+                      "name": "Amazon MediaTailor Create Live Source",
+                      "id": "aa778848-2486-47c7-9cbf-e81ed34e4eca",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"tags\": {\n    \"aliqua0f\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "liveSource",
+                            ":LiveSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e106ace0-74e8-47bc-a35a-1c2686b57e0d",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location."
+                            },
+                            {
+                              "id": "a1a3344c-a76f-4cdb-9d10-d918a2c3d127",
+                              "key": "LiveSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the live source."
+                            }
+                          ]
+                        },
+                        "description": "The live source configuration."
+                      },
+                      "response": [
+                        {
+                          "id": "c02f4199-9352-4ed2-9448-d16f86e8e2b0",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"tags\": {\n    \"aliqua0f\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "liveSource",
+                                ":LiveSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "LiveSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"LiveSourceName\": \"<string>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"aute6e\": \"<string>\",\n    \"cupidatat7\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-c02f4199-9352-4ed2-9448-d16f86e8e2b0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-aa778848-2486-47c7-9cbf-e81ed34e4eca"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Delete Live Source",
+                      "id": "242c53b4-6cb8-4140-92f9-ad02e9c16b13",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "liveSource",
+                            ":LiveSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "28ed9339-6bc5-4e0c-a14a-070ea2dcfee0",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this Live Source."
+                            },
+                            {
+                              "id": "0bcf780b-4394-48bd-bf0d-03f5af57634c",
+                              "key": "LiveSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the live source."
+                            }
+                          ]
+                        },
+                        "description": "The live source to delete."
+                      },
+                      "response": [
+                        {
+                          "id": "5bce3670-f431-4ef8-ae2b-7c47c1b976d2",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "liveSource",
+                                ":LiveSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "LiveSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-5bce3670-f431-4ef8-ae2b-7c47c1b976d2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-242c53b4-6cb8-4140-92f9-ad02e9c16b13"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Describe Live Source",
+                      "id": "27507731-648b-4694-92cd-7e851415f962",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "liveSource",
+                            ":LiveSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "250801bd-7d87-4cd4-9820-80b055723e79",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this Live Source."
+                            },
+                            {
+                              "id": "50ec09b3-ce5d-41ec-81b2-937f79c26626",
+                              "key": "LiveSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the live source."
+                            }
+                          ]
+                        },
+                        "description": "The live source to describe."
+                      },
+                      "response": [
+                        {
+                          "id": "adb359b3-3609-4cc0-ba00-70ea967ed3ae",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "liveSource",
+                                ":LiveSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "LiveSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"LiveSourceName\": \"<string>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"eta7\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-adb359b3-3609-4cc0-ba00-70ea967ed3ae"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-27507731-648b-4694-92cd-7e851415f962"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Update Live Source",
+                      "id": "4ecbb196-6533-45bd-8fcf-369a7c9718fe",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "liveSource",
+                            ":LiveSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "cecd0fed-8f9d-43d8-812e-f2b1ca93ef51",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this Live Source."
+                            },
+                            {
+                              "id": "bd372cde-5517-4e7e-9903-61c4e7728dad",
+                              "key": "LiveSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the live source."
+                            }
+                          ]
+                        },
+                        "description": "Updates a live source's configuration."
+                      },
+                      "response": [
+                        {
+                          "id": "acb05dce-391e-43c0-8d10-9cc2d1a3909e",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "liveSource",
+                                ":LiveSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "LiveSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"LiveSourceName\": \"<string>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"culpae\": \"<string>\",\n    \"dolore_11\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-acb05dce-391e-43c0-8d10-9cc2d1a3909e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-4ecbb196-6533-45bd-8fcf-369a7c9718fe"
+                    }
+                  ],
+                  "id": "d9bd1b6b-30c4-42ac-9b67-c9b01781e9bb",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-d9bd1b6b-30c4-42ac-9b67-c9b01781e9bb"
+                }
+              ],
+              "id": "c1700661-5267-437f-80ba-d6b37734f919",
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-c1700661-5267-437f-80ba-d6b37734f919"
+            },
+            {
+              "name": "vodSource",
+              "item": [
+                {
+                  "name": "{VodSourceName}",
+                  "item": [
+                    {
+                      "name": "Amazon MediaTailor Create Vod Source",
+                      "id": "57e3bcfe-3a09-4e50-ad87-02d900725559",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"tags\": {\n    \"tempor0\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "vodSource",
+                            ":VodSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3e7e014c-de0c-4aba-a8af-7fc949177c3a",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location for this VOD source."
+                            },
+                            {
+                              "id": "17f64ec1-a245-4028-ba11-442070f0f57f",
+                              "key": "VodSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name associated with the VOD source.&gt;"
+                            }
+                          ]
+                        },
+                        "description": "The VOD source configuration parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "cb0c1fd6-1ea9-41f5-86a4-118cf500cc78",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"tags\": {\n    \"tempor0\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "vodSource",
+                                ":VodSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "VodSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"in_\": \"<string>\",\n    \"non_45c\": \"<string>\",\n    \"minim8\": \"<string>\",\n    \"minim_3f4\": \"<string>\"\n  },\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-cb0c1fd6-1ea9-41f5-86a4-118cf500cc78"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-57e3bcfe-3a09-4e50-ad87-02d900725559"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Delete Vod Source",
+                      "id": "be915ae2-1e58-460d-8a0f-c7bddec77f0a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "vodSource",
+                            ":VodSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ac70a200-8bd5-4c6b-a811-2e2a32c5530f",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this VOD Source."
+                            },
+                            {
+                              "id": "07ab2d69-aa58-4dd9-9442-204d15b42cae",
+                              "key": "VodSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the VOD source."
+                            }
+                          ]
+                        },
+                        "description": "The video on demand (VOD) source to delete."
+                      },
+                      "response": [
+                        {
+                          "id": "633195e7-5e46-4bb5-8f88-ddb28aad2769",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "vodSource",
+                                ":VodSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "VodSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-633195e7-5e46-4bb5-8f88-ddb28aad2769"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-be915ae2-1e58-460d-8a0f-c7bddec77f0a"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Describe Vod Source",
+                      "id": "7f819854-6494-4e59-b6ae-5654be5c34e5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "vodSource",
+                            ":VodSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "67a9143c-f3ff-4d8d-a562-f202be09b2aa",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this VOD Source."
+                            },
+                            {
+                              "id": "71b169a0-2b78-4185-8ee4-4f25845d0fe0",
+                              "key": "VodSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the VOD Source."
+                            }
+                          ]
+                        },
+                        "description": "Provides details about a specific video on demand (VOD) source in a specific source location."
+                      },
+                      "response": [
+                        {
+                          "id": "704ac01a-8679-46fa-bf5e-f59e7d8eb3ee",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "vodSource",
+                                ":VodSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "VodSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"eiusmod0fc\": \"<string>\",\n    \"in_3\": \"<string>\"\n  },\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-704ac01a-8679-46fa-bf5e-f59e7d8eb3ee"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-7f819854-6494-4e59-b6ae-5654be5c34e5"
+                    },
+                    {
+                      "name": "Amazon MediaTailor Update Vod Source",
+                      "id": "a72c47c7-9c8b-4e6e-a433-c112bfa41630",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "vodSource",
+                            ":VodSourceName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "33c21341-1485-4aaa-82cb-7c2c1d0a299c",
+                              "key": "SourceLocationName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the source location associated with this VOD Source."
+                            },
+                            {
+                              "id": "b1426ba0-18ab-46c8-81d6-17026ce21803",
+                              "key": "VodSourceName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the VOD source."
+                            }
+                          ]
+                        },
+                        "description": "Updates a VOD source's configuration."
+                      },
+                      "response": [
+                        {
+                          "id": "86e4c87f-6a0a-4b0b-af51-71eb4e4b0c73",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "sourceLocation",
+                                ":SourceLocationName",
+                                "vodSource",
+                                ":VodSourceName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "SourceLocationName"
+                                },
+                                {
+                                  "key": "VodSourceName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"HttpPackageConfigurations\": [\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"DASH\"\n    },\n    {\n      \"Path\": \"<string>\",\n      \"SourceGroup\": \"<string>\",\n      \"Type\": \"HLS\"\n    }\n  ],\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"ea_a\": \"<string>\",\n    \"ade65\": \"<string>\"\n  },\n  \"VodSourceName\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:39:35.000Z",
+                          "updatedAt": "2026-07-28T10:39:35.000Z",
+                          "uid": "35240-86e4c87f-6a0a-4b0b-af51-71eb4e4b0c73"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-a72c47c7-9c8b-4e6e-a433-c112bfa41630"
+                    }
+                  ],
+                  "id": "b565f092-57e7-42a6-9cb5-32063c56190b",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-b565f092-57e7-42a6-9cb5-32063c56190b"
+                }
+              ],
+              "id": "6cbe1c4d-339d-42d5-a02c-7112fb784179",
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-6cbe1c4d-339d-42d5-a02c-7112fb784179"
+            },
+            {
+              "name": "liveSources",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor List Live Sources",
+                  "id": "315193f2-24be-4678-a262-e6660d65c3c7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSources?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName",
+                        "liveSources"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "7bff8b82-18ee-498b-987b-8e29d3c47587",
+                          "key": "SourceLocationName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the source location associated with this Live Sources list."
+                        }
+                      ]
+                    },
+                    "description": "Lists the live sources contained in a source location. A source represents a piece of content."
+                  },
+                  "response": [
+                    {
+                      "id": "e77c865b-e76e-4c4a-8406-1335f083ab9a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/liveSources?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "liveSources"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination limit",
+                              "key": "MaxResults",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination token",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "SourceLocationName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Items\": [\n    {\n      \"Arn\": \"<string>\",\n      \"HttpPackageConfigurations\": [\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"HLS\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"DASH\"\n        }\n      ],\n      \"LiveSourceName\": \"<string>\",\n      \"SourceLocationName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"Tags\": {\n        \"velitf02\": \"<string>\"\n      }\n    },\n    {\n      \"Arn\": \"<string>\",\n      \"HttpPackageConfigurations\": [\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"DASH\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"HLS\"\n        }\n      ],\n      \"LiveSourceName\": \"<string>\",\n      \"SourceLocationName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"Tags\": {\n        \"amet_3\": \"<string>\",\n        \"in_91\": \"<string>\",\n        \"quis_f\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-e77c865b-e76e-4c4a-8406-1335f083ab9a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-315193f2-24be-4678-a262-e6660d65c3c7"
+                }
+              ],
+              "id": "523cb8af-940f-465c-b092-d0f3d6ad99ae",
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-523cb8af-940f-465c-b092-d0f3d6ad99ae"
+            },
+            {
+              "name": "vodSources",
+              "item": [
+                {
+                  "name": "Amazon MediaTailor List Vod Sources",
+                  "id": "10218249-3e89-4e23-a4ac-280689652b30",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSources?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName",
+                        "vodSources"
+                      ],
+                      "query": [
+                        {
+                          "description": " The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "7d5b9ec5-cc51-4a3c-a726-ec23c77a8ac2",
+                          "key": "SourceLocationName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the source location associated with this VOD Source list."
+                        }
+                      ]
+                    },
+                    "description": "Lists the VOD sources contained in a source location. A source represents a piece of content."
+                  },
+                  "response": [
+                    {
+                      "id": "a8625d4a-955e-49af-8537-cbd26118f138",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName/vodSources?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sourceLocation",
+                            ":SourceLocationName",
+                            "vodSources"
+                          ],
+                          "query": [
+                            {
+                              "description": " The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination limit",
+                              "key": "MaxResults",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Pagination token",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "SourceLocationName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Items\": [\n    {\n      \"Arn\": \"<string>\",\n      \"HttpPackageConfigurations\": [\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"DASH\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"HLS\"\n        }\n      ],\n      \"SourceLocationName\": \"<string>\",\n      \"VodSourceName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"Tags\": {\n        \"commodoa\": \"<string>\",\n        \"est_5\": \"<string>\",\n        \"cillumc\": \"<string>\"\n      }\n    },\n    {\n      \"Arn\": \"<string>\",\n      \"HttpPackageConfigurations\": [\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"DASH\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"SourceGroup\": \"<string>\",\n          \"Type\": \"DASH\"\n        }\n      ],\n      \"SourceLocationName\": \"<string>\",\n      \"VodSourceName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastModifiedTime\": \"<dateTime>\",\n      \"Tags\": {\n        \"dolored\": \"<string>\",\n        \"exercitation_f_\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:39:35.000Z",
+                      "updatedAt": "2026-07-28T10:39:35.000Z",
+                      "uid": "35240-a8625d4a-955e-49af-8537-cbd26118f138"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-10218249-3e89-4e23-a4ac-280689652b30"
+                }
+              ],
+              "id": "49d6b3b1-7f88-424f-83fa-0323ae3353ca",
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-49d6b3b1-7f88-424f-83fa-0323ae3353ca"
+            },
+            {
+              "name": "Amazon MediaTailor Create Source Location",
+              "id": "d8c1c62b-765a-4cf5-84b2-5802eed72242",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"AccessConfiguration\": {\n    \"AccessType\": \"SECRETS_MANAGER_ACCESS_TOKEN\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"tags\": {\n    \"est_6d\": \"<string>\",\n    \"eiusmod_f00\": \"<string>\",\n    \"tempor_9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sourceLocation",
+                    ":SourceLocationName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a457147a-afb4-464b-a176-87dbdf9ef70a",
+                      "key": "SourceLocationName",
+                      "value": "<string>",
+                      "description": "(Required) The name associated with the source location."
+                    }
+                  ]
+                },
+                "description": "Creates a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "21bd2569-29af-4571-9e47-d3507ba4003c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"AccessConfiguration\": {\n    \"AccessType\": \"SECRETS_MANAGER_ACCESS_TOKEN\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"tags\": {\n    \"est_6d\": \"<string>\",\n    \"eiusmod_f00\": \"<string>\",\n    \"tempor_9\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SourceLocationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"AccessConfiguration\": {\n    \"AccessType\": \"SECRETS_MANAGER_ACCESS_TOKEN\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"animf\": \"<string>\",\n    \"deserunt_\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-21bd2569-29af-4571-9e47-d3507ba4003c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-d8c1c62b-765a-4cf5-84b2-5802eed72242"
+            },
+            {
+              "name": "Amazon MediaTailor Delete Source Location",
+              "id": "7250b095-65cc-4985-a11b-3a28999bb27b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sourceLocation",
+                    ":SourceLocationName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a9ca3260-5eae-4a7c-a9b3-3fc202a4f29d",
+                      "key": "SourceLocationName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the source location."
+                    }
+                  ]
+                },
+                "description": "Deletes a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "e524b426-7298-444b-9684-18253beda4b7",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SourceLocationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-e524b426-7298-444b-9684-18253beda4b7"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-7250b095-65cc-4985-a11b-3a28999bb27b"
+            },
+            {
+              "name": "Amazon MediaTailor Describe Source Location",
+              "id": "0ed58be6-c886-4f5d-9bf2-88687be3a487",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sourceLocation",
+                    ":SourceLocationName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "5e87d4f5-8870-437f-995a-258fa9463978",
+                      "key": "SourceLocationName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the source location."
+                    }
+                  ]
+                },
+                "description": "Describes a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "85b4a27f-5beb-40ba-9c45-0bf20255fd30",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SourceLocationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"AccessConfiguration\": {\n    \"AccessType\": \"S3_SIGV4\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"proident02\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-85b4a27f-5beb-40ba-9c45-0bf20255fd30"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-0ed58be6-c886-4f5d-9bf2-88687be3a487"
+            },
+            {
+              "name": "Amazon MediaTailor Update Source Location",
+              "id": "4bf8423b-b437-47c0-a424-b16fd70eb6ef",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"AccessConfiguration\": {\n    \"AccessType\": \"S3_SIGV4\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sourceLocation",
+                    ":SourceLocationName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "06575615-588f-4f0e-b806-2e6344b2bfe3",
+                      "key": "SourceLocationName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the source location."
+                    }
+                  ]
+                },
+                "description": "Updates a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+              },
+              "response": [
+                {
+                  "id": "ad880f6c-f602-4bfa-b422-8c75450c86f3",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"AccessConfiguration\": {\n    \"AccessType\": \"S3_SIGV4\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sourceLocation/:SourceLocationName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sourceLocation",
+                        ":SourceLocationName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SourceLocationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"AccessConfiguration\": {\n    \"AccessType\": \"SECRETS_MANAGER_ACCESS_TOKEN\",\n    \"SecretsManagerAccessTokenConfiguration\": {\n      \"HeaderName\": \"<string>\",\n      \"SecretArn\": \"<string>\",\n      \"SecretStringKey\": \"<string>\"\n    }\n  },\n  \"Arn\": \"<string>\",\n  \"CreationTime\": \"<dateTime>\",\n  \"DefaultSegmentDeliveryConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"HttpConfiguration\": {\n    \"BaseUrl\": \"<string>\"\n  },\n  \"LastModifiedTime\": \"<dateTime>\",\n  \"SegmentDeliveryConfigurations\": [\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"BaseUrl\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"SourceLocationName\": \"<string>\",\n  \"Tags\": {\n    \"minim7cd\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:39:35.000Z",
+                  "updatedAt": "2026-07-28T10:39:35.000Z",
+                  "uid": "35240-ad880f6c-f602-4bfa-b422-8c75450c86f3"
+                }
+              ],
+              "createdAt": "2026-07-28T10:39:35.000Z",
+              "updatedAt": "2026-07-28T10:39:35.000Z",
+              "uid": "35240-4bf8423b-b437-47c0-a424-b16fd70eb6ef"
+            }
+          ],
+          "id": "cb18ce73-ddde-4ade-aedc-f92589ca46e7",
+          "createdAt": "2026-07-28T10:39:35.000Z",
+          "updatedAt": "2026-07-28T10:39:35.000Z",
+          "uid": "35240-cb18ce73-ddde-4ade-aedc-f92589ca46e7"
+        }
+      ],
+      "id": "d4dbaf59-937e-49d4-90ee-133dbbcbdc25",
+      "createdAt": "2026-07-28T10:39:35.000Z",
+      "updatedAt": "2026-07-28T10:39:35.000Z",
+      "uid": "35240-d4dbaf59-937e-49d4-90ee-133dbbcbdc25"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://api.mediatailor.{{region}}.amazonaws.com"
+    }
+  ]
+}
