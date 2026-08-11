@@ -46,8 +46,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-channel-api
   name: Amazon MediaTailor Channel API
   description: The Channel API from Amazon MediaTailor — 6 operation(s) for channel.
@@ -66,8 +64,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-channels-api
   name: Amazon MediaTailor Channels API
   description: The Channels API from Amazon MediaTailor — 1 operation(s) for channels.
@@ -86,8 +82,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-configurelogs-api
   name: Amazon MediaTailor ConfigureLogs API
   description: The ConfigureLogs API from Amazon MediaTailor — 2 operation(s) for configurelogs.
@@ -106,8 +100,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-playbackconfiguration-api
   name: Amazon MediaTailor PlaybackConfiguration API
   description: >-
@@ -127,8 +119,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-playbackconfigurations-api
   name: Amazon MediaTailor PlaybackConfigurations API
   description: >-
@@ -148,8 +138,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-prefetchschedule-api
   name: Amazon MediaTailor PrefetchSchedule API
   description: The PrefetchSchedule API from Amazon MediaTailor — 2 operation(s) for prefetchschedule.
@@ -168,8 +156,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-sourcelocation-api
   name: Amazon MediaTailor SourceLocation API
   description: The SourceLocation API from Amazon MediaTailor — 5 operation(s) for sourcelocation.
@@ -188,8 +174,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-sourcelocations-api
   name: Amazon MediaTailor SourceLocations API
   description: The SourceLocations API from Amazon MediaTailor — 1 operation(s) for sourcelocations.
@@ -208,8 +192,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 - aid: amazon-mediatailor:amazon-mediatailor-tags-api
   name: Amazon MediaTailor Tags API
   description: The Tags API from Amazon MediaTailor — 2 operation(s) for tags.
@@ -228,8 +210,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediatailor.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-mediatailor/overview
