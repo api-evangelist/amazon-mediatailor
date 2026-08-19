@@ -1,0 +1,260 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS MediaTailor Alerts#resourceArn PrefetchSchedule API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PrefetchSchedule",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaTailor Get Prefetch Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/prefetchSchedule/:PlaybackConfigurationName/:Name",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration."
+              },
+              {
+                "name": "PlaybackConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code."
+              }
+            ]
+          },
+          "docs": "Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Prefetch Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/prefetchSchedule/:PlaybackConfigurationName/:Name",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Name",
+                "value": "",
+                "type": "path",
+                "description": "The name to assign to the schedule request."
+              },
+              {
+                "name": "PlaybackConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The name to assign to the playback configuration."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Prefetch Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/prefetchSchedule/:PlaybackConfigurationName/:Name",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body."
+              },
+              {
+                "name": "PlaybackConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the playback configuration for this prefetch schedule."
+              }
+            ]
+          },
+          "docs": "Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html\">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor List Prefetch Schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/prefetchSchedule/:PlaybackConfigurationName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "PlaybackConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "Retrieves the prefetch schedule(s) for a specific playback configuration."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lists the prefetch schedules for a playback configuration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

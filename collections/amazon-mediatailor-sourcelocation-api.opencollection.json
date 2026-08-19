@@ -1,0 +1,832 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS MediaTailor Alerts#resourceArn SourceLocation API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SourceLocation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaTailor Describe Live Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "LiveSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the live source."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this Live Source."
+              }
+            ]
+          },
+          "docs": "The live source to describe."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Live Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "LiveSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the live source."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "The live source configuration."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Update Live Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "LiveSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the live source."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this Live Source."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a live source's configuration."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Live Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/liveSource/:LiveSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "LiveSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the live source."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this Live Source."
+              }
+            ]
+          },
+          "docs": "The live source to delete."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Describe Source Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location."
+              }
+            ]
+          },
+          "docs": "Describes a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Source Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name associated with the source location."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Update Source Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Source Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location."
+              }
+            ]
+          },
+          "docs": "Deletes a source location. A source location is a container for sources. For more information about source locations, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html\">Working with source locations</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Describe Vod Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this VOD Source."
+              },
+              {
+                "name": "VodSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the VOD Source."
+              }
+            ]
+          },
+          "docs": "Provides details about a specific video on demand (VOD) source in a specific source location."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Vod Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location for this VOD source."
+              },
+              {
+                "name": "VodSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name associated with the VOD source.&gt;"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "The VOD source configuration parameters."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Update Vod Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this VOD Source."
+              },
+              {
+                "name": "VodSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the VOD source."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a VOD source's configuration."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Vod Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/vodSource/:VodSourceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this VOD Source."
+              },
+              {
+                "name": "VodSourceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the VOD source."
+              }
+            ]
+          },
+          "docs": "The video on demand (VOD) source to delete."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor List Live Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/liveSources",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this Live Sources list."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Lists the live sources contained in a source location. A source represents a piece of content."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor List Vod Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/sourceLocation/:SourceLocationName/vodSources",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": " The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results."
+              },
+              {
+                "name": "SourceLocationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the source location associated with this VOD Source list."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Lists the VOD sources contained in a source location. A source represents a piece of content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

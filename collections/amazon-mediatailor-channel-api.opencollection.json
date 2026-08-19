@@ -1,0 +1,786 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS MediaTailor Alerts#resourceArn Channel API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Channel",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaTailor Describe Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ]
+          },
+          "docs": "Describes a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Update Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ]
+          },
+          "docs": "Deletes a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Describe Program",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/program/:ProgramName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel associated with this Program."
+              },
+              {
+                "name": "ProgramName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the program."
+              }
+            ]
+          },
+          "docs": "Describes a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Create Program",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/program/:ProgramName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel for this Program."
+              },
+              {
+                "name": "ProgramName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the Program."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Update Program",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/program/:ProgramName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel for this Program."
+              },
+              {
+                "name": "ProgramName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the Program."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a program within a channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Program",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/program/:ProgramName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              },
+              {
+                "name": "ProgramName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the program."
+              }
+            ]
+          },
+          "docs": "Deletes a program within a channel. For information about programs, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html\">Working with programs</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Get Channel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/policy",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel associated with this Channel Policy."
+              }
+            ]
+          },
+          "docs": "Returns the channel's IAM policy. IAM policies are used to control access to your channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Put Channel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/policy",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The channel name associated with this Channel Policy."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an IAM policy for the channel. IAM policies are used to control access to your channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Delete Channel Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/policy",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel associated with this channel policy."
+              }
+            ]
+          },
+          "docs": "The channel policy to delete."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Get Channel Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/schedule",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel associated with this Channel Schedule."
+              },
+              {
+                "name": "durationMinutes",
+                "value": "",
+                "type": "query",
+                "description": "The duration in minutes of the channel schedule."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "<p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Retrieves information about your channel's schedule."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Start Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/start",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ]
+          },
+          "docs": "Starts a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaTailor Stop Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://api.mediatailor.{region}.amazonaws.com/channel/:ChannelName/stop",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ChannelName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the channel."
+              }
+            ]
+          },
+          "docs": "Stops a channel. For information about MediaTailor channels, see <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html\">Working with channels</a> in the <i>MediaTailor User Guide</i>."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
