@@ -223,6 +223,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-mediatailor-capability-edges.yml
+  name: Amazon MediaTailor Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-mediatailor/overview
 - type: AgenticAccess

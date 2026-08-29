@@ -1,0 +1,57 @@
+slug: amazon-mediatailor
+provider: Amazon MediaTailor
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Channel
+  spec_file: amazon-mediatailor-channel-api-openapi.yml
+  capability_id: BC-3730.10
+  capability_id_l1: BC-3730
+  capability_name: Linear Channel Scheduling
+  confidence: 0.8
+  evidence: '"CreateChannel", "CreateProgram", "GetChannelSchedule  Amazon MediaTailor Get Channel Schedule";
+    schemas "__listOfScheduleEntry", "Transition"'
+  reason: Operations create and manage linear channels and the programs/schedule entries placed on them
+    — channel assembly and linear scheduling. Some ambiguity with streaming delivery, but schedule/program
+    semantics point to linear channel scheduling.
+- tag: PlaybackConfiguration
+  spec_file: amazon-mediatailor-playbackconfiguration-api-openapi.yml
+  capability_id: BC-3760.40
+  capability_id_l1: BC-3760
+  capability_name: Ad Trafficking & Operations
+  confidence: 0.75
+  evidence: schemas "AvailSuppression", "AdMarkerPassthrough", "LivePreRollConfiguration"; description
+    "you specify ad insertion behavior and mapping information for the origin server and the ad decision
+    server (ADS)"
+  reason: Playback configurations define server-side ad insertion behaviour, avail handling and ADS mapping
+    — ad decisioning/insertion operations. Could touch streaming delivery, hence 0.75.
+- tag: PrefetchSchedule
+  spec_file: amazon-mediatailor-prefetchschedule-api-openapi.yml
+  capability_id: BC-3760.40
+  capability_id_l1: BC-3760
+  capability_name: Ad Trafficking & Operations
+  confidence: 0.75
+  evidence: 'CreatePrefetchSchedule ... schemas: PrefetchRetrieval, AvailMatchingCriteria, PrefetchConsumption
+    — "specify ad insertion behavior and mapping information for the origin server and the ad decision
+    server (ADS)"'
+  reason: Prefetch schedules pre-fetch ad responses from the ADS for avails; this is ad decisioning/insertion
+    operations (ad trafficking) within server-side ad insertion, not programme scheduling.
+- tag: PlaybackConfigurations
+  spec_file: amazon-mediatailor-playbackconfigurations-api-openapi.yml
+  capability_id: BC-3760.40
+  capability_id_l1: BC-3760
+  capability_name: Ad Trafficking & Operations
+  confidence: 0.7
+  evidence: '"ListPlaybackConfigurations"; schemas "AvailSuppression", "AdMarkerPassthrough", "LivePreRollConfiguration"'
+  reason: Lists ad-insertion playback configurations (avail suppression, ad markers, pre-roll) — inventory
+    of ad decisioning/insertion setups; only a list operation so slightly lower confidence.
