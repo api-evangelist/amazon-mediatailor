@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaTailor Alerts#resourceArn Channel API
   description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
@@ -795,16 +795,71 @@ paths:
       - Channel
 components:
   schemas:
-    ClipRange:
+    UpdateChannelResponse:
       type: object
-      required:
-      - EndOffsetMillis
       properties:
-        EndOffsetMillis:
+        Arn:
           allOf:
-          - $ref: '#/components/schemas/__long'
-          - description: The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.
-      description: Clip range configuration for the VOD source associated with the program.
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) associated with the channel.
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the channel.
+        ChannelState:
+          allOf:
+          - $ref: '#/components/schemas/ChannelState'
+          - description: Returns the state whether the channel is running or not.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp of when the channel was created.
+        FillerSlate:
+          allOf:
+          - $ref: '#/components/schemas/SlateSource'
+          - description: The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the channel was last modified.
+        Outputs:
+          allOf:
+          - $ref: '#/components/schemas/ResponseOutputs'
+          - description: The channel's output properties.
+        PlaybackMode:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> - Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        Tier:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The tier associated with this Channel.
+    SpliceInsertMessage:
+      type: object
+      properties:
+        AvailNum:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
+        AvailsExpected:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
+        SpliceEventId:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.
+        UniqueProgramId:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
+      description: Splice insert message configuration.
     Transition:
       type: object
       required:
@@ -832,150 +887,69 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: <p>Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or <code>RELATIVE</code>.</p> <p> <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.</p> <p>Note the following considerations when using <code>ABSOLUTE</code> transitions:</p> <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p> <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>
       description: Program transition configuration.
-    ChannelState:
-      type: string
-      enum:
-      - RUNNING
-      - STOPPED
-    __mapOf__string:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    TimeSignalMessage:
-      type: object
-      properties:
-        SegmentationDescriptors:
-          allOf:
-          - $ref: '#/components/schemas/SegmentationDescriptorList'
-          - description: The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.
-      description: <p>The SCTE-35 <code>time_signal</code> message can be sent with one or more <code>segmentation_descriptor</code> messages. A <code>time_signal</code> message can be sent only if a single <code>segmentation_descriptor</code> message is sent.</p> <p>The <code>time_signal</code> message contains only the <code>splice_time</code> field which is constructed using a given presentation timestamp. When sending a <code>time_signal</code> message, the <code>splice_command_type</code> field in the <code>splice_info_section</code> message is set to 6 (0x06).</p> <p>See the <code>time_signal()</code> table of the 2022 SCTE-35 specification for more information.</p>
-    __timestampUnix:
-      type: string
-      format: date-time
-    SpliceInsertMessage:
-      type: object
-      properties:
-        AvailNum:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
-        AvailsExpected:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
-        SpliceEventId:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.
-        UniqueProgramId:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.
-      description: Splice insert message configuration.
-    Integer:
-      type: integer
-    ScheduleEntryType:
-      type: string
-      enum:
-      - PROGRAM
-      - FILLER_SLATE
-    __long:
-      type: integer
-    SegmentationDescriptor:
-      type: object
-      properties:
-        SegmentNum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.
-        SegmentationEventId:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.
-        SegmentationTypeId:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.
-        SegmentationUpid:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).
-        SegmentationUpidType:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.
-        SegmentsExpected:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.
-        SubSegmentNum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.
-        SubSegmentsExpected:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.
-      description: <p>The <code>segmentation_descriptor</code> message can contain advanced metadata fields, like content identifiers, to convey a wide range of information about the ad break. MediaTailor writes the ad metadata in the egress manifest as part of the <code>EXT-X-DATERANGE</code> or <code>EventStream</code> ad marker's SCTE-35 data.</p> <p> <code>segmentation_descriptor</code> messages must be sent with the <code>time_signal</code> message type.</p> <p>See the <code>segmentation_descriptor()</code> table of the 2022 SCTE-35 specification for more information.</p>
-    ScheduleEntry:
+    RequestOutputItem:
       type: object
       required:
-      - Arn
-      - ChannelName
-      - ProgramName
-      - SourceLocationName
+      - ManifestName
+      - SourceGroup
       properties:
-        ApproximateDurationSeconds:
+        DashPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/DashPlaylistSettings'
+          - description: DASH manifest configuration parameters.
+        HlsPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/HlsPlaylistSettings'
+          - description: HLS playlist configuration parameters.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
+        SourceGroup:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
+      description: The output configuration for this channel.
+    ClipRange:
+      type: object
+      required:
+      - EndOffsetMillis
+      properties:
+        EndOffsetMillis:
           allOf:
           - $ref: '#/components/schemas/__long'
-          - description: The approximate duration of this program, in seconds.
-        ApproximateStartTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The approximate time that the program will start playing.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN of the program.
-        ChannelName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the channel that uses this schedule.
-        LiveSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the live source used for the program.
-        ProgramName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the program.
-        ScheduleAdBreaks:
-          allOf:
-          - $ref: '#/components/schemas/__listOfScheduleAdBreak'
-          - description: The schedule's ad break properties.
-        ScheduleEntryType:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleEntryType'
-          - description: The type of schedule entry.
+          - description: The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.
+      description: Clip range configuration for the VOD source associated with the program.
+    String:
+      type: string
+    SlateSource:
+      type: object
+      properties:
         SourceLocationName:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: The name of the source location.
+          - description: The name of the source location where the slate VOD source is stored.
         VodSourceName:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: The name of the VOD source.
-      description: The properties for a schedule.
-    SegmentationDescriptorList:
+          - description: The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.
+      description: Slate VOD source configuration.
+    ResponseOutputs:
       type: array
       items:
-        $ref: '#/components/schemas/SegmentationDescriptor'
-    __integer:
-      type: integer
-    __listOfScheduleEntry:
-      type: array
-      items:
-        $ref: '#/components/schemas/ScheduleEntry'
+        $ref: '#/components/schemas/ResponseOutputItem'
+    UpdateProgramTransition:
+      type: object
+      properties:
+        DurationMillis:
+          allOf:
+          - $ref: '#/components/schemas/__long'
+          - description: The duration of the live program in seconds.
+        ScheduledStartTimeMillis:
+          allOf:
+          - $ref: '#/components/schemas/__long'
+          - description: The date and time that the program is scheduled to start, in epoch milliseconds.
+      description: Program transition configuration.
     DescribeChannelResponse:
       type: object
       required:
@@ -1027,161 +1001,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/__string'
           - description: The channel's tier.
-    __listOfScheduleAdBreak:
-      type: array
-      items:
-        $ref: '#/components/schemas/ScheduleAdBreak'
-    LogType:
-      type: string
-      enum:
-      - AS_RUN
-    PutChannelPolicyResponse:
-      type: object
-      properties: {}
-    __string:
-      type: string
-    ScheduleAdBreak:
-      type: object
-      properties:
-        ApproximateDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__long'
-          - description: The approximate duration of the ad break, in seconds.
-        ApproximateStartTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The approximate time that the ad will start playing.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location containing the VOD source used for the ad break.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the VOD source used for the ad break.
-      description: The schedule's ad break properties.
-    UpdateProgramResponse:
-      type: object
-      properties:
-        AdBreaks:
-          allOf:
-          - $ref: '#/components/schemas/__listOfAdBreak'
-          - description: The ad break configuration settings.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN to assign to the program.
-        ChannelName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the channel for this program.
-        ClipRange:
-          allOf:
-          - $ref: '#/components/schemas/ClipRange'
-          - description: The clip range configuration settings.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The time the program was created.
-        DurationMillis:
-          allOf:
-          - $ref: '#/components/schemas/__long'
-          - description: The duration of the live program in milliseconds.
-        LiveSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the LiveSource for this Program.
-        ProgramName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to this program.
-        ScheduledStartTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The scheduled start time for this Program.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the source location for this program.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name that's used to refer to a VOD source.
-    CreateChannelResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) to assign to the channel.
-        ChannelName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the channel.
-        ChannelState:
-          allOf:
-          - $ref: '#/components/schemas/ChannelState'
-          - description: Indicates whether the channel is in a running state or not.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp of when the channel was created.
-        FillerSlate:
-          allOf:
-          - $ref: '#/components/schemas/SlateSource'
-          - description: Contains information about the slate used to fill gaps between programs in the schedule.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp of when the channel was last modified.
-        Outputs:
-          allOf:
-          - $ref: '#/components/schemas/ResponseOutputs'
-          - description: The output properties to assign to the channel.
-        PlaybackMode:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The playback mode to assign to the channel.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-        Tier:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The tier of the channel.
-    ResponseOutputItem:
-      type: object
-      required:
-      - ManifestName
-      - PlaybackUrl
-      - SourceGroup
-      properties:
-        DashPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/DashPlaylistSettings'
-          - description: DASH manifest configuration settings.
-        HlsPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/HlsPlaylistSettings'
-          - description: HLS manifest configuration settings.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the manifest for the channel that will appear in the channel output's playback URL.
-        PlaybackUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The URL used for playback by content players.
-        SourceGroup:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: A string used to associate a package configuration source group with a channel output.
-      description: The output item response.
-    String:
-      type: string
     LogConfigurationForChannel:
       type: object
       properties:
@@ -1190,127 +1009,24 @@ components:
           - $ref: '#/components/schemas/LogTypes'
           - description: The log types.
       description: The log configuration for the channel.
-    Long:
-      type: integer
-    RequestOutputItem:
-      type: object
-      required:
-      - ManifestName
-      - SourceGroup
-      properties:
-        DashPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/DashPlaylistSettings'
-          - description: DASH manifest configuration parameters.
-        HlsPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/HlsPlaylistSettings'
-          - description: HLS playlist configuration parameters.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
-        SourceGroup:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.
-      description: The output configuration for this channel.
-    DeleteChannelResponse:
-      type: object
-      properties: {}
-    SlateSource:
+    __listOfScheduleEntry:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScheduleEntry'
+    RelativePosition:
+      type: string
+      enum:
+      - BEFORE_PROGRAM
+      - AFTER_PROGRAM
+    TimeSignalMessage:
       type: object
       properties:
-        SourceLocationName:
+        SegmentationDescriptors:
           allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location where the slate VOD source is stored.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.
-      description: Slate VOD source configuration.
-    DescribeProgramResponse:
-      type: object
-      properties:
-        AdBreaks:
-          allOf:
-          - $ref: '#/components/schemas/__listOfAdBreak'
-          - description: The ad break configuration settings.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN of the program.
-        ChannelName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the channel that the program belongs to.
-        ClipRange:
-          allOf:
-          - $ref: '#/components/schemas/ClipRange'
-          - description: The clip range configuration settings.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp of when the program was created.
-        DurationMillis:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The duration of the live program in milliseconds.
-        LiveSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the LiveSource for this Program.
-        ProgramName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the program.
-        ScheduledStartTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The source location name.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name that's used to refer to a VOD source.
-    UpdateProgramTransition:
-      type: object
-      properties:
-        DurationMillis:
-          allOf:
-          - $ref: '#/components/schemas/__long'
-          - description: The duration of the live program in seconds.
-        ScheduledStartTimeMillis:
-          allOf:
-          - $ref: '#/components/schemas/__long'
-          - description: The date and time that the program is scheduled to start, in epoch milliseconds.
-      description: Program transition configuration.
-    GetChannelScheduleResponse:
-      type: object
-      properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfScheduleEntry'
-          - description: A list of schedule entries for the channel.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    StopChannelResponse:
-      type: object
-      properties: {}
-    GetChannelPolicyResponse:
-      type: object
-      properties:
-        Policy:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The IAM policy for the channel. IAM policies are used to control access to your channel.
-    CreateProgramResponse:
+          - $ref: '#/components/schemas/SegmentationDescriptorList'
+          - description: The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.
+      description: <p>The SCTE-35 <code>time_signal</code> message can be sent with one or more <code>segmentation_descriptor</code> messages. A <code>time_signal</code> message can be sent only if a single <code>segmentation_descriptor</code> message is sent.</p> <p>The <code>time_signal</code> message contains only the <code>splice_time</code> field which is constructed using a given presentation timestamp. When sending a <code>time_signal</code> message, the <code>splice_command_type</code> field in the <code>splice_info_section</code> message is set to 6 (0x06).</p> <p>See the <code>time_signal()</code> table of the 2022 SCTE-35 specification for more information.</p>
+    UpdateProgramResponse:
       type: object
       properties:
         AdBreaks:
@@ -1360,98 +1076,70 @@ components:
     StartChannelResponse:
       type: object
       properties: {}
-    UpdateChannelResponse:
+    DescribeProgramResponse:
       type: object
       properties:
+        AdBreaks:
+          allOf:
+          - $ref: '#/components/schemas/__listOfAdBreak'
+          - description: The ad break configuration settings.
         Arn:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) associated with the channel.
+          - description: The ARN of the program.
         ChannelName:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: The name of the channel.
-        ChannelState:
+          - description: The name of the channel that the program belongs to.
+        ClipRange:
           allOf:
-          - $ref: '#/components/schemas/ChannelState'
-          - description: Returns the state whether the channel is running or not.
+          - $ref: '#/components/schemas/ClipRange'
+          - description: The clip range configuration settings.
         CreationTime:
           allOf:
           - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp of when the channel was created.
-        FillerSlate:
+          - description: The timestamp of when the program was created.
+        DurationMillis:
           allOf:
-          - $ref: '#/components/schemas/SlateSource'
-          - description: The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
-        LastModifiedTime:
+          - $ref: '#/components/schemas/Long'
+          - description: The duration of the live program in milliseconds.
+        LiveSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the LiveSource for this Program.
+        ProgramName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the program.
+        ScheduledStartTime:
           allOf:
           - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the channel was last modified.
-        Outputs:
-          allOf:
-          - $ref: '#/components/schemas/ResponseOutputs'
-          - description: The channel's output properties.
-        PlaybackMode:
+          - description: The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.
+        SourceLocationName:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> - Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-        Tier:
+          - description: The source location name.
+        VodSourceName:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: The tier associated with this Channel.
-    ResponseOutputs:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResponseOutputItem'
-    HlsPlaylistSettings:
-      type: object
-      properties:
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-      description: HLS playlist configuration parameters.
-    __listOfAdBreak:
-      type: array
-      items:
-        $ref: '#/components/schemas/AdBreak'
-    DeleteChannelPolicyResponse:
-      type: object
-      properties: {}
-    RelativePosition:
+          - description: The name that's used to refer to a VOD source.
+    LogType:
       type: string
       enum:
-      - BEFORE_PROGRAM
-      - AFTER_PROGRAM
-    DeleteProgramResponse:
+      - AS_RUN
+    LogTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogType'
+    Integer:
+      type: integer
+    PutChannelPolicyResponse:
       type: object
       properties: {}
-    DashPlaylistSettings:
-      type: object
-      properties:
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-        MinBufferTimeSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        MinUpdatePeriodSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        SuggestedPresentationDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-      description: Dash manifest configuration parameters.
+    __listOfScheduleAdBreak:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScheduleAdBreak'
     AdBreak:
       type: object
       properties:
@@ -1476,16 +1164,346 @@ components:
           - $ref: '#/components/schemas/TimeSignalMessage'
           - description: <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p> <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p> <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
       description: Ad break configuration parameters.
-    LogTypes:
+    __long:
+      type: integer
+    GetChannelScheduleResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfScheduleEntry'
+          - description: A list of schedule entries for the channel.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    CreateChannelResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) to assign to the channel.
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the channel.
+        ChannelState:
+          allOf:
+          - $ref: '#/components/schemas/ChannelState'
+          - description: Indicates whether the channel is in a running state or not.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp of when the channel was created.
+        FillerSlate:
+          allOf:
+          - $ref: '#/components/schemas/SlateSource'
+          - description: Contains information about the slate used to fill gaps between programs in the schedule.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp of when the channel was last modified.
+        Outputs:
+          allOf:
+          - $ref: '#/components/schemas/ResponseOutputs'
+          - description: The output properties to assign to the channel.
+        PlaybackMode:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The playback mode to assign to the channel.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        Tier:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The tier of the channel.
+    SegmentationDescriptorList:
       type: array
       items:
-        $ref: '#/components/schemas/LogType'
+        $ref: '#/components/schemas/SegmentationDescriptor'
+    __listOfAdBreak:
+      type: array
+      items:
+        $ref: '#/components/schemas/AdBreak'
+    StopChannelResponse:
+      type: object
+      properties: {}
+    DashPlaylistSettings:
+      type: object
+      properties:
+        ManifestWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+        MinBufferTimeSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        MinUpdatePeriodSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        SuggestedPresentationDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+      description: Dash manifest configuration parameters.
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    Long:
+      type: integer
+    DeleteChannelPolicyResponse:
+      type: object
+      properties: {}
     MessageType:
       type: string
       enum:
       - SPLICE_INSERT
       - TIME_SIGNAL
+    ChannelState:
+      type: string
+      enum:
+      - RUNNING
+      - STOPPED
+    ScheduleEntryType:
+      type: string
+      enum:
+      - PROGRAM
+      - FILLER_SLATE
+    __string:
+      type: string
+    __timestampUnix:
+      type: string
+      format: date-time
+    HlsPlaylistSettings:
+      type: object
+      properties:
+        ManifestWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+      description: HLS playlist configuration parameters.
+    ScheduleEntry:
+      type: object
+      required:
+      - Arn
+      - ChannelName
+      - ProgramName
+      - SourceLocationName
+      properties:
+        ApproximateDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__long'
+          - description: The approximate duration of this program, in seconds.
+        ApproximateStartTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The approximate time that the program will start playing.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN of the program.
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the channel that uses this schedule.
+        LiveSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the live source used for the program.
+        ProgramName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the program.
+        ScheduleAdBreaks:
+          allOf:
+          - $ref: '#/components/schemas/__listOfScheduleAdBreak'
+          - description: The schedule's ad break properties.
+        ScheduleEntryType:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleEntryType'
+          - description: The type of schedule entry.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the VOD source.
+      description: The properties for a schedule.
+    __integer:
+      type: integer
+    ResponseOutputItem:
+      type: object
+      required:
+      - ManifestName
+      - PlaybackUrl
+      - SourceGroup
+      properties:
+        DashPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/DashPlaylistSettings'
+          - description: DASH manifest configuration settings.
+        HlsPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/HlsPlaylistSettings'
+          - description: HLS manifest configuration settings.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the manifest for the channel that will appear in the channel output's playback URL.
+        PlaybackUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL used for playback by content players.
+        SourceGroup:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A string used to associate a package configuration source group with a channel output.
+      description: The output item response.
+    ScheduleAdBreak:
+      type: object
+      properties:
+        ApproximateDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__long'
+          - description: The approximate duration of the ad break, in seconds.
+        ApproximateStartTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The approximate time that the ad will start playing.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location containing the VOD source used for the ad break.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the VOD source used for the ad break.
+      description: The schedule's ad break properties.
+    GetChannelPolicyResponse:
+      type: object
+      properties:
+        Policy:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The IAM policy for the channel. IAM policies are used to control access to your channel.
+    SegmentationDescriptor:
+      type: object
+      properties:
+        SegmentNum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.
+        SegmentationEventId:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.
+        SegmentationTypeId:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.
+        SegmentationUpid:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).
+        SegmentationUpidType:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.
+        SegmentsExpected:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.
+        SubSegmentNum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.
+        SubSegmentsExpected:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.
+      description: <p>The <code>segmentation_descriptor</code> message can contain advanced metadata fields, like content identifiers, to convey a wide range of information about the ad break. MediaTailor writes the ad metadata in the egress manifest as part of the <code>EXT-X-DATERANGE</code> or <code>EventStream</code> ad marker's SCTE-35 data.</p> <p> <code>segmentation_descriptor</code> messages must be sent with the <code>time_signal</code> message type.</p> <p>See the <code>segmentation_descriptor()</code> table of the 2022 SCTE-35 specification for more information.</p>
+    CreateProgramResponse:
+      type: object
+      properties:
+        AdBreaks:
+          allOf:
+          - $ref: '#/components/schemas/__listOfAdBreak'
+          - description: The ad break configuration settings.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN to assign to the program.
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the channel for this program.
+        ClipRange:
+          allOf:
+          - $ref: '#/components/schemas/ClipRange'
+          - description: The clip range configuration settings.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time the program was created.
+        DurationMillis:
+          allOf:
+          - $ref: '#/components/schemas/__long'
+          - description: The duration of the live program in milliseconds.
+        LiveSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the LiveSource for this Program.
+        ProgramName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to this program.
+        ScheduledStartTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The scheduled start time for this Program.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the source location for this program.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name that's used to refer to a VOD source.
+    DeleteChannelResponse:
+      type: object
+      properties: {}
+    DeleteProgramResponse:
+      type: object
+      properties: {}
   parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -1504,26 +1522,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
