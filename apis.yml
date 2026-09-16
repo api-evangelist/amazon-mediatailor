@@ -1,7 +1,7 @@
 aid: amazon-mediatailor
 name: Amazon MediaTailor
-description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize
-  your video content with server-side targeted advertising while maintaining broadcast-quality.
+description: AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that
+  enables you to monetize your video content with server-side targeted advertising while maintaining broadcast-quality.
 type: Index
 deliveryModel:
   model: saas
@@ -37,13 +37,12 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-mediatailor:amazon-mediatailor-alerts-resourcearn-api
   name: Amazon MediaTailor Alerts#resourceArn API
-  description: >-
-    The Alerts#resourceArn API from Amazon MediaTailor — 1 operation(s) for alerts#resourcearn.
+  description: The Alerts#resourceArn API from Amazon MediaTailor — 1 operation(s) for alerts#resourcearn.
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
@@ -115,8 +114,7 @@ apis:
     url: https://aws.amazon.com/mediatailor/faqs/
 - aid: amazon-mediatailor:amazon-mediatailor-playbackconfiguration-api
   name: Amazon MediaTailor PlaybackConfiguration API
-  description: >-
-    The PlaybackConfiguration API from Amazon MediaTailor — 2 operation(s) for playbackconfiguration.
+  description: The PlaybackConfiguration API from Amazon MediaTailor — 2 operation(s) for playbackconfiguration.
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
@@ -134,8 +132,7 @@ apis:
     url: https://aws.amazon.com/mediatailor/faqs/
 - aid: amazon-mediatailor:amazon-mediatailor-playbackconfigurations-api
   name: Amazon MediaTailor PlaybackConfigurations API
-  description: >-
-    The PlaybackConfigurations API from Amazon MediaTailor — 1 operation(s) for playbackconfigurations.
+  description: The PlaybackConfigurations API from Amazon MediaTailor — 1 operation(s) for playbackconfigurations.
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
@@ -224,6 +221,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
 common:
+- type: Website
+  url: https://amazon.com
 - type: CapabilityMap
   url: capabilities/amazon-mediatailor-capability-edges.yml
   name: Amazon MediaTailor Business Capability Map
