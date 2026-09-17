@@ -42,7 +42,8 @@ specificationVersion: '0.23'
 apis:
 - aid: amazon-mediatailor:amazon-mediatailor-alerts-resourcearn-api
   name: Amazon MediaTailor Alerts#resourceArn API
-  description: The Alerts#resourceArn API from Amazon MediaTailor — 1 operation(s) for alerts#resourcearn.
+  description: >-
+    The Alerts#resourceArn API from Amazon MediaTailor — 1 operation(s) for alerts#resourcearn.
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
@@ -94,114 +95,6 @@ apis:
     url: https://aws.amazon.com/mediatailor/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-configurelogs-api
-  name: Amazon MediaTailor ConfigureLogs API
-  description: The ConfigureLogs API from Amazon MediaTailor — 2 operation(s) for configurelogs.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - ConfigureLogs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-configurelogs-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-playbackconfiguration-api
-  name: Amazon MediaTailor PlaybackConfiguration API
-  description: The PlaybackConfiguration API from Amazon MediaTailor — 2 operation(s) for playbackconfiguration.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - PlaybackConfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-playbackconfiguration-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-playbackconfigurations-api
-  name: Amazon MediaTailor PlaybackConfigurations API
-  description: The PlaybackConfigurations API from Amazon MediaTailor — 1 operation(s) for playbackconfigurations.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - PlaybackConfigurations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-playbackconfigurations-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-prefetchschedule-api
-  name: Amazon MediaTailor PrefetchSchedule API
-  description: The PrefetchSchedule API from Amazon MediaTailor — 2 operation(s) for prefetchschedule.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - PrefetchSchedule
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-prefetchschedule-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-sourcelocation-api
-  name: Amazon MediaTailor SourceLocation API
-  description: The SourceLocation API from Amazon MediaTailor — 5 operation(s) for sourcelocation.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - SourceLocation
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-sourcelocation-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
-- aid: amazon-mediatailor:amazon-mediatailor-sourcelocations-api
-  name: Amazon MediaTailor SourceLocations API
-  description: The SourceLocations API from Amazon MediaTailor — 1 operation(s) for sourcelocations.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - SourceLocations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-sourcelocations-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
 - aid: amazon-mediatailor:amazon-mediatailor-tags-api
   name: Amazon MediaTailor Tags API
   description: The Tags API from Amazon MediaTailor — 2 operation(s) for tags.
@@ -212,6 +105,117 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-mediatailor-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-configure-logs-api
+  name: Amazon MediaTailor Configure Logs API
+  description: The Configure Logs API from Amazon MediaTailor — 2 operation(s) for configure logs.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Configure Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-configure-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-playback-configuration-api
+  name: Amazon MediaTailor Playback Configuration API
+  description: >-
+    The Playback Configuration API from Amazon MediaTailor — 2 operation(s) for playback configuration.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Playback Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-playback-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-playback-configurations-api
+  name: Amazon MediaTailor Playback Configurations API
+  description: >-
+    The Playback Configurations API from Amazon MediaTailor — 1 operation(s) for playback configurations.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Playback Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-playback-configurations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-prefetch-schedule-api
+  name: Amazon MediaTailor Prefetch Schedule API
+  description: >-
+    The Prefetch Schedule API from Amazon MediaTailor — 2 operation(s) for prefetch schedule.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Prefetch Schedule
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-prefetch-schedule-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-source-location-api
+  name: Amazon MediaTailor Source Location API
+  description: The Source Location API from Amazon MediaTailor — 5 operation(s) for source location.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Source Location
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-source-location-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-source-locations-api
+  name: Amazon MediaTailor Source Locations API
+  description: The Source Locations API from Amazon MediaTailor — 1 operation(s) for source locations.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Source Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-source-locations-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/mediatailor/
   - type: GettingStarted
