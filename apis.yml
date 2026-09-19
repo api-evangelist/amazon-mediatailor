@@ -65,6 +65,8 @@ apis:
   humanURL: https://aws.amazon.com/mediatailor/
   baseURL: http://api.mediatailor.{region}.amazonaws.com
   tags:
+  - Channels
+  tags_raw:
   - Channel
   properties:
   - type: OpenAPI
