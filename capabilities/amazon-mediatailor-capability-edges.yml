@@ -25,7 +25,8 @@ edges:
     — channel assembly and linear scheduling. Some ambiguity with streaming delivery, but schedule/program
     semantics point to linear channel scheduling.
 - tag: PlaybackConfiguration
-  spec_file: amazon-mediatailor-playbackconfiguration-api-openapi.yml
+  spec_file: amazon-mediatailor-playback-configuration-api-openapi.yml
+  reanchored_from: amazon-mediatailor-playbackconfiguration-api-openapi.yml
   capability_id: BC-3760.40
   capability_id_l1: BC-3760
   capability_name: Ad Trafficking & Operations
@@ -36,7 +37,8 @@ edges:
   reason: Playback configurations define server-side ad insertion behaviour, avail handling and ADS mapping
     — ad decisioning/insertion operations. Could touch streaming delivery, hence 0.75.
 - tag: PrefetchSchedule
-  spec_file: amazon-mediatailor-prefetchschedule-api-openapi.yml
+  spec_file: amazon-mediatailor-prefetch-schedule-api-openapi.yml
+  reanchored_from: amazon-mediatailor-prefetchschedule-api-openapi.yml
   capability_id: BC-3760.40
   capability_id_l1: BC-3760
   capability_name: Ad Trafficking & Operations
@@ -47,7 +49,8 @@ edges:
   reason: Prefetch schedules pre-fetch ad responses from the ADS for avails; this is ad decisioning/insertion
     operations (ad trafficking) within server-side ad insertion, not programme scheduling.
 - tag: PlaybackConfigurations
-  spec_file: amazon-mediatailor-playbackconfigurations-api-openapi.yml
+  spec_file: amazon-mediatailor-playback-configurations-api-openapi.yml
+  reanchored_from: amazon-mediatailor-playbackconfigurations-api-openapi.yml
   capability_id: BC-3760.40
   capability_id_l1: BC-3760
   capability_name: Ad Trafficking & Operations
