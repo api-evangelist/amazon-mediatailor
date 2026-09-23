@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2018-04-23
   x-release: v4
-  title: AWS MediaTailor Alerts#resourceArn Source Location API
-  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  title: AWS MediaTailor Source Location API
+  description: Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: SourceLocation
+- name: Source Location
 paths:
   /sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}:
     parameters:
@@ -180,7 +181,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     delete:
       operationId: DeleteLiveSource
       description: The live source to delete.
@@ -214,7 +215,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     get:
       operationId: DescribeLiveSource
       description: The live source to describe.
@@ -253,7 +254,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     put:
       operationId: UpdateLiveSource
       description: Updates a live source's configuration.
@@ -306,7 +307,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
   /sourceLocation/{SourceLocationName}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -318,7 +319,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateSourceLocation
-      description: Creates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
+      description: Creates a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide.
       responses:
         '200':
           description: Success
@@ -395,10 +396,10 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     delete:
       operationId: DeleteSourceLocation
-      description: Deletes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
+      description: Deletes a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide.
       responses:
         '200':
           description: Success
@@ -423,10 +424,10 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     get:
       operationId: DescribeSourceLocation
-      description: Describes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
+      description: Describes a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide.
       responses:
         '200':
           description: Success
@@ -456,10 +457,10 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     put:
       operationId: UpdateSourceLocation
-      description: Updates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
+      description: Updates a source location. A source location is a container for sources. For more information about source locations, see Working with source locations in the MediaTailor User Guide.
       responses:
         '200':
           description: Success
@@ -531,7 +532,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
   /sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -598,7 +599,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     delete:
       operationId: DeleteVodSource
       description: The video on demand (VOD) source to delete.
@@ -632,7 +633,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     get:
       operationId: DescribeVodSource
       description: Provides details about a specific video on demand (VOD) source in a specific source location.
@@ -671,7 +672,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
     put:
       operationId: UpdateVodSource
       description: Updates a VOD source's configuration.
@@ -724,7 +725,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
   /sourceLocation/{SourceLocationName}/liveSources:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -789,7 +790,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
   /sourceLocation/{SourceLocationName}/vodSources:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -854,9 +855,13 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - SourceLocation
+      - Source Location
 components:
   schemas:
+    __listOfVodSource:
+      type: array
+      items:
+        $ref: '#/components/schemas/VodSource'
     DescribeLiveSourceResponse:
       type: object
       properties:
@@ -890,350 +895,6 @@ components:
           - xml:
               name: tags
             description: The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-    HttpPackageConfigurations:
-      type: array
-      description: The VOD source's HTTP package configuration settings.
-      items:
-        $ref: '#/components/schemas/HttpPackageConfiguration'
-    AccessConfiguration:
-      type: object
-      properties:
-        AccessType:
-          allOf:
-          - $ref: '#/components/schemas/AccessType'
-          - description: '<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>'
-        SecretsManagerAccessTokenConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/SecretsManagerAccessTokenConfiguration'
-          - description: AWS Secrets Manager access token configuration parameters.
-      description: Access configuration parameters.
-    SegmentDeliveryConfiguration:
-      type: object
-      properties:
-        BaseUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: A unique identifier used to distinguish between multiple segment delivery configurations in a source location.
-      description: The segment delivery configuration settings.
-    __listOfVodSource:
-      type: array
-      items:
-        $ref: '#/components/schemas/VodSource'
-    CreateLiveSourceResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN to assign to the live source.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The time the live source was created.
-        HttpPackageConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/HttpPackageConfigurations'
-          - description: A list of HTTP package configuration parameters for this live source.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The time the live source was last modified.
-        LiveSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the live source.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the source location of the live source.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-    ListVodSourcesResponse:
-      type: object
-      properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfVodSource'
-          - description: Lists the VOD sources.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    VodSource:
-      type: object
-      required:
-      - Arn
-      - HttpPackageConfigurations
-      - SourceLocationName
-      - VodSourceName
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN for the VOD source.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the VOD source was created.
-        HttpPackageConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/HttpPackageConfigurations'
-          - description: The HTTP package configurations for the VOD source.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the VOD source was last modified.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location that the VOD source is associated with.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the VOD source.
-      description: VOD source configuration parameters.
-    UpdateLiveSourceResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) associated with this live source.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the live source was created.
-        HttpPackageConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/HttpPackageConfigurations'
-          - description: A list of HTTP package configurations for the live source on this account.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the live source was last modified.
-        LiveSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the live source.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location associated with the live source.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-    HttpPackageConfiguration:
-      type: object
-      required:
-      - Path
-      - SourceGroup
-      - Type
-      properties:
-        Path:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
-        SourceGroup:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/Type'
-          - description: The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.
-      description: The HTTP package configuration properties for the requested VOD source.
-    DeleteSourceLocationResponse:
-      type: object
-      properties: {}
-    __listOfLiveSource:
-      type: array
-      items:
-        $ref: '#/components/schemas/LiveSource'
-    DefaultSegmentDeliveryConfiguration:
-      type: object
-      properties:
-        BaseUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.
-      description: The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.
-    Type:
-      type: string
-      enum:
-      - DASH
-      - HLS
-    DescribeVodSourceResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN of the VOD source.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the VOD source was created.
-        HttpPackageConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/HttpPackageConfigurations'
-          - description: The HTTP package configurations.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The last modified time of the VOD source.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location associated with the VOD source.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the VOD source.
-    __listOfSegmentDeliveryConfiguration:
-      type: array
-      items:
-        $ref: '#/components/schemas/SegmentDeliveryConfiguration'
-    UpdateVodSourceResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) associated with the VOD source.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the VOD source was created.
-        HttpPackageConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/HttpPackageConfigurations'
-          - description: A list of HTTP package configurations for the VOD source on this account.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the VOD source was last modified.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location associated with the VOD source.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-        VodSourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the VOD source.
-    CreateSourceLocationResponse:
-      type: object
-      properties:
-        AccessConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/AccessConfiguration'
-          - description: Access configuration parameters. Configures the type of authentication used to access content from your source location.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN to assign to the source location.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The time the source location was created.
-        DefaultSegmentDeliveryConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/DefaultSegmentDeliveryConfiguration'
-          - description: The optional configuration for the server that serves segments.
-        HttpConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/HttpConfiguration'
-          - description: The source's HTTP package configurations.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The time the source location was last modified.
-        SegmentDeliveryConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/__listOfSegmentDeliveryConfiguration'
-          - description: The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the source location.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
-    ListLiveSourcesResponse:
-      type: object
-      properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfLiveSource'
-          - description: Lists the live sources.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    SecretsManagerAccessTokenConfiguration:
-      type: object
-      properties:
-        HeaderName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the HTTP header used to supply the access token in requests to the source location.
-        SecretArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.
-        SecretStringKey:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.
-      description: AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.
-    DeleteLiveSourceResponse:
-      type: object
-      properties: {}
-    HttpConfiguration:
-      type: object
-      required:
-      - BaseUrl
-      properties:
-        BaseUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.
-      description: The HTTP configuration for the source location.
-    __mapOf__string:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
     LiveSource:
       type: object
       required:
@@ -1273,47 +934,6 @@ components:
               name: tags
             description: The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
       description: Live source configuration parameters.
-    UpdateSourceLocationResponse:
-      type: object
-      properties:
-        AccessConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/AccessConfiguration'
-          - description: Access configuration parameters. Configures the type of authentication used to access content from your source location.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The Amazon Resource Name (ARN) associated with the source location.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the source location was created.
-        DefaultSegmentDeliveryConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/DefaultSegmentDeliveryConfiguration'
-          - description: The optional configuration for the host server that serves segments.
-        HttpConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/HttpConfiguration'
-          - description: The HTTP configuration for the source location.
-        LastModifiedTime:
-          allOf:
-          - $ref: '#/components/schemas/__timestampUnix'
-          - description: The timestamp that indicates when the source location was last modified.
-        SegmentDeliveryConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/__listOfSegmentDeliveryConfiguration'
-          - description: The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.
-        SourceLocationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/__mapOf__string'
-          - xml:
-              name: tags
-            description: The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
     DescribeSourceLocationResponse:
       type: object
       properties:
@@ -1355,19 +975,348 @@ components:
           - xml:
               name: tags
             description: The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+    CreateLiveSourceResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN to assign to the live source.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time the live source was created.
+        HttpPackageConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/HttpPackageConfigurations'
+          - description: A list of HTTP package configuration parameters for this live source.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time the live source was last modified.
+        LiveSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the live source.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the source location of the live source.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
     AccessType:
       type: string
       enum:
       - S3_SIGV4
       - SECRETS_MANAGER_ACCESS_TOKEN
-    DeleteVodSourceResponse:
+    HttpPackageConfiguration:
       type: object
-      properties: {}
-    __string:
-      type: string
+      required:
+      - Path
+      - SourceGroup
+      - Type
+      properties:
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.
+        SourceGroup:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/Type'
+          - description: The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.
+      description: The HTTP package configuration properties for the requested VOD source.
+    UpdateLiveSourceResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) associated with this live source.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the live source was created.
+        HttpPackageConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/HttpPackageConfigurations'
+          - description: A list of HTTP package configurations for the live source on this account.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the live source was last modified.
+        LiveSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the live source.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location associated with the live source.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+    CreateSourceLocationResponse:
+      type: object
+      properties:
+        AccessConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AccessConfiguration'
+          - description: Access configuration parameters. Configures the type of authentication used to access content from your source location.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN to assign to the source location.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time the source location was created.
+        DefaultSegmentDeliveryConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/DefaultSegmentDeliveryConfiguration'
+          - description: The optional configuration for the server that serves segments.
+        HttpConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/HttpConfiguration'
+          - description: The source's HTTP package configurations.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The time the source location was last modified.
+        SegmentDeliveryConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/__listOfSegmentDeliveryConfiguration'
+          - description: The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the source location.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+    VodSource:
+      type: object
+      required:
+      - Arn
+      - HttpPackageConfigurations
+      - SourceLocationName
+      - VodSourceName
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN for the VOD source.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the VOD source was created.
+        HttpPackageConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/HttpPackageConfigurations'
+          - description: The HTTP package configurations for the VOD source.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the VOD source was last modified.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location that the VOD source is associated with.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the VOD source.
+      description: VOD source configuration parameters.
     __timestampUnix:
       type: string
       format: date-time
+    HttpPackageConfigurations:
+      type: array
+      description: The VOD source's HTTP package configuration settings.
+      items:
+        $ref: '#/components/schemas/HttpPackageConfiguration'
+    ListLiveSourcesResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfLiveSource'
+          - description: Lists the live sources.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    SegmentDeliveryConfiguration:
+      type: object
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A unique identifier used to distinguish between multiple segment delivery configurations in a source location.
+      description: The segment delivery configuration settings.
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    SecretsManagerAccessTokenConfiguration:
+      type: object
+      properties:
+        HeaderName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the HTTP header used to supply the access token in requests to the source location.
+        SecretArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.
+        SecretStringKey:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.
+      description: AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.
+    AccessConfiguration:
+      type: object
+      properties:
+        AccessType:
+          allOf:
+          - $ref: '#/components/schemas/AccessType'
+          - description: '<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>'
+        SecretsManagerAccessTokenConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/SecretsManagerAccessTokenConfiguration'
+          - description: AWS Secrets Manager access token configuration parameters.
+      description: Access configuration parameters.
+    DeleteLiveSourceResponse:
+      type: object
+      properties: {}
+    __listOfLiveSource:
+      type: array
+      items:
+        $ref: '#/components/schemas/LiveSource'
+    DeleteSourceLocationResponse:
+      type: object
+      properties: {}
+    DeleteVodSourceResponse:
+      type: object
+      properties: {}
+    __listOfSegmentDeliveryConfiguration:
+      type: array
+      items:
+        $ref: '#/components/schemas/SegmentDeliveryConfiguration'
+    HttpConfiguration:
+      type: object
+      required:
+      - BaseUrl
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.
+      description: The HTTP configuration for the source location.
+    Type:
+      type: string
+      enum:
+      - DASH
+      - HLS
+    __string:
+      type: string
+    DefaultSegmentDeliveryConfiguration:
+      type: object
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.
+      description: The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.
+    UpdateVodSourceResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) associated with the VOD source.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the VOD source was created.
+        HttpPackageConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/HttpPackageConfigurations'
+          - description: A list of HTTP package configurations for the VOD source on this account.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the VOD source was last modified.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location associated with the VOD source.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the VOD source.
+    DescribeVodSourceResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN of the VOD source.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the VOD source was created.
+        HttpPackageConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/HttpPackageConfigurations'
+          - description: The HTTP package configurations.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The last modified time of the VOD source.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location associated with the VOD source.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the VOD source.
     CreateVodSourceResponse:
       type: object
       properties:
@@ -1401,33 +1350,67 @@ components:
           allOf:
           - $ref: '#/components/schemas/__string'
           - description: The name to assign to the VOD source.
+    UpdateSourceLocationResponse:
+      type: object
+      properties:
+        AccessConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AccessConfiguration'
+          - description: Access configuration parameters. Configures the type of authentication used to access content from your source location.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The Amazon Resource Name (ARN) associated with the source location.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the source location was created.
+        DefaultSegmentDeliveryConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/DefaultSegmentDeliveryConfiguration'
+          - description: The optional configuration for the host server that serves segments.
+        HttpConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/HttpConfiguration'
+          - description: The HTTP configuration for the source location.
+        LastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/__timestampUnix'
+          - description: The timestamp that indicates when the source location was last modified.
+        SegmentDeliveryConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/__listOfSegmentDeliveryConfiguration'
+          - description: The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.
+        SourceLocationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/__mapOf__string'
+          - xml:
+              name: tags
+            description: The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
+    ListVodSourcesResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfVodSource'
+          - description: Lists the VOD sources.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -1440,6 +1423,24 @@ components:
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2018-04-23
   x-release: v4
-  title: AWS MediaTailor Alerts#resourceArn Channels API
-  description: <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>
+  title: AWS MediaTailor Channels API
+  description: Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediatailor-2018-04-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -174,6 +175,49 @@ paths:
       tags:
       - Channels
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     ListChannelsResponse:
       type: object
@@ -186,22 +230,69 @@ components:
           allOf:
           - $ref: '#/components/schemas/__string'
           - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    SlateSource:
+    ResponseOutputItem:
+      type: object
+      required:
+      - ManifestName
+      - PlaybackUrl
+      - SourceGroup
+      properties:
+        DashPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/DashPlaylistSettings'
+          - description: DASH manifest configuration settings.
+        HlsPlaylistSettings:
+          allOf:
+          - $ref: '#/components/schemas/HlsPlaylistSettings'
+          - description: HLS manifest configuration settings.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the manifest for the channel that will appear in the channel output's playback URL.
+        PlaybackUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The URL used for playback by content players.
+        SourceGroup:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: A string used to associate a package configuration source group with a channel output.
+      description: The output item response.
+    __timestampUnix:
+      type: string
+      format: date-time
+    DashPlaylistSettings:
       type: object
       properties:
-        SourceLocationName:
+        ManifestWindowSeconds:
           allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the source location where the slate VOD source is stored.
-        VodSourceName:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+        MinBufferTimeSeconds:
           allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.
-      description: Slate VOD source configuration.
-    ResponseOutputs:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResponseOutputItem'
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        MinUpdatePeriodSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        SuggestedPresentationDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+      description: Dash manifest configuration parameters.
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    HlsPlaylistSettings:
+      type: object
+      properties:
+        ManifestWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+      description: HLS playlist configuration parameters.
     LogConfigurationForChannel:
       type: object
       properties:
@@ -210,18 +301,6 @@ components:
           - $ref: '#/components/schemas/LogTypes'
           - description: The log types.
       description: The log configuration for the channel.
-    LogType:
-      type: string
-      enum:
-      - AS_RUN
-    LogTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/LogType'
-    __listOfChannel:
-      type: array
-      items:
-        $ref: '#/components/schemas/Channel'
     Channel:
       type: object
       required:
@@ -280,116 +359,38 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: The tier for this channel. STANDARD tier channels can contain live programs.
       description: The configuration parameters for a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.
-    __mapOf__string:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    DashPlaylistSettings:
-      type: object
-      properties:
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-        MinBufferTimeSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        MinUpdatePeriodSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        SuggestedPresentationDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-      description: Dash manifest configuration parameters.
+    ResponseOutputs:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResponseOutputItem'
     __string:
       type: string
-    __timestampUnix:
-      type: string
-      format: date-time
-    HlsPlaylistSettings:
+    LogTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogType'
+    SlateSource:
       type: object
       properties:
-        ManifestWindowSeconds:
+        SourceLocationName:
           allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-      description: HLS playlist configuration parameters.
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the source location where the slate VOD source is stored.
+        VodSourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.
+      description: Slate VOD source configuration.
+    LogType:
+      type: string
+      enum:
+      - AS_RUN
+    __listOfChannel:
+      type: array
+      items:
+        $ref: '#/components/schemas/Channel'
     __integer:
       type: integer
-    ResponseOutputItem:
-      type: object
-      required:
-      - ManifestName
-      - PlaybackUrl
-      - SourceGroup
-      properties:
-        DashPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/DashPlaylistSettings'
-          - description: DASH manifest configuration settings.
-        HlsPlaylistSettings:
-          allOf:
-          - $ref: '#/components/schemas/HlsPlaylistSettings'
-          - description: HLS manifest configuration settings.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the manifest for the channel that will appear in the channel output's playback URL.
-        PlaybackUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The URL used for playback by content players.
-        SourceGroup:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: A string used to associate a package configuration source group with a channel output.
-      description: The output item response.
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
