@@ -216,9 +216,46 @@ paths:
       tags:
       - Configure Logs
 components:
+  schemas:
+    ConfigureLogsForPlaybackConfigurationResponse:
+      type: object
+      required:
+      - PercentEnabled
+      properties:
+        PercentEnabled:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the playback configuration.
+    LogType:
+      type: string
+      enum:
+      - AS_RUN
+    ConfigureLogsForChannelResponse:
+      type: object
+      properties:
+        ChannelName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name of the channel.
+        LogTypes:
+          allOf:
+          - $ref: '#/components/schemas/LogTypes'
+          - description: The types of logs collected.
+    __integer:
+      type: integer
+    __string:
+      type: string
+    LogTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogType'
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -235,20 +272,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -259,43 +290,12 @@ components:
       schema:
         type: string
       required: false
-  schemas:
-    LogTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/LogType'
-    __string:
-      type: string
-    LogType:
-      type: string
-      enum:
-      - AS_RUN
-    ConfigureLogsForPlaybackConfigurationResponse:
-      type: object
-      required:
-      - PercentEnabled
-      properties:
-        PercentEnabled:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
-        PlaybackConfigurationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the playback configuration.
-    ConfigureLogsForChannelResponse:
-      type: object
-      properties:
-        ChannelName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name of the channel.
-        LogTypes:
-          allOf:
-          - $ref: '#/components/schemas/LogTypes'
-          - description: The types of logs collected.
-    __integer:
-      type: integer
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -351,60 +351,25 @@ paths:
       tags:
       - Prefetch Schedule
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    __listOfPrefetchSchedule:
-      type: array
-      items:
-        $ref: '#/components/schemas/PrefetchSchedule'
-    __timestampUnix:
-      type: string
-      format: date-time
     DeletePrefetchScheduleResponse:
       type: object
       properties: {}
+    ListPrefetchSchedulesResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfPrefetchSchedule'
+          - description: Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    Operator:
+      type: string
+      enum:
+      - EQUALS
     PrefetchSchedule:
       type: object
       required:
@@ -439,48 +404,25 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.
       description: A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.
-    __mapOf__string:
+    __listOfAvailMatchingCriteria:
+      type: array
+      items:
+        $ref: '#/components/schemas/AvailMatchingCriteria'
+    AvailMatchingCriteria:
       type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    ListPrefetchSchedulesResponse:
-      type: object
+      required:
+      - DynamicVariable
+      - Operator
       properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfPrefetchSchedule'
-          - description: Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.
-        NextToken:
+        DynamicVariable:
           allOf:
           - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    CreatePrefetchScheduleResponse:
-      type: object
-      properties:
-        Arn:
+          - description: <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
+        Operator:
           allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The ARN to assign to the prefetch schedule.
-        Consumption:
-          allOf:
-          - $ref: '#/components/schemas/PrefetchConsumption'
-          - description: The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the prefetch schedule.
-        PlaybackConfigurationName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The name to assign to the playback configuration.
-        Retrieval:
-          allOf:
-          - $ref: '#/components/schemas/PrefetchRetrieval'
-          - description: The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.
-        StreamId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
+          - $ref: '#/components/schemas/Operator'
+          - description: For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.
+      description: <p>MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into.</p> <p>As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code> and <code>Operator</code> to <code>EQUALS</code>, and your playback configuration has an ADS URL of <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>. And the prefetch request to the ADS contains these values <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of <code>my-awesome-event</code>, since it must match the event id that MediaTailor uses to query the ADS.</p> <p>You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical <code>AND</code>. You can model logical <code>OR</code> combinations by creating multiple prefetch schedules.</p>
     GetPrefetchScheduleResponse:
       type: object
       properties:
@@ -510,21 +452,6 @@ components:
           - description: An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.
     __string:
       type: string
-    AvailMatchingCriteria:
-      type: object
-      required:
-      - DynamicVariable
-      - Operator
-      properties:
-        DynamicVariable:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
-        Operator:
-          allOf:
-          - $ref: '#/components/schemas/Operator'
-          - description: For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.
-      description: <p>MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into.</p> <p>As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code> and <code>Operator</code> to <code>EQUALS</code>, and your playback configuration has an ADS URL of <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>. And the prefetch request to the ADS contains these values <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of <code>my-awesome-event</code>, since it must match the event id that MediaTailor uses to query the ADS.</p> <p>You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical <code>AND</code>. You can model logical <code>OR</code> combinations by creating multiple prefetch schedules.</p>
     PrefetchConsumption:
       type: object
       required:
@@ -543,14 +470,6 @@ components:
           - $ref: '#/components/schemas/__timestampUnix'
           - description: The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.
       description: A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.
-    Operator:
-      type: string
-      enum:
-      - EQUALS
-    __listOfAvailMatchingCriteria:
-      type: array
-      items:
-        $ref: '#/components/schemas/AvailMatchingCriteria'
     PrefetchRetrieval:
       type: object
       required:
@@ -569,6 +488,87 @@ components:
           - $ref: '#/components/schemas/__timestampUnix'
           - description: The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.
       description: A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.
+    __listOfPrefetchSchedule:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrefetchSchedule'
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    CreatePrefetchScheduleResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The ARN to assign to the prefetch schedule.
+        Consumption:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchConsumption'
+          - description: The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the prefetch schedule.
+        PlaybackConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The name to assign to the playback configuration.
+        Retrieval:
+          allOf:
+          - $ref: '#/components/schemas/PrefetchRetrieval'
+          - description: The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.
+        StreamId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.
+    __timestampUnix:
+      type: string
+      format: date-time
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

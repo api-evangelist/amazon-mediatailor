@@ -4,7 +4,7 @@
     "_original/amazon-mediatailor-openapi-original.yml"
   ],
   "outputs": [
-    "amazon-mediatailor-alerts-resourcearn-api-openapi.yml",
+    "amazon-mediatailor-alerts-api-openapi.yml",
     "amazon-mediatailor-channel-api-openapi.yml",
     "amazon-mediatailor-channels-api-openapi.yml",
     "amazon-mediatailor-configurelogs-api-openapi.yml",
@@ -16,7 +16,7 @@
     "amazon-mediatailor-tags-api-openapi.yml"
   ],
   "archived": [
-    "deleted 6 superseded output(s) from the previous generation"
+    "deleted 7 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -54,7 +54,7 @@
     "amazon-mediatailor-openapi-original.yml: tagged paths DELETE /playbackConfiguration/{Name} -> PlaybackConfiguration",
     "amazon-mediatailor-openapi-original.yml: tagged paths GET /playbackConfiguration/{Name} -> PlaybackConfiguration",
     "amazon-mediatailor-openapi-original.yml: tagged paths GET /channel/{ChannelName}/schedule -> Channel",
-    "amazon-mediatailor-openapi-original.yml: tagged paths GET /alerts#resourceArn -> Alerts#resourceArn",
+    "amazon-mediatailor-openapi-original.yml: tagged paths GET /alerts#resourceArn -> Alerts",
     "amazon-mediatailor-openapi-original.yml: tagged paths GET /channels -> Channels",
     "amazon-mediatailor-openapi-original.yml: tagged paths GET /sourceLocation/{SourceLocationName}/liveSources -> SourceLocation",
     "amazon-mediatailor-openapi-original.yml: tagged paths GET /playbackConfigurations -> PlaybackConfigurations",
@@ -67,7 +67,7 @@
     "amazon-mediatailor-openapi-original.yml: tagged paths PUT /channel/{ChannelName}/start -> Channel",
     "amazon-mediatailor-openapi-original.yml: tagged paths PUT /channel/{ChannelName}/stop -> Channel",
     "amazon-mediatailor-openapi-original.yml: tagged paths DELETE /tags/{ResourceArn}#tagKeys -> Tags",
-    "amazon-mediatailor-openapi-original.yml: declared missing tag: Alerts#resourceArn",
+    "amazon-mediatailor-openapi-original.yml: declared missing tag: Alerts",
     "amazon-mediatailor-openapi-original.yml: declared missing tag: Channel",
     "amazon-mediatailor-openapi-original.yml: declared missing tag: Channels",
     "amazon-mediatailor-openapi-original.yml: declared missing tag: ConfigureLogs",
@@ -77,8 +77,8 @@
     "amazon-mediatailor-openapi-original.yml: declared missing tag: SourceLocation",
     "amazon-mediatailor-openapi-original.yml: declared missing tag: SourceLocations",
     "amazon-mediatailor-openapi-original.yml: declared missing tag: Tags",
-    "superseded outputs removed: amazon-mediatailor-configure-logs-api-openapi.yml, amazon-mediatailor-playback-configuration-api-openapi.yml, amazon-mediatailor-playback-configurations-api-openapi.yml, amazon-mediatailor-prefetch-schedule-api-openapi.yml, amazon-mediatailor-source-location-api-openapi.yml \u2026",
-    "apis.yml register: written (+6 apis, 10 total)"
+    "superseded outputs removed: amazon-mediatailor-alerts-resourcearn-api-openapi.yml, amazon-mediatailor-configure-logs-api-openapi.yml, amazon-mediatailor-playback-configuration-api-openapi.yml, amazon-mediatailor-playback-configurations-api-openapi.yml, amazon-mediatailor-prefetch-schedule-api-openapi.yml \u2026",
+    "apis.yml register: written (+7 apis, 10 total)"
   ],
   "skipped": [
     "amazon-mediatailor-alerts-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -40,25 +40,6 @@ created: '2026-03-16'
 modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
-- aid: amazon-mediatailor:amazon-mediatailor-alerts-resourcearn-api
-  name: Amazon MediaTailor Alerts#resourceArn API
-  description: >-
-    The Alerts#resourceArn API from Amazon MediaTailor — 1 operation(s) for alerts#resourcearn.
-  humanURL: https://aws.amazon.com/mediatailor/
-  baseURL: http://api.mediatailor.{region}.amazonaws.com
-  tags:
-  - Alerts#resourceArn
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediatailor-alerts-resourcearn-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediatailor/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediatailor/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediatailor/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediatailor/faqs/
 - aid: amazon-mediatailor:amazon-mediatailor-channel-api
   name: Amazon MediaTailor Channel API
   description: The Channel API from Amazon MediaTailor — 6 operation(s) for channel.
@@ -107,6 +88,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-mediatailor-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediatailor/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediatailor/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediatailor/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediatailor/faqs/
+- aid: amazon-mediatailor:amazon-mediatailor-alerts-api
+  name: Amazon MediaTailor Alerts API
+  description: The Alerts API from Amazon MediaTailor — 1 operation(s) for alerts.
+  humanURL: https://aws.amazon.com/mediatailor/
+  baseURL: http://api.mediatailor.{region}.amazonaws.com
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediatailor-alerts-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/mediatailor/
   - type: GettingStarted
@@ -228,7 +227,7 @@ apis:
     url: https://aws.amazon.com/mediatailor/faqs/
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/mediatailor/
 - type: CapabilityMap
   url: capabilities/amazon-mediatailor-capability-edges.yml
   name: Amazon MediaTailor Business Capability Map
@@ -305,5 +304,5 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
