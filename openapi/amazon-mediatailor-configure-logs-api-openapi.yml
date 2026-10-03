@@ -234,6 +234,12 @@ components:
       type: string
       enum:
       - AS_RUN
+    LogTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogType'
+    __integer:
+      type: integer
     ConfigureLogsForChannelResponse:
       type: object
       properties:
@@ -245,35 +251,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/LogTypes'
           - description: The types of logs collected.
-    __integer:
-      type: integer
     __string:
       type: string
-    LogTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/LogType'
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -290,8 +278,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

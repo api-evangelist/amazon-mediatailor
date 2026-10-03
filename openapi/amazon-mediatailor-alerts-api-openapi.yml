@@ -181,26 +181,50 @@ paths:
       tags:
       - Alerts
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ListAlertsResponse:
-      type: object
-      properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfAlert'
-          - description: A list of alerts that are associated with this resource.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
-    __listOf__string:
-      type: array
-      items:
-        $ref: '#/components/schemas/__string'
-    __listOfAlert:
-      type: array
-      items:
-        $ref: '#/components/schemas/Alert'
     Alert:
       type: object
       required:
@@ -231,54 +255,30 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: The Amazon Resource Name (ARN) of the resource.
       description: Alert configuration parameters.
-    __string:
-      type: string
+    __listOfAlert:
+      type: array
+      items:
+        $ref: '#/components/schemas/Alert'
+    ListAlertsResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfAlert'
+          - description: A list of alerts that are associated with this resource.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    __listOf__string:
+      type: array
+      items:
+        $ref: '#/components/schemas/__string'
     __timestampUnix:
       type: string
       format: date-time
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+    __string:
+      type: string
   securitySchemes:
     hmac:
       type: apiKey
