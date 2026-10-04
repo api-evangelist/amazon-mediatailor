@@ -175,61 +175,46 @@ paths:
       tags:
       - Channels
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ListChannelsResponse:
+    DashPlaylistSettings:
       type: object
       properties:
-        Items:
+        ManifestWindowSeconds:
           allOf:
-          - $ref: '#/components/schemas/__listOfChannel'
-          - description: A list of channels that are associated with this account.
-        NextToken:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+        MinBufferTimeSeconds:
           allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        MinUpdatePeriodSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+        SuggestedPresentationDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
+      description: Dash manifest configuration parameters.
+    ResponseOutputs:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResponseOutputItem'
+    LogConfigurationForChannel:
+      type: object
+      properties:
+        LogTypes:
+          allOf:
+          - $ref: '#/components/schemas/LogTypes'
+          - description: The log types.
+      description: The log configuration for the channel.
+    __timestampUnix:
+      type: string
+      format: date-time
+    __string:
+      type: string
+    __integer:
+      type: integer
     SlateSource:
       type: object
       properties:
@@ -242,22 +227,33 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.
       description: Slate VOD source configuration.
-    __mapOf__string:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    HlsPlaylistSettings:
-      type: object
-      properties:
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-      description: HLS playlist configuration parameters.
     LogTypes:
       type: array
       items:
         $ref: '#/components/schemas/LogType'
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    __listOfChannel:
+      type: array
+      items:
+        $ref: '#/components/schemas/Channel'
+    ListChannelsResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfChannel'
+          - description: A list of channels that are associated with this account.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    LogType:
+      type: string
+      enum:
+      - AS_RUN
     ResponseOutputItem:
       type: object
       required:
@@ -286,26 +282,6 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: A string used to associate a package configuration source group with a channel output.
       description: The output item response.
-    DashPlaylistSettings:
-      type: object
-      properties:
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
-        MinBufferTimeSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        MinUpdatePeriodSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-        SuggestedPresentationDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - description: 'Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.'
-      description: Dash manifest configuration parameters.
     Channel:
       type: object
       required:
@@ -364,33 +340,57 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: The tier for this channel. STANDARD tier channels can contain live programs.
       description: The configuration parameters for a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.
-    __integer:
-      type: integer
-    LogConfigurationForChannel:
+    HlsPlaylistSettings:
       type: object
       properties:
-        LogTypes:
+        ManifestWindowSeconds:
           allOf:
-          - $ref: '#/components/schemas/LogTypes'
-          - description: The log types.
-      description: The log configuration for the channel.
-    LogType:
-      type: string
-      enum:
-      - AS_RUN
-    ResponseOutputs:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResponseOutputItem'
-    __timestampUnix:
-      type: string
-      format: date-time
-    __listOfChannel:
-      type: array
-      items:
-        $ref: '#/components/schemas/Channel'
-    __string:
-      type: string
+          - $ref: '#/components/schemas/__integer'
+          - description: 'The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.'
+      description: HLS playlist configuration parameters.
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

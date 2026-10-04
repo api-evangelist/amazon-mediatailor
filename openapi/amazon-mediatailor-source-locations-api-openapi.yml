@@ -175,50 +175,70 @@ paths:
       tags:
       - Source Locations
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    AccessType:
+      type: string
+      enum:
+      - S3_SIGV4
+      - SECRETS_MANAGER_ACCESS_TOKEN
+    __timestampUnix:
+      type: string
+      format: date-time
+    DefaultSegmentDeliveryConfiguration:
+      type: object
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.
+      description: The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.
+    __string:
+      type: string
+    __listOfSegmentDeliveryConfiguration:
+      type: array
+      items:
+        $ref: '#/components/schemas/SegmentDeliveryConfiguration'
+    __mapOf__string:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    ListSourceLocationsResponse:
+      type: object
+      properties:
+        Items:
+          allOf:
+          - $ref: '#/components/schemas/__listOfSourceLocation'
+          - description: A list of source locations.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
+    __listOfSourceLocation:
+      type: array
+      items:
+        $ref: '#/components/schemas/SourceLocation'
+    HttpConfiguration:
+      type: object
+      required:
+      - BaseUrl
+      properties:
+        BaseUrl:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - description: The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.
+      description: The HTTP configuration for the source location.
+    AccessConfiguration:
+      type: object
+      properties:
+        AccessType:
+          allOf:
+          - $ref: '#/components/schemas/AccessType'
+          - description: '<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>'
+        SecretsManagerAccessTokenConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/SecretsManagerAccessTokenConfiguration'
+          - description: AWS Secrets Manager access token configuration parameters.
+      description: Access configuration parameters.
     SourceLocation:
       type: object
       required:
@@ -265,27 +285,6 @@ components:
               name: tags
             description: The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.
       description: A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.
-    AccessConfiguration:
-      type: object
-      properties:
-        AccessType:
-          allOf:
-          - $ref: '#/components/schemas/AccessType'
-          - description: '<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>'
-        SecretsManagerAccessTokenConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/SecretsManagerAccessTokenConfiguration'
-          - description: AWS Secrets Manager access token configuration parameters.
-      description: Access configuration parameters.
-    __mapOf__string:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    AccessType:
-      type: string
-      enum:
-      - S3_SIGV4
-      - SECRETS_MANAGER_ACCESS_TOKEN
     SegmentDeliveryConfiguration:
       type: object
       properties:
@@ -298,17 +297,6 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: A unique identifier used to distinguish between multiple segment delivery configurations in a source location.
       description: The segment delivery configuration settings.
-    ListSourceLocationsResponse:
-      type: object
-      properties:
-        Items:
-          allOf:
-          - $ref: '#/components/schemas/__listOfSourceLocation'
-          - description: A list of source locations.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
     SecretsManagerAccessTokenConfiguration:
       type: object
       properties:
@@ -325,37 +313,49 @@ components:
           - $ref: '#/components/schemas/__string'
           - description: The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.
       description: AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.
-    DefaultSegmentDeliveryConfiguration:
-      type: object
-      properties:
-        BaseUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.
-      description: The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.
-    __listOfSourceLocation:
-      type: array
-      items:
-        $ref: '#/components/schemas/SourceLocation'
-    __listOfSegmentDeliveryConfiguration:
-      type: array
-      items:
-        $ref: '#/components/schemas/SegmentDeliveryConfiguration'
-    __timestampUnix:
-      type: string
-      format: date-time
-    HttpConfiguration:
-      type: object
-      required:
-      - BaseUrl
-      properties:
-        BaseUrl:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - description: The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.
-      description: The HTTP configuration for the source location.
-    __string:
-      type: string
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
