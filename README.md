@@ -1,4 +1,4 @@
-# Amazon MediaTailor (amazon-mediatailor)
+# Amazon MediaTailor
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,128 +66,267 @@
 
 AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize your video content with server-side targeted advertising while maintaining broadcast-quality.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-mediatailor/refs/heads/main/apis.yml)
+**Areas:** AWS · Broadcasting · Media Processing · Media
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon MediaTailor on APIs.io
 
-## Tags:
+Everything profiled for Amazon MediaTailor is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-mediatailor/](https://apis.io/providers/amazon-mediatailor/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Broadcasting, Media Processing, Media
+### APIs (14)
 
-## Timestamps
+- [Amazon MediaTailor Channel API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-channel-api/) — The Channel API from Amazon MediaTailor — 6 operation(s) for channel.
+- [Amazon MediaTailor Channels API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-channels-api/) — The Channels API from Amazon MediaTailor — 1 operation(s) for channels.
+- [Amazon MediaTailor Tags API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-tags-api/) — The Tags API from Amazon MediaTailor — 2 operation(s) for tags.
+- [Amazon MediaTailor Alerts API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-alerts-api/) — The Alerts API from Amazon MediaTailor — 1 operation(s) for alerts.
+- [Amazon MediaTailor Configure Logs API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-configure-logs-api/) — The Configure Logs API from Amazon MediaTailor — 2 operation(s) for configure logs.
+- [Amazon MediaTailor Playback Configuration API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-playback-configuration-api/) — The Playback Configuration API from Amazon MediaTailor — 2 operation(s) for playback configuration.
+- [Amazon MediaTailor Playback Configurations API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-playback-configurations-api/) — The Playback Configurations API from Amazon MediaTailor — 1 operation(s) for playback configurations.
+- [Amazon MediaTailor Prefetch Schedule API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-prefetch-schedule-api/) — The Prefetch Schedule API from Amazon MediaTailor — 2 operation(s) for prefetch schedule.
+- [Amazon MediaTailor Source Location API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-source-location-api/) — The Source Location API from Amazon MediaTailor — 5 operation(s) for source location.
+- [Amazon MediaTailor Source Locations API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-source-locations-api/) — The Source Locations API from Amazon MediaTailor — 1 operation(s) for source locations.
+- [Amazon MediaTailor Mediatailor Function API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-function-api/) — The Mediatailor Function API from Amazon MediaTailor — 1 operation(s) for mediatailor function.
+- [Amazon MediaTailor Mediatailor Livesource API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-livesource-api/) — The Mediatailor Livesource API from Amazon MediaTailor — 1 operation(s) for mediatailor livesource.
+- [Amazon MediaTailor Mediatailor Operations API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-operations-api/) — The Mediatailor Operations API from Amazon MediaTailor — 3 operation(s) for mediatailor operations.
+- [Amazon MediaTailor Mediatailor Vodsource API](https://apis.io/apis/amazon-mediatailor/amazon-mediatailor-vodsource-api/) — The Mediatailor Vodsource API from Amazon MediaTailor — 1 operation(s) for mediatailor vodsource.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon MediaTailor API
-AWS Elemental MediaTailor is a channel assembly and personalized ad-insertion service that enables you to monetize your video content with server-side targeted advertising while maintaining broadcast-quality.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/mediatailor/](https://aws.amazon.com/mediatailor/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Mediatailor Agentic Access](https://apis.io/agentic-access/amazon-mediatailor/amazon-mediatailor-agentic-access/)
 
- - Broadcasting, Media Processing, Media
+#### JSON Schema (152)
 
-#### Properties
+The data models the API reads and writes.
 
+- [AccessConfiguration](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-access-configuration/)
+- [AccessType](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-access-type/)
+- [AdBreak](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-ad-break/)
+- [AdMarkerPassthrough](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-ad-marker-passthrough/)
+- [Alert](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-alert/)
+- [AvailMatchingCriteria](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-avail-matching-criteria/)
+- [AvailSuppression](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-avail-suppression/)
+- [Bumper](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-bumper/)
+- [CdnConfiguration](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-cdn-configuration/)
+- [Channel](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-channel/)
+- [ChannelState](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-channel-state/)
+- [ClipRange](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-clip-range/)
+- [ConfigurationAliasesRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configuration-aliases-request/)
+- [ConfigurationAliasesResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configuration-aliases-response/)
+- [ConfigureLogsForChannelRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-request/)
+- [ConfigureLogsForChannelResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-response/)
+- [ConfigureLogsForPlaybackConfigurationRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-request/)
+- [ConfigureLogsForPlaybackConfigurationResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-response/)
+- [CreateChannelRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-channel-request/)
+- [CreateChannelResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-channel-response/)
+- [CreateLiveSourceRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-live-source-request/)
+- [CreateLiveSourceResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-live-source-response/)
+- [CreatePrefetchScheduleRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-request/)
+- [CreatePrefetchScheduleResponse](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-response/)
+- [CreateProgramRequest](https://apis.io/schemas/amazon-mediatailor/mediatailor-api-create-program-request/)
+- …and 127 more published on APIs.io
+
+#### JSON Structure (152)
+
+Data models expressed in JSON Structure.
+
+- [Mediatailor Api Access Configuration Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-access-configuration-structure/)
+- [Mediatailor Api Access Type Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-access-type-structure/)
+- [Mediatailor Api Ad Break Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-ad-break-structure/)
+- [Mediatailor Api Ad Marker Passthrough Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-ad-marker-passthrough-structure/)
+- [Mediatailor Api Alert Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-alert-structure/)
+- [Mediatailor Api Avail Matching Criteria Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-avail-matching-criteria-structure/)
+- [Mediatailor Api Avail Suppression Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-avail-suppression-structure/)
+- [Mediatailor Api Bumper Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-bumper-structure/)
+- [Mediatailor Api Cdn Configuration Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-cdn-configuration-structure/)
+- [Mediatailor Api Channel State Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-channel-state-structure/)
+- [Mediatailor Api Channel Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-channel-structure/)
+- [Mediatailor Api Clip Range Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-clip-range-structure/)
+- [Mediatailor Api Configuration Aliases Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configuration-aliases-request-structure/)
+- [Mediatailor Api Configuration Aliases Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configuration-aliases-response-structure/)
+- [Mediatailor Api Configure Logs For Channel Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-request-structure/)
+- [Mediatailor Api Configure Logs For Channel Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-response-structure/)
+- [Mediatailor Api Configure Logs For Playback Configuration Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-request-structure/)
+- [Mediatailor Api Configure Logs For Playback Configuration Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-response-structure/)
+- [Mediatailor Api Create Channel Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-channel-request-structure/)
+- [Mediatailor Api Create Channel Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-channel-response-structure/)
+- [Mediatailor Api Create Live Source Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-live-source-request-structure/)
+- [Mediatailor Api Create Live Source Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-live-source-response-structure/)
+- [Mediatailor Api Create Prefetch Schedule Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-request-structure/)
+- [Mediatailor Api Create Prefetch Schedule Response Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-response-structure/)
+- [Mediatailor Api Create Program Request Structure](https://apis.io/json-structure/amazon-mediatailor/mediatailor-api-create-program-request-structure/)
+- …and 127 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Mediatailor Mediatailor Api Context](https://apis.io/jsonld/amazon-mediatailor/amazon-mediatailor-mediatailor-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Mediatailor Vocabulary](https://apis.io/vocabularies/amazon-mediatailor/amazon-mediatailor-vocabulary/)
+
+#### Examples (152)
+
+Example requests and responses.
+
+- [Mediatailor Api Access Configuration Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-access-configuration-example/)
+- [Mediatailor Api Access Type Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-access-type-example/)
+- [Mediatailor Api Ad Break Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-ad-break-example/)
+- [Mediatailor Api Ad Marker Passthrough Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-ad-marker-passthrough-example/)
+- [Mediatailor Api Alert Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-alert-example/)
+- [Mediatailor Api Avail Matching Criteria Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-avail-matching-criteria-example/)
+- [Mediatailor Api Avail Suppression Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-avail-suppression-example/)
+- [Mediatailor Api Bumper Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-bumper-example/)
+- [Mediatailor Api Cdn Configuration Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-cdn-configuration-example/)
+- [Mediatailor Api Channel Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-channel-example/)
+- [Mediatailor Api Channel State Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-channel-state-example/)
+- [Mediatailor Api Clip Range Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-clip-range-example/)
+- [Mediatailor Api Configuration Aliases Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configuration-aliases-request-example/)
+- [Mediatailor Api Configuration Aliases Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configuration-aliases-response-example/)
+- [Mediatailor Api Configure Logs For Channel Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-request-example/)
+- [Mediatailor Api Configure Logs For Channel Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configure-logs-for-channel-response-example/)
+- [Mediatailor Api Configure Logs For Playback Configuration Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-request-example/)
+- [Mediatailor Api Configure Logs For Playback Configuration Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-configure-logs-for-playback-configuration-response-example/)
+- [Mediatailor Api Create Channel Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-channel-request-example/)
+- [Mediatailor Api Create Channel Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-channel-response-example/)
+- [Mediatailor Api Create Live Source Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-live-source-request-example/)
+- [Mediatailor Api Create Live Source Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-live-source-response-example/)
+- [Mediatailor Api Create Prefetch Schedule Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-request-example/)
+- [Mediatailor Api Create Prefetch Schedule Response Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-prefetch-schedule-response-example/)
+- [Mediatailor Api Create Program Request Example](https://apis.io/examples/amazon-mediatailor/mediatailor-api-create-program-request-example/)
+- …and 127 more published on APIs.io
+
+#### Collections (20)
+
+Postman and Open Collection request collections.
+
+- [AWS MediaTailor Alerts#resourceArn API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-alerts-resourcearn-api/)
+- [AWS MediaTailor Alerts#resourceArn Channel API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-channel-api/)
+- [AWS MediaTailor Alerts#resourceArn Channels API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-channels-api/)
+- [AWS MediaTailor Alerts#resourceArn ConfigureLogs API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-configurelogs-api/)
+- [AWS MediaTailor Alerts#resourceArn PlaybackConfiguration API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-playbackconfiguration-api/)
+- [AWS MediaTailor Alerts#resourceArn PlaybackConfigurations API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-playbackconfigurations-api/)
+- [AWS MediaTailor Alerts#resourceArn PrefetchSchedule API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-prefetchschedule-api/)
+- [AWS MediaTailor Alerts#resourceArn SourceLocation API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-sourcelocation-api/)
+- [AWS MediaTailor Alerts#resourceArn SourceLocations API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-sourcelocations-api/)
+- [AWS MediaTailor Alerts#resourceArn Tags API](https://apis.io/collections/amazon-mediatailor/open-amazon-mediatailor-tags-api/)
+- [AWS MediaTailor Alerts#resourceArn API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-alerts-resourcearn-api/)
+- [AWS MediaTailor Alerts#resourceArn Channel API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-channel-api/)
+- [AWS MediaTailor Alerts#resourceArn Channels API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-channels-api/)
+- [AWS MediaTailor Alerts#resourceArn ConfigureLogs API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-configurelogs-api/)
+- [AWS MediaTailor Alerts#resourceArn PlaybackConfiguration API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-playbackconfiguration-api/)
+- [AWS MediaTailor Alerts#resourceArn PlaybackConfigurations API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-playbackconfigurations-api/)
+- [AWS MediaTailor Alerts#resourceArn PrefetchSchedule API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-prefetchschedule-api/)
+- [AWS MediaTailor Alerts#resourceArn SourceLocation API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-sourcelocation-api/)
+- [AWS MediaTailor Alerts#resourceArn SourceLocations API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-sourcelocations-api/)
+- [AWS MediaTailor Alerts#resourceArn Tags API](https://apis.io/collections/amazon-mediatailor/postman-amazon-mediatailor-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon MediaTailor — jsonschema rules](https://apis.io/rules/amazon-mediatailor/amazon-mediatailor-jsonschema-spectral-rules/)
+- [Amazon MediaTailor API Rules](https://apis.io/rules/amazon-mediatailor/amazon-mediatailor-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Mediatailor Authentication](https://apis.io/security/amazon-mediatailor/amazon-mediatailor-authentication/)
+- [Amazon Mediatailor Domain Security](https://apis.io/security/amazon-mediatailor/amazon-mediatailor-domain-security/)
+- [Amazon Mediatailor Trust Center](https://apis.io/security/amazon-mediatailor/amazon-mediatailor-trust-center/)
+- [Amazon Mediatailor Vulnerability Disclosure](https://apis.io/security/amazon-mediatailor/amazon-mediatailor-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Mediatailor Plans Pricing](https://apis.io/plans/amazon-mediatailor/amazon-mediatailor-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Mediatailor Rate Limits](https://apis.io/rate-limits/amazon-mediatailor/amazon-mediatailor-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Mediatailor Finops](https://apis.io/finops/amazon-mediatailor/amazon-mediatailor-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/mediatailor/)
 - [Documentation](https://docs.aws.amazon.com/mediatailor/)
-- [OpenAPI](openapi/amazon-mediatailor-openapi-original.yml)
-- [GettingStarted](https://aws.amazon.com/mediatailor/getting-started/)
-- [Pricing](https://aws.amazon.com/mediatailor/pricing/)
-- [FAQ](https://aws.amazon.com/mediatailor/faqs/)
-
-## Common Properties
-
-- [Portal](https://aws.amazon.com/mediatailor/)
-- [Documentation](https://docs.aws.amazon.com/mediatailor/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/media/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/mediatailor/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Server-Side Ad Insertion | Seamless ad replacement at the server side for consistent viewer experience across devices. |
-| Personalized Ad Targeting | Insert targeted ads based on viewer demographics, geography, and behavioral data. |
-| Channel Assembly | Create linear channels from VOD assets and live streams with automated ad scheduling. |
-| Ad Decision Server Integration | Connect to any VAST/VPAID-compliant ad decision server for programmatic advertising. |
-| Playback Configuration | Configure ad insertion parameters, slate, and CDN settings per playback session. |
+**Kin Score 54.8** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 59.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 60.5 |
 
-| Name | Description |
-|------|-------------|
-| VOD Monetization | Insert targeted ads into video-on-demand content for revenue generation. |
-| Live Stream Advertising | Replace live ad markers with personalized ads during live events. |
-| FAST Channel Creation | Build free ad-supported streaming TV channels from VOD libraries. |
-| Addressable Advertising | Deliver personalized ad experiences to individual viewers at scale. |
+**Agent readiness 30.2** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS Elemental MediaPackage | Ingest packaged live streams for ad insertion. |
-| Amazon CloudFront | Deliver ad-inserted content via CloudFront with low latency. |
-| Amazon S3 | Store VOD source content and slate media assets in S3. |
-| Amazon CloudWatch | Monitor ad insertion metrics and playback session data. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-mediatailor/](https://apis.io/providers/amazon-mediatailor/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon MediaTailor OpenAPI](openapi/amazon-mediatailor-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon MediaTailor: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- 152 schema files in [json-schema/](json-schema/)
-
-### JSON Structure
-
-- 152 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon MediaTailor API Context](json-ld/amazon-mediatailor-mediatailor-api-context.jsonld)
-
-### Examples
-
-- 152 example files in [examples/](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Amazon MediaTailor](capabilities/shared/mediatailor.yaml) — 44 operations for media processing
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon MediaTailor Workflow](capabilities/amazon-mediatailor-media-workflow.yaml) | Amazon MediaTailor | 8 | Broadcast Engineer |
-
-## Vocabulary
-
-- [Amazon MediaTailor Vocabulary](vocabulary/amazon-mediatailor-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon MediaTailor Spectral Rules](rules/amazon-mediatailor-spectral-rules.yml) — 20 rules across 8 categories enforcing Amazon MediaTailor API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-mediatailor/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
