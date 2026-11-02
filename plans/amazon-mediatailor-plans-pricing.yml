@@ -1,0 +1,181 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/mediatailor/pricing/
+sources:
+- https://aws.amazon.com/mediatailor/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: AWS MediaTailor pricing page; main rate tables render via dynamic price tokens, but explicit numeric
+  rates appear in regional ad delivery table, logs table, and pricing examples. No upfront costs or minimum
+  fees stated.
+plan_count: 10
+currency: USD
+plans:
+- name: Live ad insertion (US East N. Virginia, example)
+  price_text: $0.50 per 1000 live ad insertions
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: 1000 ad insertions
+- name: VOD ad insertion (US East N. Virginia, example)
+  price_text: $0.25 per 1000 VOD ad insertions
+  price: 0.25
+  currency: USD
+  period: per-use
+  unit: 1000 ad insertions
+- name: Channel Assembly - basic channel
+  price_text: $0.10 per running hour for a basic channel
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: running channel hour
+- name: Channel Assembly - standard channel
+  price_text: $0.35 per running hour for a standard channel
+  price: 0.35
+  currency: USD
+  period: per-use
+  unit: running channel hour
+- name: Monetization Functions
+  price_text: $0.0001 per invocation
+  price: 0.0001
+  currency: USD
+  period: per-use
+  unit: lifecycle hook invocation
+- name: Ad Transcode - HD (MediaConvert basic tier, US East N. Virginia)
+  price_text: $0.015 per minute for HD
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: minute
+  included_quota: 10 unique ads can be transcoded per thousand ad insertions without incurring additional
+    cost
+- name: Ad Transcode - SD
+  price_text: $0.0075 per minute for SD
+  price: 0.0075
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Ad Transcode - audio only
+  price_text: $0.003 per minute for audio only content
+  price: 0.003
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Ad Delivery OUT - Next 9.999 TB per month (US East N. Virginia)
+  price_text: $0.090
+  price: 0.09
+  currency: USD
+  period: per-use
+  unit: per GB
+  included_quota: First 1 GB per month $0.000
+- name: Logs - Delivery to CloudWatch Logs Standard, first 10TB
+  price_text: $0.50 per GB
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: GB
+  included_quota: 50 KB per ad inserted
+rate_limit_statements:
+- If you use the integrated ad transcoding capabilities at a rate of more than 10 transcodes per 1000
+  ad insertions, there will be charges for the additional Ad Transcodes
+- A basic channel is limited to scheduling only video-on-demand (VOD) content
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - compute
+  - data
+  plans:
+  - name: Live ad insertion (US East N. Virginia, example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: VOD ad insertion (US East N. Virginia, example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Channel Assembly - basic channel
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Channel Assembly - standard channel
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Monetization Functions
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Ad Transcode - HD (MediaConvert basic tier, US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Ad Transcode - SD
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Ad Transcode - audio only
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Ad Delivery OUT - Next 9.999 TB per month (US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Logs - Delivery to CloudWatch Logs Standard, first 10TB
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
