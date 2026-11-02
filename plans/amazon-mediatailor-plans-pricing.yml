@@ -90,7 +90,7 @@ rate_limit_statements:
   ad insertions, there will be charges for the additional Ad Transcodes
 - A basic channel is limited to scheduling only video-on-demand (VOD) content
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
