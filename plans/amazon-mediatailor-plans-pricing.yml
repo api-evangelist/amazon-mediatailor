@@ -90,7 +90,7 @@ rate_limit_statements:
   ad insertions, there will be charges for the additional Ad Transcodes
 - A basic channel is limited to scheduling only video-on-demand (VOD) content
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
@@ -98,6 +98,7 @@ x-canonical:
   units:
   - compute
   - data
+  - request
   plans:
   - name: Live ad insertion (US East N. Virginia, example)
     access: other
@@ -133,10 +134,10 @@ x-canonical:
     - other
   - name: Monetization Functions
     access: other
-    model: subscription
+    model: hybrid
     model_how: derived
     units:
-    - other
+    - request
     periods:
     - other
   - name: Ad Transcode - HD (MediaConvert basic tier, US East N. Virginia)
